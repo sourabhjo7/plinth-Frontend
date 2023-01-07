@@ -1,0 +1,39 @@
+.contact{
+    border: 2px solid white;
+    padding: 10px 13px;
+    border-radius: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto 15px;
+}
+
+.name{
+    font-size: 18px;
+}
+
+.number{
+    font-size: 13px;
+}
+
+@media screen and (max-width: 1150px) {
+    .contact{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .name{
+        font-size: 14px;
+    }
+    .number{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .contact{
+        width: 107%;
+    }
+}

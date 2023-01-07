@@ -1,0 +1,311 @@
+.backContainer{
+    position: relative;
+    background-color: transparent;
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.topLayer{
+    display: flex; 
+    flex-direction: row-reverse;   
+    height: 50%;
+    width: 100%;
+}
+.topLayerLeft{
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+
+    background: linear-gradient(-45deg, #1D296A , #853353 , #a4332d );
+    background: linear-gradient(-104.84deg, #1D296A 0%, #702441 29.04%, #B62820 64.35%, #FAB42D 106.03%);
+    /* background: linear-gradient(-45deg, #7a1611 , #e73c7e, #23a6d5, #23d5ab); */
+    /* background: linear-gradient(45deg, #7a1611, #fc4a1a, #f7b733); */
+    background-repeat: no-repeat;
+
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.topLayerLeftRight{
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+}
+.downLayer{
+    width: 100%;
+    height: 50%;
+}
+.downLayerLeft{
+    width: 50%;
+    height: 100%;
+    background-color: cyan;
+
+    background: linear-gradient(-45deg, #1D296A 0.45%, #702441 29.25%, #B62820 64.26%, #FAB42D 105.59%);
+    background: linear-gradient(-283.84deg, #1D296A 0%, #702441 29.04%, #B62820 64.35%, #FAB42D 106.03%);
+    background-repeat: no-repeat;
+
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+.downLayerRight{
+    /* width: 50%;
+    height: 100%; */
+    background-color: transparent;
+}
+.RegisterButton{
+    font-family: Light;
+    color: white;
+    font-size: 1.25vw;
+    font-weight: 200;
+    line-height: 23px;
+    letter-spacing: 0.1em;
+    height: 8%;
+    width: 17%;
+    top: 46%;
+    margin-left: 41.5%;
+    border: 0px;
+    border-radius: 4px;
+    position: absolute;
+
+    background: rgba( 71, 71, 71, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 3px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+
+    opacity: 0;
+    z-index: 10;
+
+    transition: transform 0.3s ease-in-out 0.01s;
+}
+
+.Handles{
+    opacity: 0;
+}
+
+.RegisterButton:hover{
+    transform: scale(1.1);
+}
+.CountdownHeading{
+    font-family: Light;
+    color:white;
+    font-size: 1.1vw;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+}
+.CountdownContainer{
+    display: flex;
+    flex-direction: row;
+}
+.Countdown{
+    background: transparent;
+    background-blend-mode: normal;
+    font-family: Poppins;
+    color:white;
+    font-size: 50px;
+    width: 30%;
+}
+
+.mainDiV{
+    position: relative;
+}
+
+.upContainer{
+    background-color: transparent;
+    /* background-color: purple; */
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+    top:0;
+}
+
+/* .................................. */
+
+.homeGradientLayer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    background: transparent;
+    height: 50%;
+
+    transform: rotate(-180deg);
+}
+.homeGradientLayerRev{
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: transparent;
+    transform: 180;
+    background-size: 50%;
+    width: 100%;
+    height: 50%;
+}
+
+.PlinthTitle{
+    font-family: Light;
+    color:white;
+    font-size: 6.9vw;
+    font-weight: 400;
+    line-height: 150px;
+    letter-spacing: 0.07em;
+    height: auto;
+}
+.PlinthHeading{
+    display: flex;
+    height: auto;
+    transform: rotate(-180deg);
+    position: relative;
+}
+.huddleimg{
+    width: 7.8vw;
+}
+.sponsordiv{
+    position: absolute;
+    /* width: 30vh; */
+    top:-15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.95;
+}
+.sponsortext{
+    /* line-height: 50px; */
+        text-align: left;
+        font-family: "Poppins";
+        color: white;
+        font-size: 1vw;
+        margin-left: 0.3vw;
+        /* line-height: 5vh; */
+        letter-spacing: 0;
+        font-weight: 600;
+        /* text-transform: capitalize; */
+}
+
+.PlinthYear{
+    /* margin-left: 1%; */
+    font-family: Light;
+    color:transparent;
+    -webkit-text-stroke: 3px white;
+    font-size: 5.9vw;
+    font-weight: 400;
+    line-height: 150px;
+    letter-spacing: 0.1em;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+}
+.HrLine{
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(-45deg, #F07217 0%, #C82222 29.69%, #259ABF 55.73%, #7B1FA7 77.08%, #F37011 100%);
+    background: linear-gradient(-45deg, #1D296A 0%, #702441 29.04%, #B62820 64.35%, #FAB42D 106.03%);
+    margin-right: 2.3%;    
+    width: 50%;
+    background-size: 400% 400%;
+	animation: gradient 7s ease infinite;
+}
+.SubHeading{
+    display: flex;
+    align-items: center;
+    width: 55%;
+    transform: rotate(-180deg);
+}
+.PlinthTag{
+    
+    line-height: 23px;
+    text-align: left;
+    font-family: Light;
+    color:white;
+    font-size: 1.1vw;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:600px) {
+    .SubHeading{
+        flex-direction: column;
+    }
+    .PlinthTitle{
+        font-size: 9vw;
+        font-weight: 400;
+        line-height: 5vh;
+        padding-left: 62px;
+    }
+    
+    .PlinthYear{
+        font-size: 9vw;
+        line-height: 0;
+        color:white;
+    -webkit-text-stroke: 0px white;
+    line-height: 5vh;
+    }
+    .PlinthTag{
+        line-height: 50px;
+        text-align: left;
+        font-family: Light;
+        color: white;
+        font-size: 2.5vw;
+        line-height: 5vh;
+        letter-spacing: 0;
+        font-weight: 300;
+    }
+    .RegisterButton{
+        font-size: 3.5vw;
+        font-weight: 200;
+        /* line-height: 23px; */
+        letter-spacing: 0em;
+        height: 8%;
+        width: 40%;
+        top: 46%;
+        margin-left: 30%;
+        position: absolute;
+    }
+    .CountdownHeading{
+        font-size: 3vw;
+    font-weight: 200;
+    letter-spacing: 0em;
+    }
+    .Countdown{
+        width: max-content;
+    }
+    .sponsordiv{
+        /* width: 30vh; */
+        top:-75%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.95;
+    }
+    .sponsortext{
+        font-size: 1.8vw;
+        /* margin-top: 0.7vh; */
+    }
+    .huddleimg{
+        width: 15vw;
+    }
+}

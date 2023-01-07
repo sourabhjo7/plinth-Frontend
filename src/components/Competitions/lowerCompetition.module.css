@@ -1,0 +1,145 @@
+.competitions_body {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.events {
+  display: grid;
+  grid-template-columns: 40vw 40vw;
+  column-gap: 4vw;
+  row-gap: 4vw;
+  padding: 8% 1% 8% 1%;
+  z-index: 0;
+  position: relative;
+  width: 85%;
+  /* align-content: center; */
+  /* justify-content: center; */
+}
+.event_card {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: red;
+  border-radius: 16px;
+  font-family: "Poppins", "sans-serif";
+  color: white;
+  box-sizing: border-box;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(3px);
+  transition: transform 0.5s;
+  overflow: hidden;
+}
+.event_card:hover > .event_image {
+  filter: brightness(100%);
+}
+.event_card:hover {
+  transform: scale(1.03);
+}
+.event_image {
+  height: 100%;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  width: 50%;
+  position: relative;
+  filter: brightness(75%);
+  transition: filter 1s;
+}
+.event_tag {
+  position: absolute;
+  /* height: 1.1rem; */
+  padding: 1px 6px;
+  left: 1%;
+  /* width:2.8rem; */
+  border-radius: 16px;
+  background-color: white;
+  color: black;
+  mix-blend-mode: lighten;
+  opacity: 0.85;
+  font-weight: bold;
+  bottom: 3%;
+  font-size: 0.8vw;
+  text-align: center;
+}
+.tag {
+  position: absolute;
+  /* height: 1.1rem; */
+  padding: 1px 6px;
+  left: 1%;
+  /* width:2.8rem; */
+  border-radius: 16px;
+  background-color: white;
+  color: black;
+  mix-blend-mode: lighten;
+  opacity: 0.85;
+  font-weight: bold;
+  bottom: 3%;
+  font-size: 0.8vw;
+  text-align: center;
+}
+.tag {
+  left: 10%;
+}
+.event_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2.3vh 1.5vw;
+}
+.event_name {
+  font-weight: bolder;
+  font-size: 1.7vw;
+}
+.event_description {
+  opacity: 0.7;
+  font-size: 0.9vw;
+}
+.event_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.7vh;
+  overflow: visible;
+  border-radius: 0;
+}
+.event_register {
+  background-color: white;
+  border: 0;
+  border-radius: 10px;
+  width: 46%;
+  color: black;
+  mix-blend-mode: lighten;
+  opacity: 0.8;
+  font-weight: bold;
+  height: 4.3vh;
+  /* cursor: pointer; */
+  font-family: "Poppins", "sans-serif";
+  transition: transform 0.5s;
+  font-size: 0.9vw;
+  z-index: 20;
+}
+.event_explore {
+  border: 1.15429px solid white;
+  border-radius: 10px;
+  background: transparent;
+  width: 46%;
+  color: white;
+  font-weight: bold;
+  height: 4.3vh;
+  opacity: 0.8;
+  /* cursor: pointer; */
+  font-family: "Poppins", "sans-serif";
+  transition: transform 0.5s;
+  font-size: 0.9vw;
+}
+.event_register:hover {
+  transform: scale(1.04);
+}
+.event_explore:hover {
+  transform: scale(1.04);
+}

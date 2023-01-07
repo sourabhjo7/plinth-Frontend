@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+.outerBg{
+    /* background: #10334E; */
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background-image: url("./ourteambg.webp");
+    /* background: rgb(26,68,100);
+    background: linear-gradient(45deg, rgba(26,68,100,1) 0%, rgba(8,20,36,1) 100%);  */
+  
+   background-repeat: no-repeat;
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;  */
+  background-attachment: fixed;
+
+  /* background-size: 400% 400%;
+  background-position: 0% 50%;
+  animation: gradient 7s ease infinite; */
+  position: relative;
+  
+}
+
+.section{
+    z-index: 10;
+}
+
+body{
+    position: relative;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 99% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.header{
+    font-family: Dark;
+    color: white;
+    font-size: 75px;
+    font-weight: 400;
+
+    background: linear-gradient(45deg, #ffffffe0 0%, rgba(224, 246, 248, 0.877) 128%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-align: center;
+    padding: 30px 0 10px 0;
+
+    background: #ffffffe0;
+    background: -webkit-linear-gradient(
+      45deg,
+      rgb(126, 205, 212),
+      #ffffffe0
+    ); 
+    background: linear-gradient(
+      45deg,
+      rgb(126, 205, 212),
+      #ffffffe0
+    ); 
+  
+    background-size: 300% 300%;
+    animation: gradient 3s ease infinite;
+  
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+
+.outer{
+    width: 70%;
+    margin: 15px auto 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+
+    border-radius: 16px;
+    background: rgb(62 62 62 / 11%);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer{
+    width: 100vw;
+    height: 7vh;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+    background: rgb(62 62 62 / 18%);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer .gdscLogo{
+    height: 100%;
+    width:40px;
+    display: grid;
+    place-items: center;
+}
+
+.footer .gdscLogo img{
+    width: 100%;
+}
+
+.footer p{
+    font-family: Poppins;
+    color: white;
+    font-weight: 500;
+
+    font-size: 20px;
+}
+
+.handle{
+    opacity: 1;
+    z-index: 40;
+    position: relative;
+  }
+
+@media screen and (max-width: 570px) {
+    .footer p{
+        font-size: 10px;
+    }
+    .footer {
+        height: 6vh;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 1100px) {
+    .outer{
+     width: 85%;
+     margin-left: 95px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header{
+        font-size: 45px;
+    }
+    .outer{
+        width: 80%;
+        margin-left: 90px;
+    }
+ }
+
+ @media screen and (max-width: 600px) {
+    .outer{
+        width: 75%;
+        margin-left: 90px;
+    }
+    
+ }
+
+
+
+ @media screen and (max-width: 440px) {
+    .header{
+        font-size: 35px;
+        margin-left: 44px;
+    }
+    .outer{
+        width: 68%;
+        margin-left: 90px;
+    }
+ }
+

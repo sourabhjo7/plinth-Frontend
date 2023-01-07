@@ -1,0 +1,33 @@
+.timerShell {
+  /* width: 30px; */
+  display: flex;
+  border: 2px solid;
+  border-image-source: linear-gradient(
+    176.03deg,
+    rgba(124, 228, 197, 0.048) 0.99%,
+    rgba(199, 204, 255, 0.104) 99.35%
+  );
+  padding-bottom: 10px;
+  padding-right: 70px;
+  padding-left: 10px;
+  margin-top: 5%;
+
+  background: rgba( 255, 255, 255, 0.1 );
+box-shadow: 0 3px 40px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 9.5px );
+-webkit-backdrop-filter: blur( 9.5px );
+border-radius: 3px;
+border: 0.5px solid rgba( 255, 255, 255, 0.18 );
+transition: transform 0.3s ease-in-out 0.01s;
+}
+
+.timerShell:hover{
+  transform: scale(1.1);
+}
+
+@media (max-width:600px) {
+  .timerShell {
+    width: max-content;
+    padding-right: 16vw;
+  }
+}

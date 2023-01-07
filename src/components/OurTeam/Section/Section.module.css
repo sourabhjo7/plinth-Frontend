@@ -1,0 +1,79 @@
+.section .subSection .subHeading{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+
+    color: rgba(255, 255, 255, 0.8); 
+    text-align: center;
+    padding: 15px 0 5px;
+}
+
+.section{
+    z-index: 10;
+}
+
+hr{
+    width: 93%;
+
+    background-color: white;
+    height: 1px;
+    margin: auto;
+}
+
+.section .subSection .leads,
+.section .subSection .subteam{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    gap: 0 100px;
+}
+
+.subteam hr{
+    width: 85%;
+}
+
+.none{
+    display: none;
+}
+
+.separation .arrow{
+
+    background: rgb(255, 255, 255);
+
+    border: none;
+    border-radius: 50%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+
+    color: #12274D;
+
+    height: 35px;
+    width: 35px;
+    line-height: 5px;
+
+    display: block;
+    margin: auto;
+    transform:  translateY(-17px) rotate(180deg);
+    transition: all 0.5s linear;
+}
+
+
+.separation .arrow.reverse{
+    transform: translateY(-17px) rotateY(0deg);
+}
+
+@media screen and (max-width: 730px) {
+    hr{
+        width: 90%;
+    }
+
+    .section .subSection .leads,
+    .section .subSection .members{
+        gap: 0 50px;
+    }
+}

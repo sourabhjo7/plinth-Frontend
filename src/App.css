@@ -1,0 +1,65 @@
+* {
+  /* transition: all 0.3s ease-in-out 0.01s; */
+  cursor: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Light"; /*Can be any text*/
+  src: local("Absolute_Xero"),
+    url("./fonts/Absolute_Xero/Absolute_Xero.ttf") format("truetype");
+}
+/* @font-face {
+  font-family: "Dark"; 
+  src: local("PhonkContrast"),
+    url("./fonts/PhonkContrast.otf") format("opentype");
+} */
+@font-face {
+  font-family: "Dark"; 
+  src: local("Agrandir"),
+    url("./fonts/Agrandir.otf") format("opentype");
+}
+
+.cursor {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:400;
+  pointer-events: none;
+}
+
+/* Scrollbar */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  /* border-radius: 10px; */
+  border: 1px solid black;
+}
+
+.progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: white;
+  top: 0px;
+  z-index: 5;
+}

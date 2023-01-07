@@ -1,0 +1,185 @@
+.background {
+  position: relative;
+
+  height: 100vh;
+  width: 100vw;
+  width: auto;
+
+  background-color: transparent;
+  /* background-image: url("./compBg.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background: #000428; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    76deg,
+    #291d67,
+    #000428
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    76deg,
+    #291d67,
+    #000428
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* height: 100vh; */
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  background-size: 400% 400%;
+  background-position: 0% 50%;
+  animation: gradient 10s ease infinite;
+
+  background-attachment: fixed;
+
+  z-index: 0;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 99% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.heading {
+  /* width: 100%;
+  font-family: "Light";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  letter-spacing: 0.01vw;
+  align-self: center;
+  background: linear-gradient(0deg, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  padding: 4%; */
+
+
+  font-family: 'Light';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4vw;
+    align-self: center;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    background: linear-gradient(45deg, #ffffffd3 0%, rgba(255, 255, 255, 0.532) 128%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    /* margin-top:1vh; */
+    margin-bottom:5vh;
+
+}
+.Form {
+  box-sizing: border-box;
+  /* position: relative; */
+  width: 100%;
+  border-radius: 16px;
+  /* padding: 3% 0% 3% 0%; */
+  /* margin: auto;
+  padding: 8%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-right: 8%;
+  margin-left: 8%;
+  margin-bottom: 2%; */
+}
+.h3 {
+  font-size: 10%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  /* line-height: 27px; */
+  /* identical to box height */
+
+  color: #ffffff;
+}
+.Personal {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  /* display: block; */
+  text-align: center;
+  font-family: Poppins;
+  font-size:1vw;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 3% 0 3% 0;
+  background: none;
+  border: 0px;
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+  padding: 10px 10px 15px 0px;
+  padding-left: 2%;
+}
+.p {
+  color: #bf1650;
+  font-family: "Poppins";
+  font-weight: bold;
+  text-align: left;
+  font-size: 1vw;
+  margin: 0%;
+}
+
+.p::before {
+  display: inline;
+  content: "⚠ ";
+}
+.input::placeholder {
+  color: #cccccc;
+}
+input:auto-fill {
+  background: none !important;
+  background-color: transparent !important;
+}
+
+.buttonCont {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+}
+.PaymentBtn {
+  color: #3940be;
+  background-color: white;
+}
+.TeamBtn,
+.PaymentBtn {
+  margin-top: 3vh;
+  font-family: "Poppins",sans-serif;
+  background: white;
+  color: #251C5F;
+  font-weight: bold;
+  font-size: 1.1vw;
+  width: 12vw;
+  height: 6vh;
+  align-self: center;
+  border: 0.1vw solid rgba(255, 255, 255, 0.8);
+border-radius: 0.8vw;
+letter-spacing: 0.03vw;
+}
+.TeamBtn {
+  color: #ffffff;
+  background: none;
+  border: 2px solid #ffffff;
+}

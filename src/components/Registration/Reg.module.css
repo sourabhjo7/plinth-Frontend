@@ -1,0 +1,135 @@
+.maindiv {
+  background-color: transparent;
+  /* background-image: url("./compBg.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  background: #000428;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(76deg, #291D67, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(76deg, #291D67, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  background-size: 400% 400%;
+  background-position: 0% 50%;
+	animation: gradient 10s ease infinite;
+
+  background-attachment: fixed;
+
+  z-index: 10;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 99% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animDiv {
+  background-color: transparent;
+  /* min-height: 100vh; */
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+  /* margin-bottom: 14vh; */
+}
+.secDiv {
+  background-color: transparent;
+  min-height: 100vh;
+  width: 100vw;
+  font-size: 45px;
+  font-family: "poppins";
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.base {
+  margin-top: 100px;
+  width: 75%;
+  /* position: absolute; */
+  animation: floating 8s infinite ease-in-out;
+}
+@keyframes floating {
+  0% { transform: translate(0,  0px) scale(1);
+  }
+  50%  { transform: translate(0, 15px) scale(0.97); }
+  100%   { transform: translate(0, -0px) scale(1);}   
+}
+@keyframes floating2 {
+  0% { transform: translate(0,  0px) scale(1);
+  }
+  50%  { transform: translate(0, 5px) scale(0.98); }
+  100%   { transform: translate(0, -0px) scale(1);}   
+}
+.baseDiv{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.base2Div{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.diamond{
+  width: 30%;
+  position: absolute;
+  top:100px;
+  z-index: 3;
+  animation: updown 4s infinite ease-in-out;
+}
+@keyframes updown {
+  0% { transform: translate(0,  -15px) scale(1.1);
+  }
+  50%  { transform: translate(0, 50px) scale(0.9); }
+  100%   { transform: translate(0, -15px) scale(1.1);}   
+}
+
+
+.title {
+  font-family: Light;
+  color: white;
+  font-size: 5.5vw;
+  /* font-size: 80px; */
+  font-weight: 400;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top:43vh;
+  animation: floating2 6s infinite ease-in-out;
+  
+
+  /* margin-top: 10%;
+  margin-bottom: 7%; */
+}

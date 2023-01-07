@@ -1,0 +1,36 @@
+.TimerCell {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 5%;
+}
+.TimerCellValue {
+    font-size: 2vw;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 54px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+.TimerCellLabel {
+    font-family: 'Light';
+    font-size: 0.8vw;
+    font-weight: 300;
+}
+
+@media (max-width:600px) {
+    .TimerCellLabel {
+        font-family: 'Light';
+        font-size: 1.5vw;
+        font-weight: 300;
+    }
+    .TimerCellValue {
+        font-size: 4vw;
+        font-family: Poppins;
+        font-weight: 600;
+        line-height: 45px;
+        letter-spacing: 0em;
+        
+    }
+}
