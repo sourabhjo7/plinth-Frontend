@@ -30,6 +30,7 @@ function Filter(props) {
             <AnimatePresence mode="wait" >
             <Card
               index={index}
+              auth = {props.auth}
               key={filteredEvent.id}
               name={filteredEvent.name}
               club={filteredEvent.club}

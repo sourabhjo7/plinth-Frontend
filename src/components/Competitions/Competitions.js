@@ -18,7 +18,7 @@ import Filter from "./Filter/Filter/Filter";
 
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 
-function Competitions() {
+function Competitions({auth,setAuth}) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const scaleX = useSpring(scrollYProgress, {
@@ -216,7 +216,7 @@ function Competitions() {
           </div>
 
           <div className={styles.outer}>
-            <Filter btnEnter={btnEnter} textLeave={textLeave}/>
+            <Filter btnEnter={btnEnter} auth = {auth} textLeave={textLeave}/>
           </div>
 
           

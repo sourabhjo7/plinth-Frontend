@@ -15,10 +15,11 @@ import { FiLogIn } from "react-icons/fi";
 import { AiOutlineTeam } from "react-icons/ai";
 import { HiOutlineStar } from "react-icons/hi";
 import { FiMic } from "react-icons/fi";
+import axios from "axios";
 
 const imgSrc = require("./plinth.png");
 
-export default function Sidebar() {
+export default function Sidebar({auth,setAuth,serverSystemUrl}) {
   const location = useLocation();
 
   gsap.registerPlugin(CSSPlugin);
@@ -43,6 +44,21 @@ export default function Sidebar() {
       );
     }
   }, []);
+
+   const onLoginHandler = () =>{
+      if(auth==="false"){
+        window.location="/login";
+      }
+      else{
+        axios.get(`${serverSystemUrl}/auth/logout`,{validateStatus: false,
+          withCredentials: true}).then((res)=>{
+          if(res.status===200){
+          setAuth("false");
+          window.location="/";  
+          }
+        })
+      }
+   }
 
   return (
     <div>
@@ -168,13 +184,14 @@ export default function Sidebar() {
 
         <ul className="logout">
           <li>
-            <a className="anchor" href="/login">
+
+            <button className="anchor" href="/login" onClick = {onLoginHandler}>
               {/* <i className="fa fa-sign-in fa-2x" /> */}
               <div className="fa fa-2x">
                 <FiLogIn size={25} />
               </div>
-              <span className="nav-text">Login/SignUp</span>
-            </a>
+              <span className="nav-text">{(auth === "false")?"Login":"Logout"}</span>
+            </button>
           </li>
         </ul>
       </nav>

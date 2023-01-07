@@ -115,7 +115,7 @@ function Home() {
     };
 
     const fetchData = () => {
-      window.open(`http://localhost:3000/auth/google`, "_self");
+      window.location="/competitions"
     };
 
 

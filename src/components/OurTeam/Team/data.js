@@ -77,8 +77,18 @@ export const teams = [
       {
         name: "Kingshuk Ghosh",
         image: "./images/teams/kingshuk.jpg",
-        designation: "Tech Lead",
+        designation: "Tech Sub-Lead",
         phone: "+91 93216 67834",
+        mail: "/",
+        facebook: "/",
+        instagram: "/",
+        linkedin: "/",
+      },
+      {
+        name: "Sourabh Joshi",
+        image: "./images/teams/sourabh.jpeg",
+        designation: "Tech Sub-Lead",
+        phone: "+91 95494 08165",
         mail: "/",
         facebook: "/",
         instagram: "/",
@@ -170,10 +180,10 @@ export const teams = [
         subteam: "Backend Devs",
         members: [
           {
-            name: "Sriraj Behera",
-            image: "./images/teams/sriraj.jpg",
+            name: "Sourabh Joshi",
+            image: "./images/teams/sourabh.jpeg",
             designation: "Backend Mentor",
-            phone: "+91 70212 49264",
+            phone: "+91 95494 08165",
             mail: "/",
             facebook: "/",
             instagram: "/",

@@ -13,7 +13,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import Contact from "./Contacts/Contact";
 
-const CampusAmb = () => {
+const CampusAmb = ({auth,setAuth}) => {
   const [section, setSection] = useState("about");
   const [val, setVal] = useState("A part  time opportunity for the students to cater a large crowd in various fields like programming, gaming, MUN etc.  The program provides occassions for networking and building connections. ");
   const handleView = (e) => {

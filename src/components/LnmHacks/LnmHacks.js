@@ -13,7 +13,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import Contact from "./Contacts/Contact";
 
-const LnmHacks = () => {
+const LnmHacks = ({auth,setAuth}) => {
   const [section, setSection] = useState("about");
   const [val, setVal] = useState("LNMHacks 5.0 will be a 72-hour hackathon with a wide range of tracks in Blockchain field such as DeFi, DAOs, NFTs and Gaming, LNMHacks is expecting the participation of innovators and developers from all over the nation.");
   const handleView = (e) => {

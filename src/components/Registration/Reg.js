@@ -7,7 +7,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Registration from "./Registration";
 
-function Reg() {
+function Reg({serverSystemUrl ,auth,setAuth }) {
 
   //Particle Bg
   const particlesInit = useCallback(async (engine) => {
@@ -22,7 +22,7 @@ function Reg() {
   return (
     <>
       <div className={styles.maindiv}>
-      <Registration />
+      <Registration serverSystemUrl={serverSystemUrl} auth={auth} setAuth={setAuth}/>
       </div>
 
       <Particles

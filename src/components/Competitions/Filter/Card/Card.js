@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function Card(props) {
   const navigate = useNavigate();
   const handleRegister = (e, name) => {
-    navigate(`/${name}/registration`);
+    window.location = (props.auth == "false") ? "/login" : `/${name}`;
   };
   const handleClick = (e, name) => {
     navigate(`/${name}`);
@@ -42,7 +42,7 @@ function Card(props) {
           {/* <button className={styles.regbtn} onClick={(e) => handleRegister(e, props.name, props.index)}>
             Register
           </button> */}
-           <button className={styles.regbtn} onClick={() => alert("Registration Opening Soon!!")} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>
+           <button className={styles.regbtn} onClick={(e) => handleRegister(e, props.name.toLowerCase().replaceAll(" ", "_"))} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>
             Register
           </button>
           <button className={styles.expbtn} onClick={(e) => handleClick(e, props.name.toLowerCase().replaceAll(" ", "_"))} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>

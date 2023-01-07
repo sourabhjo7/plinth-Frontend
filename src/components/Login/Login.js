@@ -15,7 +15,7 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-export default function Login({ serverSystemUrl }) {
+export default function Login({ serverSystemUrl ,auth,setAuth}) {
   console.log("===>", serverSystemUrl);
   gsap.registerPlugin(CSSPlugin);
   let item1 = useRef(null);
@@ -35,20 +35,36 @@ export default function Login({ serverSystemUrl }) {
     mode: "onChange",
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async(data) => {
     console.log("--->", data);
 
-    axios
-      .post(`http://localhost:5000/auth/login`, qs.stringify(data), {
-        withCredentials: true,
-      })
-      .then(function(response) {
-        console.log(response);
-        //             if(response.data==="Succesfully registered" && response.status===200 ){
+    const res = await axios.post(
+      `${serverSystemUrl}/auth/login`,
+      data,
+      { validateStatus: false, withCredentials: true }
+    );
+    if (res.status === 200) {
+      console.log("logged as -",res.data.user.role);
 
-        // window.open(`http://localhost:3001/${name}/${id}/${localStorage.getItem('username')}/${localStorage.getItem('userid')}/t`,'_self')
-        //             }
-      });
+       setAuth(res.data.user.role);
+       window.location = "/competitions";
+    }
+    else{
+      window.location = "/registration";
+    }
+    console.log("this is data of response ", res.data);
+
+    // axios
+    //   .post(`http://localhost:5000/auth/login`, qs.stringify(data), {
+    //     withCredentials: true,
+    //   })
+    //   .then(function(response) {
+    //     console.log(response);
+    //     //             if(response.data==="Succesfully registered" && response.status===200 ){
+
+    //     // window.open(`http://localhost:3001/${name}/${id}/${localStorage.getItem('username')}/${localStorage.getItem('userid')}/t`,'_self')
+    //     //             }
+    //   });
   };
 
   //Particle Bg

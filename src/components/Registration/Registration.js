@@ -12,7 +12,8 @@ import { Power3 } from "gsap";
 import { TimelineLite } from "gsap/gsap-core.js";
 import { CSSPlugin } from "gsap/CSSPlugin";
 
-function Registration() {
+function Registration({ serverSystemUrl, auth, setAuth }) {
+  const [accomodation,setAccomodation]=useState("no");
   gsap.registerPlugin(CSSPlugin);
   let item1 = useRef(null);
   let item2 = useRef(null);
@@ -43,20 +44,19 @@ function Registration() {
     let obj = country.find((o) => o.name === tar);
     setCities(City.getCitiesOfCountry(obj.isoCode));
   };
-  const onSubmit = (data) => {
-    console.log("--->", data);
+  const onSubmit = async (data) => {
+    console.log("--->", {...data,accomodation});
 
-    axios
-      .post(`http://localhost:5000/auth/register`, qs.stringify(data), {
-        withCredentials: true,
-      })
-      .then(function(response) {
-        console.log(response);
-        //             if(response.data==="Succesfully registered" && response.status===200 ){
-
-        // window.open(`http://localhost:3001/${name}/${id}/${localStorage.getItem('username')}/${localStorage.getItem('userid')}/t`,'_self')
-        //             }
-      });
+    const res = await axios.post(`${serverSystemUrl}/auth/register`, {data,accomodation}, {
+      validateStatus: false,
+      withCredentials: true,
+    });
+    if (res.status === 200) {
+      console.log("registered as=====", res.data.user.role);
+      setAuth(res.data.user.role);
+      window.location = "/competitions";
+    }
+    console.log("this is data of response ", res.data);
   };
 
   const [mousePosition, setMousePosition] = useState({
@@ -149,7 +149,7 @@ function Registration() {
       window.removeEventListener("mousemove", mouseMove);
     };
   }, []);
-
+ 
   return (
     <div className={`${styles.background}`}>
       <motion.div
@@ -375,6 +375,19 @@ function Registration() {
           {errors.YearOfStudy && (
             <p className={`${styles.p}`}>{errors.YearOfStudy.message}</p>
           )}
+          <div className={styles.acco}>
+            <p className={styles.acco_title}>Need Accomodation?</p>
+            <div onchange={e=>{setAccomodation(e.target.value)}} className={styles.acco_inner}>
+              <input type="radio" id="yes" name="acco" onClick={(e)=>{
+                setAccomodation("yes");
+              }} value="yes" />
+              <label for="yes"> Yes</label>
+              <input type="radio" id="no" name="acco" value="no" onClick={(e)=>{
+                setAccomodation("no");
+              }} />
+              <label for="no">No</label>
+            </div>
+          </div>
           <input
             onMouseEnter={btnEnter}
             onMouseLeave={textLeave}

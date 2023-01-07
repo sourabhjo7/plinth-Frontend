@@ -142,5 +142,31 @@ input:auto-fill{
   z-index: 6;
 }
 
+.acco{
 
+}
 
+.acco_title{
+  font-family: Poppins;
+    font-size: 1.25vw;
+    font-weight: 500;
+    color: #cccccc;
+    margin: 5% 0 5% 0;
+}
+
+.acco_inner{
+
+}
+
+.acco_inner label{
+  font-family: Poppins;
+    font-size: 1.1vw;
+    font-weight: 500;
+    color: #cccccc;
+    margin-right: 10px;
+}
+
+.acco_inner input{
+  border-radius: 50%;
+  margin-right: 5px;
+}

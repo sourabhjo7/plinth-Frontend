@@ -19,20 +19,35 @@ import Login from "./components/Login/Login";
 
 import axios from "axios";
 console.log(process.env.REACT_APP_API_URL);
-const serverSystemUrl="https://api.plinth.co.in";
+const serverSystemUrl= "https://api.plinth.co.in";
 function App() {
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState(null);
-  const getUser = async () => {
-    try {
-      const url = `http://localhost:3000/auth/google`;
-      const { data } = await axios.get(url, { withCredentials: true });
-      setUser(data.user._json);
-      console.log(data);
-    } catch (err) {
-      console.log(err, "hi");
-    }
-  };
+  const [auth, setAuth] = useState("false");
+  // const getUser = async () => {
+  //   try {
+  //     const url = `http://localhost:3000/auth/google`;
+  //     const { data } = await axios.get(url, { withCredentials: true });
+  //     setUser(data.user._json);
+  //     console.log(data);
+  //   } catch (err) {
+  //     console.log(err, "hi");
+  //   }
+  // };
+
+  useEffect(() => { 
+    axios
+    .get(`${serverSystemUrl}/`, {
+      validateStatus: false,
+      withCredentials: true,
+    })
+    .then((response) => {
+      console.log("---------", response);
+      if (response.status == 200) {
+        setAuth(response.data.user.role);
+      }
+    });
+  }, [auth])
+  
   useEffect(() => {
     // console.log((user));
     setLoading(true);
@@ -45,19 +60,20 @@ function App() {
   return (
     <div className="App">
         <Router>
-          <Sidebar/>
+          <Sidebar auth = {auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>
           <Routes>
             <Route path="/" element={loading ? (
         <Loader />
       ) :<Home />} />
-            <Route path="aboutus" element={<Aboutus />} />
+            <Route path="aboutus" element={<Aboutus  />} />
             <Route path="ourteam" element={<Team />} />
-            <Route path="competitions" element={<Competitions />} />
-            <Route path="/:name" element={<Explore />}/>
-            <Route path="/registration" element={<Reg />}/>
-            <Route path="campus_ambassador" element={<CampusAmb />} />
-            <Route path="lnm_hacks" element={<LnmHacks />} />
-            <Route path="login" element={<Login serverSystemUrl={serverSystemUrl}/>}/>
+            <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
+            <Route path="/:name" element={<Explore auth={auth} setAuth={setAuth}/>}/>
+            {(auth==="false")&&<Route path="/registration" element={<Reg auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
+            }<Route path="campus_ambassador" element={<CampusAmb auth={auth} setAuth={setAuth}/>} />
+            <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />
+            {(auth==="false")&&(<Route path="/login" element={<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
+            )}
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
           </Routes>
 

@@ -62,8 +62,12 @@ nav.main-menu.expanded {
   transition: all 0.1s linear;
 }
 .anchor{
-  width: 100%;
+  width: fit-content;
   overflow-x:hidden;
+  background-color: inherit;
+  color: white;
+  border:none;
+  outline: none;
 }
 .image-plinth {
   width: 51px;

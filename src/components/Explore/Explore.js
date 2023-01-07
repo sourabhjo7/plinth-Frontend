@@ -14,7 +14,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import Contact from "./Contacts/Contact";
 
-const Explore = () => {
+const Explore = ({auth,setAuth}) => {
   const [section, setSection] = useState("about");
   const params = useParams();
   const location = useLocation();
@@ -264,9 +264,9 @@ const Explore = () => {
 
             <button
               className={styles.event_register_button}
-              onClick={() => alert("Registration Opening Soon!!")} onMouseEnter={btnEnter} onMouseLeave={textLeave}
+              onClick={() => alert("Payments Opening Soon!!")} onMouseEnter={btnEnter} onMouseLeave={textLeave}
             >
-              Register
+              Payment
             </button>
 
             {/* <div className={styles.explore_details1}>
