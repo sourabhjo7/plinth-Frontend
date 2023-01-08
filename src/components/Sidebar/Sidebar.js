@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Sidebar.css";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import { gsap } from "gsap";
 import { Power3 } from "gsap";
@@ -21,7 +21,7 @@ const imgSrc = require("./plinth.png");
 
 export default function Sidebar({auth,setAuth,serverSystemUrl}) {
   const location = useLocation();
-
+  const navigate=useNavigate();
   gsap.registerPlugin(CSSPlugin);
   let item = useRef(null);
   const [tl] = useState(new TimelineLite({ paused: false }));
@@ -47,14 +47,14 @@ export default function Sidebar({auth,setAuth,serverSystemUrl}) {
 
    const onLoginHandler = () =>{
       if(auth==="false"){
-        window.location="/login";
+        navigate("/login")
       }
       else{
         axios.get(`${serverSystemUrl}/auth/logout`,{validateStatus: false,
           withCredentials: true}).then((res)=>{
           if(res.status===200){
           setAuth("false");
-          window.location="/";  
+          navigate("/")  
           console.log(res.data.msg);
           }
         })
@@ -131,32 +131,32 @@ export default function Sidebar({auth,setAuth,serverSystemUrl}) {
                     height="16"
                     rx="3"
                     stroke="white"
-                    stroke-width="4"
+                    strokeWidth="4"
                   />
                   <path
                     d="M27 8H37C38.6569 8 40 9.34315 40 11V21C40 22.6569 38.6569 24 37 24H27C25.3431 24 24 22.6569 24 21V11C24 9.34315 25.3431 8 27 8Z"
                     stroke="white"
-                    stroke-width="4"
+                    strokeWidth="4"
                   />
                   <path
                     d="M43 8H53C54.6569 8 56 9.34315 56 11V21C56 22.6569 54.6569 24 53 24H43C41.3431 24 40 22.6569 40 21V11C40 9.34315 41.3431 8 43 8Z"
                     stroke="white"
-                    stroke-width="4"
+                    strokeWidth="4"
                   />
                   <path
                     d="M27 24H37C38.6569 24 40 25.3431 40 27V37C40 38.6569 38.6569 40 37 40H27C25.3431 40 24 38.6569 24 37V27C24 25.3431 25.3431 24 27 24Z"
                     stroke="white"
-                    stroke-width="4"
+                    strokeWidth="4"
                   />
                   <path
                     d="M43 24H53C54.6569 24 56 25.3431 56 27V37C56 38.6569 54.6569 40 53 40H43C41.3431 40 40 38.6569 40 37V27C40 25.3431 41.3431 24 43 24Z"
                     stroke="white"
-                    stroke-width="4"
+                    strokeWidth="4"
                   />
                   <path
                     d="M43 40H53C54.6569 40 56 41.3431 56 43V53C56 54.6569 54.6569 56 53 56H43C41.3431 56 40 54.6569 40 53V43C40 41.3431 41.3431 40 43 40Z"
                     stroke="white"
-                    stroke-width="4"
+                    strokeWidth="4"
                   />
                 </svg>
               </div>

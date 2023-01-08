@@ -10,7 +10,7 @@ import { gsap } from "gsap";
 import { Power3 } from "gsap";
 import { TimelineLite } from "gsap/gsap-core.js";
 import { CSSPlugin } from "gsap/CSSPlugin";
-
+import FlashMessage from "../FlashMessage/FlashMessage";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -26,7 +26,8 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
   const { name, id } = params;
   const [tl] = useState(new TimelineLite({ paused: false }));
   const [tl2] = useState(new TimelineLite({ paused: false }));
-
+  const [flashMessage,setflashMessage]=useState(false);
+  const [message,setMessage]=useState("logged in successfully!")
   const {
     register,
     formState: { errors },
@@ -38,19 +39,21 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
   const onSubmit = async(data) => {
     console.log("--->", data);
 
+    setflashMessage(!flashMessage)
     const res = await axios.post(
       `${serverSystemUrl}/auth/login`,
       data,
       { validateStatus: false, withCredentials: true }
     );
+    setMessage(res.data.msg)
     if (res.status === 200) {
       console.log("logged as -",res.data.user.role);
 
        setAuth(res.data.user.role);
-       window.location = "/competitions";
+       navigate("/competitions")
     }
     else{
-      window.location = "/registration";
+      navigate("/registration")
     }
     console.log("this is data of response ", res.data);
 
@@ -194,6 +197,7 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
       >
         <Handles />
       </motion.div>
+      {flashMessage?<FlashMessage message={message} />:null}
       <div
         ref={(el) => {
           item1 = el;

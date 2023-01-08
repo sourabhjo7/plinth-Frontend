@@ -11,12 +11,13 @@ import { gsap } from "gsap";
 import { Power3 } from "gsap";
 import { TimelineLite } from "gsap/gsap-core.js";
 import { CSSPlugin } from "gsap/CSSPlugin";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Registration({ serverSystemUrl, auth, setAuth }) {
   const [accomodation,setAccomodation]=useState("no");
-  const [flashMessage,setflashMessage]=useState(true);
+  const [flashMessage,setflashMessage]=useState(false);
   const [message,setMessage]=useState("logged in successfully!")
-
+  const navigate=useNavigate();
   gsap.registerPlugin(CSSPlugin);
   let item1 = useRef(null);
   let item2 = useRef(null);
@@ -59,7 +60,7 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
     if (res.status === 200) {
       console.log("registered as=====", res.data.user.role);
       setAuth(res.data.user.role);
-      window.location = "/competitions";
+      navigate("/competitions")
       // alert("")
     }
     console.log("this is data of response ", res.data);
@@ -383,15 +384,15 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
           )}
           <div className={styles.acco}>
             <p className={styles.acco_title}>Need Accomodation?</p>
-            <div onchange={e=>{setAccomodation(e.target.value)}} className={styles.acco_inner}>
+            <div onChange={e=>{setAccomodation(e.target.value)}} className={styles.acco_inner}>
               <input type="radio" id="yes" name="acco" onClick={(e)=>{
                 setAccomodation("yes");
               }} value="yes" />
-              <label for="yes"> Yes</label>
+              <label htmlFor="yes"> Yes</label>
               <input type="radio" id="no" name="acco" value="no" onClick={(e)=>{
                 setAccomodation("no");
               }} />
-              <label for="no">No</label>
+              <label htmlFor="no">No</label>
             </div>
           </div>
           <input

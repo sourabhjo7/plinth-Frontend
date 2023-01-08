@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 function Card(props) {
   const navigate = useNavigate();
   const handleRegister = (e, name) => {
-    window.location = (props.auth == "false") ? "/login" : `/${name}`;
+    const path=(props.auth == "false") ? "/login" : `/${name}`;
+    navigate(path)
   };
   const handleClick = (e, name) => {
     navigate(`/${name}`);
