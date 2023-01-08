@@ -15,7 +15,7 @@ import { CSSPlugin } from "gsap/CSSPlugin";
 function Registration({ serverSystemUrl, auth, setAuth }) {
   const [accomodation,setAccomodation]=useState("no");
   const [flashMessage,setflashMessage]=useState(true);
-  const [message,setMessage]=useState("none")
+  const [message,setMessage]=useState("logged in successfully!")
 
   gsap.registerPlugin(CSSPlugin);
   let item1 = useRef(null);
