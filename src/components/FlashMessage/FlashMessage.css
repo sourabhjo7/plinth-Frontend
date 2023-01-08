@@ -1,0 +1,23 @@
+.flash-message{
+    width: fit-content;
+    bottom: 0;
+    z-index: 3;
+    width: 360px;
+    height: 145px;
+    color: #fff;
+    background: linear-gradient(135deg, #0a5e79, #2ba888);
+    border-radius: 120px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+    padding: 36px;
+    /* transition: all .3s ease-in-out .3s;
+    transform: scale(0) translate(-50%, -100%);
+    transform-origin: 0 0;
+    opacity: 0; */
+    /* user-select: none; */
+    /* position: absolute; */
+    color: white;
+    /* background-color: azure; */
+}
+.p{
+    color: white;
+}

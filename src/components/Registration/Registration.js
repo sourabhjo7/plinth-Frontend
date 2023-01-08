@@ -6,7 +6,7 @@ import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import axios from "axios";
 import qs from "qs";
 import { motion } from "framer-motion/dist/framer-motion";
-
+import FlashMessage from '../FlashMessage/FlashMessage'
 import { gsap } from "gsap";
 import { Power3 } from "gsap";
 import { TimelineLite } from "gsap/gsap-core.js";
@@ -14,6 +14,9 @@ import { CSSPlugin } from "gsap/CSSPlugin";
 
 function Registration({ serverSystemUrl, auth, setAuth }) {
   const [accomodation,setAccomodation]=useState("no");
+  const [flashMessage,setflashMessage]=useState(true);
+  const [message,setMessage]=useState("none")
+
   gsap.registerPlugin(CSSPlugin);
   let item1 = useRef(null);
   let item2 = useRef(null);
@@ -47,6 +50,8 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
   const onSubmit = async (data) => {
     console.log("--->", {...data,accomodation});
 
+    // setMessage(res.data.msg)
+    setflashMessage(!flashMessage)
     const res = await axios.post(`${serverSystemUrl}/auth/register`, {data,accomodation}, {
       validateStatus: false,
       withCredentials: true,
@@ -55,6 +60,7 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
       console.log("registered as=====", res.data.user.role);
       setAuth(res.data.user.role);
       window.location = "/competitions";
+      // alert("")
     }
     console.log("this is data of response ", res.data);
   };
@@ -175,7 +181,7 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
       >
         <Handles />
       </motion.div>
-
+        {flashMessage?<FlashMessage message={message} />:null}
       <div
         ref={(el) => {
           item1 = el;
@@ -226,7 +232,7 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
             {...register("email", {
               required: "This field is required",
               pattern: {
-                value: /^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/,
+                value: /^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/,
                 message: "Invalid Email address",
               },
             })}
