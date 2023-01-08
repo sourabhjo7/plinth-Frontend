@@ -17,7 +17,7 @@ import { loadFull } from "tsparticles";
 
 import axios from "axios";
 
-function Home() {
+function Home({auth,setAuth}) {
   //Particle Bg
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
@@ -115,7 +115,13 @@ function Home() {
     };
 
     const fetchData = () => {
-      window.location="/competitions"
+      if(auth==="false"){
+        window.location="/registration"
+      }
+      else{
+        window.location="/competitions"
+      }
+      
     };
 
 

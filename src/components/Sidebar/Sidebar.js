@@ -55,6 +55,7 @@ export default function Sidebar({auth,setAuth,serverSystemUrl}) {
           if(res.status===200){
           setAuth("false");
           window.location="/";  
+          console.log(res.data.msg);
           }
         })
       }

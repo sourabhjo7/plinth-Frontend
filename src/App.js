@@ -64,7 +64,7 @@ function App() {
           <Routes>
             <Route path="/" element={loading ? (
         <Loader />
-      ) :<Home />} />
+      ) :<Home auth={auth} setAuth={setAuth} />} />
             <Route path="aboutus" element={<Aboutus  />} />
             <Route path="ourteam" element={<Team />} />
             <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
