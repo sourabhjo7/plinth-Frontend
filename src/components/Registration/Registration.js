@@ -16,7 +16,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 function Registration({ serverSystemUrl, auth, setAuth }) {
   const [accomodation,setAccomodation]=useState("no");
   const [flashMessage,setflashMessage]=useState(false);
-  const [message,setMessage]=useState("logged in successfully!")
+  const [message,setMessage]=useState("logged in")
   const navigate=useNavigate();
   gsap.registerPlugin(CSSPlugin);
   let item1 = useRef(null);
@@ -51,19 +51,24 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
   const onSubmit = async (data) => {
     console.log("--->", {...data,accomodation});
 
-    // setMessage(res.data.msg)
-    setflashMessage(!flashMessage)
+    
+    
     const res = await axios.post(`${serverSystemUrl}/auth/register`, {data,accomodation}, {
       validateStatus: false,
       withCredentials: true,
     });
     if (res.status === 200) {
-      console.log("registered as=====", res.data.user.role);
-      setAuth(res.data.user.role);
-      navigate("/competitions")
+       
+       setMessage(res.data.msg)
+       setflashMessage(!flashMessage);
+       console.log("registered as=====", res.data.user.role);
+       setTimeout(() => {
+        setAuth(res.data.user.role);
+        navigate("/competitions")  
+       }, 1000);
+      
       // alert("")
     }
-    console.log("this is data of response ", res.data);
   };
 
   const [mousePosition, setMousePosition] = useState({

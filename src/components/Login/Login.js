@@ -38,8 +38,6 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
 
   const onSubmit = async(data) => {
     console.log("--->", data);
-
-    setflashMessage(!flashMessage)
     const res = await axios.post(
       `${serverSystemUrl}/auth/login`,
       data,
@@ -48,9 +46,12 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
     setMessage(res.data.msg)
     if (res.status === 200) {
       console.log("logged as -",res.data.user.role);
-
+      setMessage(res.data.msg)
+      setflashMessage(!flashMessage);
+      setTimeout(() => {
        setAuth(res.data.user.role);
-       navigate("/competitions")
+       navigate("/competitions")  
+      }, 1000);
     }
     else{
       navigate("/registration")
