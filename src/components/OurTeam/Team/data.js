@@ -97,7 +97,7 @@ export const teams = [
     ],
     members: [
       {
-        subteam: "Designers",
+        subteam: "Designers & Developers",
         members: [
           {
             name: "Aditya Mittal",
@@ -114,31 +114,6 @@ export const teams = [
             image: "./images/teams/aryan-bansal.jpg",
             designation: "Designer",
             phone: "+91 70237 11736",
-            mail: "/",
-            facebook: "/",
-            instagram: "/",
-            linkedin: "/",
-          },
-          {
-            name: "Vishal Kumar",
-            image: "./images/teams/vishal.jpg",
-            designation: "Designer",
-            phone: "+91 92057 34004",
-            mail: "/",
-            facebook: "/",
-            instagram: "/",
-            linkedin: "/",
-          },
-        ],
-      },
-      {
-        subteam: "Frontend Devs",
-        members: [
-          {
-            name: "Kingshuk Ghosh",
-            image: "./images/teams/kingshuk.jpg",
-            designation: "Frontend Mentor",
-            phone: "+91 93216 67834",
             mail: "/",
             facebook: "/",
             instagram: "/",
@@ -174,21 +149,6 @@ export const teams = [
             instagram: "/",
             linkedin: "/",
           },
-        ],
-      },
-      {
-        subteam: "Backend Devs",
-        members: [
-          {
-            name: "Sourabh Joshi",
-            image: "./images/teams/sourabh.jpeg",
-            designation: "Backend Mentor",
-            phone: "+91 95494 08165",
-            mail: "/",
-            facebook: "/",
-            instagram: "/",
-            linkedin: "/",
-          },
           {
             name: "Arnit Gupta",
             image: "./images/teams/arnit.jpg",
@@ -211,6 +171,7 @@ export const teams = [
           },
         ],
       },
+      
     ],
   },
 ];

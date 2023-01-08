@@ -133,10 +133,10 @@ function Team() {
         </div>
         <div className={styles.footer}>
           <div className={styles.gdscLogo}>
-            <img src="./Images/gdsc-logo.svg" alt="" />
+            <img src="./Images/plinth.jpg" alt="" />
           </div>
           <p onMouseEnter={handleEnter}
-          onMouseLeave={textLeave}>Designed and Developed by GDSC, LNMIIT</p>
+          onMouseLeave={textLeave}>Designed and Developed by Plinth , LNMIIT</p>
         </div>
       <div
             className={`${styles.handle}`}
