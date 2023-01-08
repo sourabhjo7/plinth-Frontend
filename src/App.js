@@ -19,7 +19,7 @@ import Login from "./components/Login/Login";
 
 import axios from "axios";
 console.log(process.env.REACT_APP_API_URL);
-const serverSystemUrl=  "http://localhost:5000"//"https://api.plinth.co.in";
+const serverSystemUrl= "https://api.plinth.co.in";
 function App() {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState("false");

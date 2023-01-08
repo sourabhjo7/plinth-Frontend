@@ -227,7 +227,7 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
             {...register("email", {
               required: "This field is required",
               pattern: {
-                value: /^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/,
+                value: -/^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/,
                 message: "Invalid Email address",
               },
             })}
