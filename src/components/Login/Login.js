@@ -261,8 +261,8 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
             className={`${styles.btn}`}
           />
           <div className={styles.lower}>
-            <a href="/registration">Don't have an account?</a>
-            <a href="">Forgot Password?</a>
+            <a href="/registration" className={styles.a}>Don't have an account?</a>
+            <a href="" className={styles.a}>Forgot Password?</a>
           </div>
         </div>
       </form>

@@ -51,7 +51,7 @@
 .heading{   font-family: 'Dark';
     font-style: normal;
     font-weight: 400;
-    font-size: 3.3vw;
+    font-size: 4vw;
     align-self: center;
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
     background: linear-gradient(45deg, #ffffffd3 0%, rgba(255, 255, 255, 0.532) 128%);
@@ -68,7 +68,7 @@
 }
 .Form {
     position: relative;
-    width: 335px;
+    width: 455px;
   background: linear-gradient(
       176.03deg,
       rgba(124, 228, 197, 0.024) 0.99%,
@@ -183,6 +183,28 @@ a{
   opacity: 1;
   z-index: 6;
 }
-
-
+@media only screen and (max-width:965px){
+  .Form{
+    width: 335px;
+  }
+  .a{
+    font-size: 1.5vw;
+  }
+  .input{
+    font-size: 1.8vw;
+  }
+  .btn{
+    font-size: 1.8vw;
+  }
+}
+@media only screen and (max-width:470px){
+  .Form{
+    margin-left: 65px;
+    margin-right: 20px;
+    width: 220px;
+  }
+  .a{
+    font-size: 1.8vw;
+  }
+}
 

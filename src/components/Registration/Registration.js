@@ -392,12 +392,12 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
             <div onChange={e=>{setAccomodation(e.target.value)}} className={styles.acco_inner}>
               <input type="radio" id="yes" name="acco" onClick={(e)=>{
                 setAccomodation("yes");
-              }} value="yes" />
-              <label htmlFor="yes"> Yes</label>
+              }} value="yes" className={styles.radio} />
+              <label htmlFor="yes" className={styles.radioLabel}> Yes</label>
               <input type="radio" id="no" name="acco" value="no" onClick={(e)=>{
                 setAccomodation("no");
-              }} />
-              <label htmlFor="no">No</label>
+              }} className={styles.radio} />
+              <label htmlFor="no" className={styles.radioLabel}>No</label>
             </div>
           </div>
           <input

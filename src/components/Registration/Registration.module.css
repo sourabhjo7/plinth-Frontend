@@ -160,7 +160,7 @@ input:auto-fill{
 
 .acco_inner label{
   font-family: Poppins;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
     font-weight: 500;
     color: #cccccc;
     margin-right: 10px;
@@ -168,5 +168,39 @@ input:auto-fill{
 
 .acco_inner input{
   border-radius: 50%;
+  font-size: 5px;
   margin-right: 5px;
+}
+.radio{
+  size: 5%;
+}
+.radioLabel{
+  font-size: 1.5vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .Form{
+    flex-direction: column;
+    align-items: center;
+    width: calc(inherit - 70px);
+  }
+  .Personal{
+    width: 60%;
+
+  }
+  .Institute{
+    margin-top: 5%;
+    width: 60%;
+  }
+  .input{
+    font-size: 1.5vw;
+  }
+  .btn{
+    font-size: 1.5vw;
+  }
+}
+@media only screen and (max-width:486px){
+  .Form{
+    margin-left: 65px;
+  }
 }
