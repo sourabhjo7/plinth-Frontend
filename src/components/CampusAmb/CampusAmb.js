@@ -31,7 +31,7 @@ const CampusAmb = ({auth,setAuth}) => {
       setSection("structure");
 
     } else if (id === "timeline") {
-      setVal("Registartion Deadline: 15th January 2023");
+      setVal("Registration Deadline: 15th January 2023");
       setSection("timeline");
 
     } else if (id === "prizes") {
