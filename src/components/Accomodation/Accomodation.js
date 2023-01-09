@@ -1,4 +1,4 @@
-import React, { useState, useEffect ,Fragment} from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from "./Accomodation.module.css";
 
@@ -7,31 +7,35 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
-
+import FlashMessage from "../FlashMessage/FlashMessage";
 import { motion } from "framer-motion/dist/framer-motion";
 
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import Contact from "./Contacts/Contact";
 
-const Accomodation = ({auth}) => {
+const Accomodation = ({ auth }) => {
   const [section, setSection] = useState("about");
-  const [val, setVal] = useState(<Fragment><b>Accomodation Passes also includes ProNite Passes.</b><br/>
+  const navigate=useNavigate()
+  const [isChecked, setIsChecked] = useState(false)
+  const [href,setHref]=useState('')
+  const [flashMessage,setFlashMessage]=useState(false)
+  const [val, setVal] = useState(<Fragment><b>Accomodation Passes also includes ProNite Passes.</b><br />
     Plinth has grown in stature in terms of its content, infrastructure, and logistics. Thanks to an overwhelming throng of such scale and a world-class technological show, mixed correctly with a tinge of enjoyment, our goal is a technical extravaganza. With such diversity, the hospitality of the guests is critical and makes up a top priority for organizers.
-  <br></br><br/>
-  At Plinth, we are continually striving for everyone's satisfaction. We will leave no stone unturned in meeting the demands of secure housing away from home. Along with lodging for our participants, we have set up a cafeteria serving a range of cuisines to suit every appetite. We make every effort to make your stay pleasant and memorable.
+    <br></br><br />
+    At Plinth, we are continually striving for everyone's satisfaction. We will leave no stone unturned in meeting the demands of secure housing away from home. Along with lodging for our participants, we have set up a cafeteria serving a range of cuisines to suit every appetite. We make every effort to make your stay pleasant and memorable.
   </Fragment>);
   const handleView = (e) => {
     const { id } = e.target;
     if (id === "contact") {
-      setVal(<Contact/>);
+      setVal(<Contact />);
       setSection("contact");
     } else if (id === "about") {
       setVal(<Fragment>
-        <b>Accomodation Passes also includes ProNite Passes.</b><br/>
+        <b>Accomodation Passes also includes ProNite Passes.</b><br />
         Plinth has grown in stature in terms of its content, infrastructure, and logistics. Thanks to an overwhelming throng of such scale and a world-class technological show, mixed correctly with a tinge of enjoyment, our goal is a technical extravaganza. With such diversity, the hospitality of the guests is critical and makes up a top priority for organizers.
-        <br></br><br/>
+        <br></br><br />
         At Plinth, we are continually striving for everyone's satisfaction. We will leave no stone unturned in meeting the demands of secure housing away from home. Along with lodging for our participants, we have set up a cafeteria serving a range of cuisines to suit every appetite. We make every effort to make your stay pleasant and memorable.
-        </Fragment>);
+      </Fragment>);
       setSection("about");
 
     } else if (id === "policies") {
@@ -40,43 +44,53 @@ const Accomodation = ({auth}) => {
         There shall be no refunds for cancellation once the registration process has been done.
         <br />
         We thus request all attendees to carefully review their schedules before registration.
-        </Fragment>);
+      </Fragment>);
       setSection("policies");
 
     } else if (id === "info") {
       setVal(<Fragment>
-        <b>Accomodation Charges</b><br/>
+        <b>Accomodation Charges</b><br />
         Accommodation Charges Accommodation charges are INR 999 per candidate for 3 days. Maximum of 3 nights stay allowed (27th Jan 7 AM - 30th Jan 10 AM).
-         It does not include a food facility. Guest can purchase their meals from the food court, cafeteria, or hostel messes at subsidized rates.
-        <br/><br/>
-        <b>Timing</b><br/>
-Check-in: 7:00 AM to 10:00 PM on your check-in date<br/>
-Check-out: Anytime on or before your check-out date
+        It does not include a food facility. Guest can purchase their meals from the food court, cafeteria, or hostel messes at subsidized rates.
+        <br /><br />
+        <b>Timing</b><br />
+        Check-in: 7:00 AM to 10:00 PM on your check-in date<br />
+        Check-out: Anytime on or before your check-out date
 
-      
+
       </Fragment>);
       setSection("info");
 
     } else if (id === "instructions") {
       setVal(<Fragment>
-        <b>Instructions</b> 
-        <br/>:- All guests carrying electronic items of any kind will have to declare them at the LNMIIT Jaipur main gate through a ‘Gate Pass’. The belongings will also be checked on the way out of LNMIIT Jaipur along with the ‘Gate Pass’, failing to do so will result in the belongings being impounded.
-        <br/><br/>:- All guests will be provided with mattresses and a blanket. Plinth will not provide a mattress cover or pillows. The guests are encouraged to arrange them independently (if required).
-        <br/><br/>:- Any commodities issued to the guests would have to be returned in sound condition to the organizers during check-out.
-        <br/><br/>:- Random checks would be made to avoid any illegal stay at the campus. Any team failing to produce their electronic/physical receipts of accommodation would be heavily fined and disqualified.
-        <br/><br/>:- Entry will be only through the 'Main Gate' of LNMIIT Jaipur. All other gates will be closed for entry.
-        <br/><br/>:- All guests are required to carry their valid government photo id proofs at all times. In addition, the student participants are also required to carry their valid College photo id card. Any guest failing to produce their id card will not be permitted inside the campus during Plinth 2022.
-        <br/><br/>:- Alcohol, drugs, sharp objects, and explosives of any kind are strictly prohibited inside the campus. Any other item if deemed unsafe will be prohibited. The decision of the Security and Plinth team will be final in case of any disputes.
-        <br/><br/>:- No outside vehicles will be allowed into the campus during the Plinth 2022."
-        <br/><br/>:- All guests are required to maintain the decorum and cleanliness of the campus and follow the rules of the campus at all times.
-        <br/><br/>:- Plinth 2023 and LNMIIT will not be responsible for any mishaps that occur throughout the duration of stay for Plinth 2023
+        <b>Instructions</b>
+        <br />:- All guests carrying electronic items of any kind will have to declare them at the LNMIIT Jaipur main gate through a ‘Gate Pass’. The belongings will also be checked on the way out of LNMIIT Jaipur along with the ‘Gate Pass’, failing to do so will result in the belongings being impounded.
+        <br /><br />:- All guests will be provided with mattresses and a blanket. Plinth will not provide a mattress cover or pillows. The guests are encouraged to arrange them independently (if required).
+        <br /><br />:- Any commodities issued to the guests would have to be returned in sound condition to the organizers during check-out.
+        <br /><br />:- Random checks would be made to avoid any illegal stay at the campus. Any team failing to produce their electronic/physical receipts of accommodation would be heavily fined and disqualified.
+        <br /><br />:- Entry will be only through the 'Main Gate' of LNMIIT Jaipur. All other gates will be closed for entry.
+        <br /><br />:- All guests are required to carry their valid government photo id proofs at all times. In addition, the student participants are also required to carry their valid College photo id card. Any guest failing to produce their id card will not be permitted inside the campus during Plinth 2022.
+        <br /><br />:- Alcohol, drugs, sharp objects, and explosives of any kind are strictly prohibited inside the campus. Any other item if deemed unsafe will be prohibited. The decision of the Security and Plinth team will be final in case of any disputes.
+        <br /><br />:- No outside vehicles will be allowed into the campus during the Plinth 2022."
+        <br /><br />:- All guests are required to maintain the decorum and cleanliness of the campus and follow the rules of the campus at all times.
+        <br /><br />:- Plinth 2023 and LNMIIT will not be responsible for any mishaps that occur throughout the duration of stay for Plinth 2023
 
 
       </Fragment>);
       setSection("instructions");
     }
   };
-
+  const handleClick=()=>{
+    if(isChecked){
+      navigate('/login')
+    }
+    else{
+      // console.log(flashMessage)
+      setFlashMessage(!flashMessage)
+    }
+    // isChecked?:
+    // isChecked?setHref('/login'):setHref('')
+  }
   //Particle Bg
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
@@ -183,14 +197,14 @@ Check-out: Anytime on or before your check-out date
         transition={{
           x: { delay: 0 },
           y: { delay: 0 },
-          type: 'tween', stiffness: 10000 ,bounce:0
+          type: 'tween', stiffness: 10000, bounce: 0
           // type: 'tween',ease: [0.17, 0.67, 0.83, 0.67] 
         }}
       />
       <div className={styles.explore_body}>
         <div className={styles.explore}>
 
-        <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={`${styles.explore_heading} ${styles.none}`}>Accomodation</div>
+          <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={`${styles.explore_heading} ${styles.none}`}>Accomodation</div>
 
           {/* <motion.div variants={variants}
             initial="imgInitial"
@@ -271,23 +285,31 @@ Check-out: Anytime on or before your check-out date
             </div>
 
 
-
-              {auth&&<a href= "/login" >
+            <div className={styles.checkboxWrapper} onclick={()=>{setIsChecked(!isChecked)}}>
+              <label>
+                <input type="checkbox"  onChange={() => setIsChecked((prev) => !prev)} />
+                <span>I hereby agree to abide by the terms and conditions as provided.</span>
+              </label>
+            </div>
+            {flashMessage?<FlashMessage message='Please check the Checkbox to continue'/>:null}
+            {auth &&
               <button
                 className={styles.event_register_button}
                 onMouseEnter={btnEnter} onMouseLeave={textLeave}
+                onClick={()=>handleClick()}
               >
                 Register Now!
-              </button></a>}
+              </button>}
 
-              {!auth&&<a href= ""  >
+            {!auth && <a href=""  >
               <button
                 className={styles.event_register_button}
                 onMouseEnter={btnEnter} onMouseLeave={textLeave}
+                onClick={() => alert("Payments Opening Soon!!")} 
               >
-                Payment opening soon!
+                Make Payment 
               </button></a>}
-            
+
           </motion.div >
         </div>
 
@@ -301,7 +323,7 @@ Check-out: Anytime on or before your check-out date
           <Handles />
         </motion.div>
 
-        {isDesktop&&<Particles
+        {isDesktop && <Particles
           id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}
