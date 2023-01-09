@@ -15,7 +15,8 @@ import Contact from "./Contacts/Contact";
 
 const Accomodation = ({auth}) => {
   const [section, setSection] = useState("about");
-  const [val, setVal] = useState(<Fragment>Plinth has grown in stature in terms of its content, infrastructure, and logistics. Thanks to an overwhelming throng of such scale and a world-class technological show, mixed correctly with a tinge of enjoyment, our goal is a technical extravaganza. With such diversity, the hospitality of the guests is critical and makes up a top priority for organizers.
+  const [val, setVal] = useState(<Fragment><b>Accomodation Passes also includes ProNite Passes.</b><br/>
+    Plinth has grown in stature in terms of its content, infrastructure, and logistics. Thanks to an overwhelming throng of such scale and a world-class technological show, mixed correctly with a tinge of enjoyment, our goal is a technical extravaganza. With such diversity, the hospitality of the guests is critical and makes up a top priority for organizers.
   <br></br><br/>
   At Plinth, we are continually striving for everyone's satisfaction. We will leave no stone unturned in meeting the demands of secure housing away from home. Along with lodging for our participants, we have set up a cafeteria serving a range of cuisines to suit every appetite. We make every effort to make your stay pleasant and memorable.
   </Fragment>);
@@ -25,7 +26,9 @@ const Accomodation = ({auth}) => {
       setVal(<Contact/>);
       setSection("contact");
     } else if (id === "about") {
-      setVal(<Fragment>Plinth has grown in stature in terms of its content, infrastructure, and logistics. Thanks to an overwhelming throng of such scale and a world-class technological show, mixed correctly with a tinge of enjoyment, our goal is a technical extravaganza. With such diversity, the hospitality of the guests is critical and makes up a top priority for organizers.
+      setVal(<Fragment>
+        <b>Accomodation Passes also includes ProNite Passes.</b><br/>
+        Plinth has grown in stature in terms of its content, infrastructure, and logistics. Thanks to an overwhelming throng of such scale and a world-class technological show, mixed correctly with a tinge of enjoyment, our goal is a technical extravaganza. With such diversity, the hospitality of the guests is critical and makes up a top priority for organizers.
         <br></br><br/>
         At Plinth, we are continually striving for everyone's satisfaction. We will leave no stone unturned in meeting the demands of secure housing away from home. Along with lodging for our participants, we have set up a cafeteria serving a range of cuisines to suit every appetite. We make every effort to make your stay pleasant and memorable.
         </Fragment>);
@@ -43,7 +46,6 @@ const Accomodation = ({auth}) => {
     } else if (id === "info") {
       setVal(<Fragment>
         <b>Accomodation Charges</b><br/>
-        <b>Accomodation Passes also includes ProNite Passes.</b><br/>
         Accommodation Charges Accommodation charges are INR 999 per candidate for 3 days. Maximum of 3 nights stay allowed (27th Jan 7 AM - 30th Jan 10 AM).
          It does not include a food facility. Guest can purchase their meals from the food court, cafeteria, or hostel messes at subsidized rates.
         <br/><br/>
