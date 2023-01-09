@@ -65,7 +65,7 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
        setTimeout(() => {
         setAuth(res.data.user.role);
         navigate("/competitions")  
-       }, 1000);
+       }, 2000);
       
       // alert("")
     }

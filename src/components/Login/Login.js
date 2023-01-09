@@ -51,7 +51,7 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
       setTimeout(() => {
        setAuth(res.data.user.role);
        navigate("/competitions")  
-      }, 1000);
+      }, 2000);
     }
     else{
       navigate("/registration")

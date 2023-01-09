@@ -6,7 +6,7 @@ const FlashMessage = ({ message }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setVisible(false);
-    }, 1200);
+    }, 2200);
 
     return () => clearTimeout(timeout);
   }, [message]);
