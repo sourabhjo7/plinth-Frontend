@@ -16,6 +16,7 @@ import Team from "./components/OurTeam/Team/Team";
 import CampusAmb from "./components/CampusAmb/CampusAmb";
 import LnmHacks from "./components/LnmHacks/LnmHacks";
 import Login from "./components/Login/Login";
+import Accomodation from "./components/Accomodation/Accomodation";
 
 import axios from "axios";
 console.log(process.env.REACT_APP_API_URL);
@@ -68,6 +69,7 @@ function App() {
             <Route path="aboutus" element={<Aboutus  />} />
             <Route path="ourteam" element={<Team />} />
             <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
+            <Route path="accomodation" element={<Accomodation auth={auth} />} />
             <Route path="/:name" element={<Explore auth={auth} setAuth={setAuth}/>}/>
             {(auth==="false")&&<Route path="/registration" element={<Reg auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             }<Route path="campus_ambassador" element={<CampusAmb auth={auth} setAuth={setAuth}/>} />

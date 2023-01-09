@@ -85,7 +85,7 @@
       margin: 0 25px;
     }
     .outer .tags {
-        width: 60vw;
+        /* width: 60vw; */
     }
     .outer .tags .tag {
         font-size: 15px;

@@ -144,7 +144,7 @@ function About() {
             }} onMouseEnter={subtextEnter} onMouseLeave={textLeave} className={`${styles.textcontent}`}>
             
             
-            Plinth, the annual Tech-Fest of The LNMIIT, Jaipur, stretches for three heart-throbbing days. It witnesses immense participation from college students all across the country and is an exhilarating culmination of science, festivities and interactions with renowned personalities, making it a once in a lifetime experience for those in attendance.
+            Plinth, the annual Tech-Fest of The LNMIIT, Jaipur, <b>India's first Web3 based College Tech fest</b>, stretches for three heart-throbbing days. It witnesses immense participation from college students all across the country and is an exhilarating culmination of science, festivities and interactions with renowned personalities, making it a once in a lifetime experience for those in attendance.
             <br></br><br></br>
             With sweat-dripping competitions and lively enthusiasm, the fest is much celebrated amongst the youth. This 2023 iteration of Plinth focuses on instilling Web-3 in our minds and aims at enhancing the cognitive skills of the students, eventually increasing their ability to comprehend the science behind Spatial Web-driven systems and modern technologies. This shall revive the technical temperament of our youth, somewhere left behind in the pandemic times.
             <br></br><br></br>

@@ -15,6 +15,8 @@ import { FiLogIn } from "react-icons/fi";
 import { AiOutlineTeam } from "react-icons/ai";
 import { HiOutlineStar } from "react-icons/hi";
 import { FiMic } from "react-icons/fi";
+import { TbBed } from "react-icons/tb";
+
 import axios from "axios";
 
 const imgSrc = require("./plinth.png");
@@ -170,6 +172,15 @@ export default function Sidebar({auth,setAuth,serverSystemUrl}) {
                 <FiMic size={25} />
               </div>
               <span className="nav-text">Ambassador</span>
+            </a>
+          </li>
+          <li className="has-subnav">
+            <a className="anchor" href="/accomodation">
+              {/* <i className="fa fa-phone fa-2x" /> */}
+              <div className="fa fa-2x">
+                <TbBed size={25} />
+              </div>
+              <span className="nav-text">Accomodation</span>
             </a>
           </li>
           <li className="has-subnav">

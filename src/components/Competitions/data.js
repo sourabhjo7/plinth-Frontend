@@ -1,4 +1,4 @@
-export const clubs = ["Astronomy", "Coding", "Debating", "Quizzinga", "Robotics", "Startups", "Fun Events"];
+export const clubs = ["Astronomy", "Coding", "Debating", "Quizzinga", "Robotics", "Startups","Fun Events","Web3"];
 
 export const events = [
   {
@@ -1111,6 +1111,87 @@ export const events = [
         "name": "Chitransh Jaiswal",
         "number" : "+91 74259 20696",
         "email" : "20ucs059@lnmiit.ac.in",
+      }
+    ],
+    "rulebook": "",
+    "clubemail": "",
+  },  
+  {
+    "id": "39",
+    "name": "Web3 Gaming hours",
+    "club": "Web3",
+    "participation": "Team Participation",
+    "imgName": "",
+    "poster": "",
+    "about": "Web3 gaming is here to revolutionise the way we think about gaming forever. With the power of blockchain technology at its fingertips, web3 gaming allows for the creation of decentralised, transparent, and secure platforms that will change the industry as we know it. Plinth brings an exciting opportunity to learn about web3 gaming through workshops and sessions with the industry leaders.",
+    "structure": "",
+    "prizes": "",
+    "timeline": "",
+    "contacts": 
+    [
+      {
+        "name": "Vinay Sharma",
+        "number" : "+91 95491 78651",
+        "email" : "19ume011@lnmiit.ac.in",
+      },
+      {
+        "name": "Meet Patel",
+        "number" : "+91 70418 13479",
+        "email" : "19ume020@lnmiit.ac.in",
+      }
+    ],
+    "rulebook": "",
+    "clubemail": "",
+  },  
+  {
+    "id": "40",
+    "name": "DeFi hours",
+    "club": "Web3",
+    "participation": "Team Participation",
+    "imgName": "",
+    "poster": "",
+    "about": "Gone are the days of traditional financial institutions holding all the power. DeFi puts the control back in the hands of the people, allowing them to access financial services without the need for intermediaries.2023 is going to be the year for DeFi mass adoption and we don’t want you to get behind. Listen to some of the biggest names from DeFi India in Plinth.",
+    "structure": "",
+    "prizes": "",
+    "timeline": "",
+    "contacts": 
+    [
+      {
+        "name": "Vinay Sharma",
+        "number" : "+91 95491 78651",
+        "email" : "19ume011@lnmiit.ac.in",
+      },
+      {
+        "name": "Meet Patel",
+        "number" : "+91 70418 13479",
+        "email" : "19ume020@lnmiit.ac.in",
+      }
+    ],
+    "rulebook": "",
+    "clubemail": "",
+  },  
+  {
+    "id": "41",
+    "name": "Multichain panel discussion",
+    "club": "Web3",
+    "participation": "Team Participation",
+    "imgName": "",
+    "poster": "",
+    "about": "Multichain panel discussion of having to choose between different blockchain platforms - with multichain, you can have it all. Interoperability is at the heart of multichain, allowing different blockchain networks to communicate and work together seamlessly. But the benefits of multichain go beyond just interoperability. Learn about the future of Blockchain tech with the panel of most amazing speakers from industry.",
+    "structure": "",
+    "prizes": "",
+    "timeline": "",
+    "contacts": 
+    [
+      {
+        "name": "Vinay Sharma",
+        "number" : "+91 95491 78651",
+        "email" : "19ume011@lnmiit.ac.in",
+      },
+      {
+        "name": "Meet Patel",
+        "number" : "+91 70418 13479",
+        "email" : "19ume020@lnmiit.ac.in",
       }
     ],
     "rulebook": "",
