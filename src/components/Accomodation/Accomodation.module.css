@@ -227,6 +227,13 @@ a {
 .notnone{
   display: block;
 }
+.checkboxWrapper{
+  /* font-size: 5%; */
+}
+.checkboxWrapper > label > input{
+  margin: 10px;
+  scale: 1.5;
+}
 
 @media (max-width: 630px) {
   .explore_body {
@@ -306,7 +313,10 @@ a {
     position: relative;
     right: -5vw;
   }
-
+  .checkboxWrapper{
+    /* font-size: 5%; */
+    margin-left: 65px;
+  }
   .none{
     display: block;
   }
