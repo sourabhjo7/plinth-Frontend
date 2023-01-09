@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+import React from "react";
 export const teams = [
   {
     team: "Fest Heads",
@@ -112,8 +114,8 @@ export const teams = [
           {
             name: "Aryan Bansal",
             image: "./images/teams/aryan-bansal.jpg",
-            designation: "Designer",
-            phone: "+91 70237 11736",
+            designation: "UI/UX Designer",
+            phone: "+91 93510 36367",
             mail: "/",
             facebook: "/",
             instagram: "/",
@@ -122,7 +124,7 @@ export const teams = [
           {
             name: "Vishal Kumar",
             image: "./images/teams/vishal.jpg",
-            designation: "Frontend Developer",
+            designation: <Fragment>Frontend Developer<br/>UI/UX Designer</Fragment>,
             phone: "+91 92057 34004",
             mail: "/",
             facebook: "/",

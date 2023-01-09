@@ -224,3 +224,22 @@ nav.main-menu li.active > a,
   height: 25px;
   width: 25px;
 }
+
+@media (max-width: 630px) {
+  .main-menu{
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: fixed;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    height: 100%;
+    left: 0%;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 1rem;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+  }
+  .top-header{
+    margin-top: 15px;
+  }
+}

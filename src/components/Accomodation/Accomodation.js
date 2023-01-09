@@ -19,11 +19,13 @@ const Accomodation = ({ auth }) => {
   const [isChecked, setIsChecked] = useState(false)
   const [href,setHref]=useState('')
   const [flashMessage,setFlashMessage]=useState(false)
-  const [val, setVal] = useState(<Fragment><b>Accomodation Passes also includes ProNite Passes.</b><br />
+  const [val, setVal] = useState(<Fragment>
+    <div style={{display:"flex",flexDirection:"column"}}>
+    <div style={{alignSelf:"center",justifySelf:"center",margin:"auto auto",fontWeight:"bold"}}>Accomodation Passes also includes ProNite Passes.</div>
     Plinth has grown in stature in terms of its content, infrastructure, and logistics. Thanks to an overwhelming throng of such scale and a world-class technological show, mixed correctly with a tinge of enjoyment, our goal is a technical extravaganza. With such diversity, the hospitality of the guests is critical and makes up a top priority for organizers.
     <br></br><br />
     At Plinth, we are continually striving for everyone's satisfaction. We will leave no stone unturned in meeting the demands of secure housing away from home. Along with lodging for our participants, we have set up a cafeteria serving a range of cuisines to suit every appetite. We make every effort to make your stay pleasant and memorable.
-  </Fragment>);
+    </div></Fragment>);
   const handleView = (e) => {
     const { id } = e.target;
     if (id === "contact") {
@@ -31,11 +33,12 @@ const Accomodation = ({ auth }) => {
       setSection("contact");
     } else if (id === "about") {
       setVal(<Fragment>
-        <b>Accomodation Passes also includes ProNite Passes.</b><br />
+        <div style={{display:"flex",flexDirection:"column"}}>
+        <div style={{alignSelf:"center",justifySelf:"center",margin:"auto auto",fontWeight:"bold"}}>Accomodation Passes also includes ProNite Passes.</div>
         Plinth has grown in stature in terms of its content, infrastructure, and logistics. Thanks to an overwhelming throng of such scale and a world-class technological show, mixed correctly with a tinge of enjoyment, our goal is a technical extravaganza. With such diversity, the hospitality of the guests is critical and makes up a top priority for organizers.
         <br></br><br />
         At Plinth, we are continually striving for everyone's satisfaction. We will leave no stone unturned in meeting the demands of secure housing away from home. Along with lodging for our participants, we have set up a cafeteria serving a range of cuisines to suit every appetite. We make every effort to make your stay pleasant and memorable.
-      </Fragment>);
+        </div></Fragment>);
       setSection("about");
 
     } else if (id === "policies") {
