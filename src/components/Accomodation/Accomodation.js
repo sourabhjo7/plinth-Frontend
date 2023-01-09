@@ -292,7 +292,7 @@ const Accomodation = ({ auth }) => {
               </label>
             </div>
             {flashMessage?<FlashMessage message='Please check the Checkbox to continue'/>:null}
-            {auth &&
+            {(auth==="false") &&
               <button
                 className={styles.event_register_button}
                 onMouseEnter={btnEnter} onMouseLeave={textLeave}
@@ -301,7 +301,7 @@ const Accomodation = ({ auth }) => {
                 Register Now!
               </button>}
 
-            {!auth && <a href=""  >
+            {(auth!=="false") && <a href=""  >
               <button
                 className={styles.event_register_button}
                 onMouseEnter={btnEnter} onMouseLeave={textLeave}
