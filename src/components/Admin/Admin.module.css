@@ -1,0 +1,60 @@
+.maindiv {
+  
+  background-color: rgb(42, 42, 136);
+
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 10;
+  /* cursor: default; */
+
+  font-family: "Poppins";
+}
+/* .maindiv *{
+  cursor: default;
+} */
+.pages {
+  width: 80%;
+  height: 65vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  margin: 0 30px;  
+}
+.text {
+  padding: 3px 10px;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  border-radius: 16px;
+  margin: 15px auto;  
+}
+.heading{   font-family: 'Dark';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.3vw;
+  align-self: center;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  background: linear-gradient(45deg, #ffffffd3 0%, rgba(255, 255, 255, 0.532) 128%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-top:4.5vh;
+  margin-bottom:4vh;
+
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 99% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
