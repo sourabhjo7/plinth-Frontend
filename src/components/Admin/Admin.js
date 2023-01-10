@@ -3,9 +3,28 @@ import styles from "./Admin.module.css";
 import "../../fonts/Absolute_Xero/Absolute_Xero.ttf";
 import List from "./List";
 import { motion } from "framer-motion/dist/framer-motion";
+import axios from "axios";
 
-function Admin() {
-  const [users, setUsers] = useState("100");
+
+function Admin({serverSystemUrl}) {
+const [users,setUsers]=useState([]);
+const [count,setCount]=useState(0);
+  useEffect(() => { 
+    axios
+    .get(`${serverSystemUrl}/auth/getallusers`, {
+      validateStatus: false,
+      withCredentials: true,
+    })
+    .then((response) => {
+      if (response.status == 200) {
+         setCount(response.data.count);
+         setUsers((prev)=>{
+          return [...response.data.users]
+         })
+        console.log("---",count );
+      }
+    });
+  }, [])
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -49,10 +68,10 @@ function Admin() {
       <div className={styles.maindiv}>
         <div className={`${styles.heading}`}>Admin Portal</div>
         <div className={styles.pages}>
-          <List />
+          <List users={users}/>
         </div>
         <div className={styles.total}>
-          <div className={styles.text}>Total Users : {users}</div>
+          <div className={styles.text}>Total Users : {count}</div>
         </div>
       </div>
     </>

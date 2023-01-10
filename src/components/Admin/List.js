@@ -3,13 +3,13 @@ import Student_varification_list_css from "./List.module.css"
 import S_v_listitem from "./Listitem"
 import Data from "./data";
 // import Navbar from "./Navbar1";
-export default function List () {
+export default function List ({users}) {
     return (
 <>
 
 <div div className={Student_varification_list_css.list_heading}>
 
-    <p  className={Student_varification_list_css.list_1}>#</p>
+    {/* <p  className={Student_varification_list_css.list_1}>#</p> */}
     <p  className={Student_varification_list_css.list_2}>Name</p>
     <p  className={Student_varification_list_css.list_3}>Email</p>
     <p  className={Student_varification_list_css.list_4}>Phone No</p>
@@ -21,8 +21,8 @@ export default function List () {
 
 <div  >
 {
-        Data.map((value)=>(
-        <div key= {value.id} className={Student_varification_list_css.child}>
+        users.map((value)=>(
+        <div key= {value._id} className={Student_varification_list_css.child}>
          <S_v_listitem details={value} />
         </div>  
           )

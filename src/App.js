@@ -21,10 +21,11 @@ const Accomodation = lazy(()=>import("./components/Accomodation/Accomodation"));
 
 
 console.log(process.env.REACT_APP_API_URL);
-const serverSystemUrl= "https://api.plinth.co.in";
+const serverSystemUrl=  "http://localhost:5000"//"https://api.plinth.co.in";
 function App() {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState("false");
+  
   // const getUser = async () => {
   //   try {
   //     const url = `http://localhost:3000/auth/google`;
@@ -59,6 +60,8 @@ function App() {
     // console.log(loading);
   }, []);
 
+  console.log(auth);
+
   return (
     <div className="App">
         <Router>
@@ -71,7 +74,7 @@ function App() {
       ) :<Home auth={auth} setAuth={setAuth} />} />
             <Route path="aboutus" element={<Aboutus  />} />
             <Route path="ourteam" element={<Team />} />
-            <Route path="admin" element={<Admin />} />
+            <Route path="/admin" element={(auth==="admin") && (<Admin serverSystemUrl={serverSystemUrl}/>)} />
             <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
             <Route path="accomodation" element={<Accomodation auth={auth} />} />
             <Route path="/:name" element={<Explore auth={auth} setAuth={setAuth}/>}/>

@@ -192,6 +192,15 @@ export default function Sidebar({auth,setAuth,serverSystemUrl}) {
               <span className="nav-text">Our Team</span>
             </a>
           </li>
+          {(auth==="admin")&&(<li className="has-subnav">
+            <a className="anchor" href="/admin">
+              {/* <i className="fa fa-phone fa-2x" /> */}
+              <div className="fa fa-2x">
+                <TbBed size={25} />
+              </div>
+              <span className="nav-text">Admin</span>
+            </a>
+          </li>)}
         </ul>
 
         <ul className="logout">
