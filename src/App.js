@@ -9,6 +9,7 @@ import axios from "axios";
 
 const Aboutus = lazy(()=>import("./components/About/About"));
 const Admin = lazy(()=>import("./components/Admin/Admin"));
+const Komet = lazy(()=>import("./components/Komet/Komet"));
 const Sidebar = lazy(()=>import("./components/Sidebar/Sidebar"));
 const Competitions = lazy(()=>import("./components/Competitions/Competitions"));
 const Reg = lazy(()=>import("./components/Registration/Reg"));
@@ -75,6 +76,7 @@ function App() {
             <Route path="aboutus" element={<Aboutus  />} />
             <Route path="ourteam" element={<Team />} />
             <Route path="/admin" element={(auth==="admin") && (<Admin serverSystemUrl={serverSystemUrl}/>)} />
+            <Route path="komet" element={<Komet />} />
             <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
             <Route path="accomodation" element={<Accomodation auth={auth} />} />
             <Route path="/:name" element={<Explore auth={auth} setAuth={setAuth}/>}/>
