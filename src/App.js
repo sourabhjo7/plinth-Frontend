@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Loader from "./components/Loader/Loader";
 import axios from "axios";
 // import CreateTeam from "./components/CreateTeam/CreateTeam";
+import Payment from "./components/Payments/Payment";
 
 const Aboutus = lazy(()=>import("./components/About/About"));
 const Admin = lazy(()=>import("./components/Admin/Admin"));
@@ -21,7 +22,6 @@ const Login = lazy(()=>import("./components/Login/Login"));
 const Accomodation = lazy(()=>import("./components/Accomodation/Accomodation"));
 
 
-import Payment from "./components/Payments/Payment";
 console.log(process.env.REACT_APP_API_URL);
 const serverSystemUrl=  "http://localhost:5000"//"https://api.plinth.co.in";
 function App() {

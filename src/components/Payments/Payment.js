@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Payment.module.css";
+import qr from './qr.png'
 import { useForm } from "react-hook-form";
 import {payment} from './data.js'
 function Payment() {
@@ -45,8 +46,14 @@ function Payment() {
                 Payments
             </div>
             <div className={`${styles.explore_heading} ${styles.notnone}`}>{payment[0].name}</div>
+            <div className={styles.payDets}>
+            <div>
+                {payment[0].basic.map((valuee,index)=>(
+                    <p className={styles.text}>{valuee}</p>
+                ))}
+                </div>
             <div className={styles.explore_details}>
-                
+           
                 <div  className={styles.explore_navbar}>
                     <div
                         className={section === "robowar" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
@@ -80,8 +87,9 @@ function Payment() {
                 
                 </div>
                 <div className={styles.explore_description}>{val.map((value,index)=>(
-                    <p>{value}</p>
+                    <p className={styles.text}>{value}</p>
                 ))}</div>
+            </div>
             </div>
             <form
                 onSubmit={handleSubmit(onSubmit)}
@@ -94,6 +102,8 @@ function Payment() {
                         Payments Information
                     </div>
 
+
+                    <div className={styles.input}>Amount to Pay:445</div>
                     <input
                         className={`${styles.input}`}
                         placeholder="UPI ID used for payment"
@@ -109,7 +119,10 @@ function Payment() {
                     {errors.userUpiId && (
                         <p className={`${styles.p}`}>{errors.userUpiId.message}</p>
                     )}
-
+                    <div className={styles.qrDiv}>
+                        <img src={qr} className={styles.qrImg}/>
+                    </div>
+                    <div className={styles.input}>Upi ID to pay to : 123@paytm</div>
                     <input
                     className={`${styles.input}`} type="file" {...register("file", {
                         required: "This Field is required",
@@ -118,7 +131,12 @@ function Payment() {
                     {errors.file && (
                         <p className={`${styles.p}`}>{errors.file.message}</p>
                     )}
-
+      <input
+         
+            type="submit"
+            value="Submit"
+            className={`${styles.btn}`}
+          />
                 </div>
 
             </form>
