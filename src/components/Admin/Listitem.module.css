@@ -1,0 +1,34 @@
+.list_heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 50px;
+}
+.list_1{
+    text-align: center;
+    width: 5%;
+    /* text-align: left; */
+    /* margin-left: 2.5%; */
+}
+.list_2{
+    width: 18%;
+    text-align: left;
+}
+.list_3{
+    width: 22%;
+    text-align: left;
+}
+.list_4{
+    width: 15%;
+    text-align: left;
+}
+.list_5{
+    width: 10%;
+    text-align: left;
+}
+.list_6{
+    width: 30%;
+    text-align: left;
+}

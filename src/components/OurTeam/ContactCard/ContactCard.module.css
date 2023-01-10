@@ -19,7 +19,9 @@
 
     position: relative;
 }
-
+.iconTag{
+    color: white;
+}
 .contact_details{
     display: flex;
     flex-direction: column;

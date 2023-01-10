@@ -105,7 +105,8 @@ body{
     box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer .gdscLogo{
