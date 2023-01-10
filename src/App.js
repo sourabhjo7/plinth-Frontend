@@ -1,24 +1,24 @@
 import "./App.css";
-import React from "react";
+import React,{lazy,Suspense} from "react";
 import Home from "./components/HomePage/Home/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader/Loader";
-import Aboutus from "./components/About/About";
-import Contactus from "./components/ContactUs/Contactus";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Competitions from "./components/Competitions/Competitions";
-import Reg from "./components/Registration/Reg";
-
-import Explore from "./components/Explore/Explore"
-import CreateTeam from "./components/CreateTeam/CreateTeam";
-import Team from "./components/OurTeam/Team/Team";
-import CampusAmb from "./components/CampusAmb/CampusAmb";
-import LnmHacks from "./components/LnmHacks/LnmHacks";
-import Login from "./components/Login/Login";
-import Accomodation from "./components/Accomodation/Accomodation";
-
 import axios from "axios";
+// import CreateTeam from "./components/CreateTeam/CreateTeam";
+
+const Aboutus = lazy(()=>import("./components/About/About"));
+const Sidebar = lazy(()=>import("./components/Sidebar/Sidebar"));
+const Competitions = lazy(()=>import("./components/Competitions/Competitions"));
+const Reg = lazy(()=>import("./components/Registration/Reg"));
+const Explore = lazy(()=>import("./components/Explore/Explore"));
+const Team = lazy(()=>import("./components/OurTeam/Team/Team"));
+const CampusAmb = lazy(()=>import("./components/CampusAmb/CampusAmb"));
+const LnmHacks = lazy(()=>import("./components/LnmHacks/LnmHacks"));
+const Login = lazy(()=>import("./components/Login/Login"));
+const Accomodation = lazy(()=>import("./components/Accomodation/Accomodation"));
+
+
 console.log(process.env.REACT_APP_API_URL);
 const serverSystemUrl= "https://api.plinth.co.in";
 function App() {
@@ -62,6 +62,8 @@ function App() {
     <div className="App">
         <Router>
           <Sidebar auth = {auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>
+
+          <Suspense fallback={<p>Loading...</p>}>
           <Routes>
             <Route path="/" element={loading ? (
         <Loader />
@@ -78,6 +80,7 @@ function App() {
             )}
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
           </Routes>
+          </Suspense>
 
         </Router>
         
