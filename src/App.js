@@ -21,6 +21,7 @@ const Login = lazy(()=>import("./components/Login/Login"));
 const Accomodation = lazy(()=>import("./components/Accomodation/Accomodation"));
 
 
+import Payment from "./components/Payments/Payment";
 console.log(process.env.REACT_APP_API_URL);
 const serverSystemUrl=  "http://localhost:5000"//"https://api.plinth.co.in";
 function App() {
@@ -85,6 +86,7 @@ function App() {
             <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />
             {(auth==="false")&&(<Route path="/login" element={<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             )}
+            <Route path="/payments" element={<Payment/>} />
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
           </Routes>
           </Suspense>
