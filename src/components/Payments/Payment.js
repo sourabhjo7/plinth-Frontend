@@ -3,6 +3,8 @@ import styles from "./Payment.module.css";
 import qr from './qr.png'
 import { useForm } from "react-hook-form";
 import {payment} from './data.js'
+import { motion } from "framer-motion/dist/framer-motion";
+
 function Payment() {
     const [section, setSection] = useState("robowar");
     const [val, setVal] = useState(payment[0].robowar);
@@ -38,10 +40,91 @@ function Payment() {
 
       };
 
-    return (
+      const [mousePosition, setMousePosition] = useState({
+        x: 0,
+        y: 0,
+      });
+    
+      const variants = {
+        def: {
+          x: mousePosition.x - 10,
+          y: mousePosition.y - 12,
+        },
+        text: {
+          height: 120,
+          width: 120,
+          x: mousePosition.x - 58,
+          y: mousePosition.y - 60,
+          backgroundColor: "white",
+          mixBlendMode: "difference",
+        },
+        handle: {
+          height: 50,
+          width: 50,
+          x: mousePosition.x - 23,
+          y: mousePosition.y - 25,
+          backgroundColor: "white",
+          mixBlendMode: "difference",
+        },
+        handlebefore: {
+          opacity: 0,
+        },
+        handleafter: {
+          opacity: 1,
+        },
+        btn: {
+          height: 40,
+          width: 40,
+          x: mousePosition.x - 18,
+          y: mousePosition.y - 20,
+          backgroundColor: "white",
+          //   borderWidth: '2px',
+          mixBlendMode: "difference"
+        },
+        init: {
+          opacity:0
+        },
+        later: {
+          opacity:1
+        },
+      };
+
+      const [cursorVariant, setCursorVariant] = useState("def");
+  const textEnter = () => setCursorVariant("text");
+//   const handleEnter = () => setCursorVariant("handle");
+//   const diamondEnter = () => setCursorVariant("diamond");
+  const textLeave = () => setCursorVariant("def");
+//   const btnEnter = () => setCursorVariant("btn");
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+    window.addEventListener("mousemove", mouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    };
+  }, []);
+
+    return (<>
+    <motion.div
+        className="cursor"
+        variants={variants}
+        animate={cursorVariant}
+        transition={{
+          x: { delay: 0 },
+          y: { delay: 0 },
+          type: 'tween', stiffness: 10000 ,bounce:0
+        }}
+      />
         <div className={styles.payments}>
             <div
                 className={`${styles.heading}`}
+                onMouseEnter={textEnter} onMouseLeave={textLeave}
             >
                 Payments
             </div>
@@ -141,6 +224,7 @@ function Payment() {
 
             </form>
         </div >
+        </>
     )
 }
 
