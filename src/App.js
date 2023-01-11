@@ -27,6 +27,7 @@ const serverSystemUrl=  "http://localhost:5000"//"https://api.plinth.co.in";
 function App() {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState("false");
+  const [userId,setUserId]=useState(null)
   
   // const getUser = async () => {
   //   try {
@@ -49,6 +50,7 @@ function App() {
       console.log("---------", response);
       if (response.status == 200) {
         setAuth(response.data.user.role);
+        setUserId(response.data.user.user_id)
       }
     });
   }, [auth])
@@ -86,7 +88,7 @@ function App() {
             <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />
             {(auth==="false")&&(<Route path="/login" element={<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             )}
-            <Route path="/payments" element={<Payment/>} />
+            <Route path="/payments/:eventname"  element={<Payment userid={userId}/>} />
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
           </Routes>
           </Suspense>

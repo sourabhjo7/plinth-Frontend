@@ -3,7 +3,7 @@ import styles from "./Payment.module.css";
 import qr from './qr.png'
 import { useForm } from "react-hook-form";
 import {payment} from './data.js'
-function Payment() {
+function Payment(props) {
     const [section, setSection] = useState("robowar");
     const [val, setVal] = useState(payment[0].robowar);
     const {
