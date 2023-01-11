@@ -28,7 +28,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState("false");
   const [userId,setUserId]=useState(null)
-  
+  const [accomodation,setAccomodation]=useState(false)
   // const getUser = async () => {
   //   try {
   //     const url = `http://localhost:3000/auth/google`;
@@ -51,6 +51,7 @@ function App() {
       if (response.status == 200) {
         setAuth(response.data.user.role);
         setUserId(response.data.user.user_id)
+        setAccomodation(response.data.user.accomodation)
       }
     });
   }, [auth])
@@ -82,13 +83,13 @@ function App() {
             <Route path="komet" element={<Komet />} />
             <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
             <Route path="accomodation" element={<Accomodation auth={auth} />} />
-            <Route path="/:name" element={<Explore auth={auth} setAuth={setAuth}/>}/>
+            <Route path="/:name/:id" element={<Explore auth={auth} setAuth={setAuth}/>}/>
             {(auth==="false")&&<Route path="/registration" element={<Reg auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             }<Route path="campus_ambassador" element={<CampusAmb auth={auth} setAuth={setAuth}/>} />
             <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />
             {(auth==="false")&&(<Route path="/login" element={<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             )}
-            <Route path="/payments/:eventname"  element={<Payment userid={userId}/>} />
+            <Route path="/payments/:eventname/:id"  element={<Payment userid={userId} accomodation={accomodation}/>} />
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
           </Routes>
           </Suspense>

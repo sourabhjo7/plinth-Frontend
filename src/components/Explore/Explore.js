@@ -265,7 +265,7 @@ const Explore = ({auth,setAuth}) => {
 
             <button
               className={styles.event_register_button}
-              onClick={() => navigate(`/payments/${data[0].name}`)} onMouseEnter={btnEnter} onMouseLeave={textLeave}
+              onClick={() => navigate(`/payments/${data[0].name}/${data[0].id}`)} onMouseEnter={btnEnter} onMouseLeave={textLeave}
             >
               Payment
             </button>

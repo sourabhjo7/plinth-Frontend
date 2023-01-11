@@ -32,6 +32,7 @@ function Filter(props) {
               index={index}
               auth = {props.auth}
               key={filteredEvent.id}
+              id={filteredEvent.id}
               name={filteredEvent.name}
               club={filteredEvent.club}
               participation={filteredEvent.participation}

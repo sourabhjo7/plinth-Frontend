@@ -1,9 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from "./Payment.module.css";
-import qr from './qr.png'
+import qr from './qr.jpeg'
+import {events} from '../Competitions/data'
+import { motion } from "framer-motion/dist/framer-motion";
 import { useForm } from "react-hook-form";
 import {payment} from './data.js'
 function Payment(props) {
+    const user_id=props.userID
+    const {eventname,id} = useParams(); 
+    const reqEvent=events.filter((event) => event.id === id)
+    // console.log(props.accomodation)
+    let paid=reqEvent[0].payment;
+    if(props.accomodation){
+        paid+=999
+    }
     const [section, setSection] = useState("robowar");
     const [val, setVal] = useState(payment[0].robowar);
     const {
@@ -35,7 +46,12 @@ function Payment(props) {
         }
     };
     const onSubmit = async (data) => {
-
+        // data.push({paid:'500'})
+        const paymen={
+            "paid":`${reqEvent.payment}`
+        }
+        const finalResult = Object.assign(data,paymen);
+        console.log(finalResult)
       };
 
       const [mousePosition, setMousePosition] = useState({
@@ -184,12 +200,12 @@ function Payment(props) {
                     </div>
 
 
-                    <div className={styles.input}>Amount to Pay:445</div>
+                    <div className={styles.input}>Amount to Pay:{paid}</div>
                     <input
                         className={`${styles.input}`}
                         placeholder="UPI ID used for payment"
                         type="text"
-                        {...register("userUpiId", {
+                        {...register("upiId", {
                             required: "This field is required",
                             pattern: {
                                 value: /[a-z0-9]*@[a-z]*/,
@@ -201,9 +217,10 @@ function Payment(props) {
                         <p className={`${styles.p}`}>{errors.userUpiId.message}</p>
                     )}
                     <div className={styles.qrDiv}>
+                    <div className={styles.input}>QR code for payment </div>
                         <img src={qr} className={styles.qrImg}/>
                     </div>
-                    <div className={styles.input}>Upi ID to pay to : 123@paytm</div>
+                    <div className={styles.input}>Upi ID to pay to : 7015824452@paytm</div>
                     <input
                     className={`${styles.input}`} type="file" {...register("file", {
                         required: "This Field is required",
@@ -215,7 +232,7 @@ function Payment(props) {
       <input
          
             type="submit"
-            value="Submit"
+            value="Confirm Payment"
             className={`${styles.btn}`}
           />
                 </div>
