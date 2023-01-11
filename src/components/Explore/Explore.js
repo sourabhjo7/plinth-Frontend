@@ -212,6 +212,7 @@ const Explore = ({auth,setAuth}) => {
               duration: 1,
               delay: 0
             }} className={styles.explore_content}>
+              
             <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={`${styles.explore_heading} ${styles.notnone}`}>{data[0].name}</div>
             <div className={styles.explore_details}>
               <div onMouseEnter={btnEnter} onMouseLeave={textLeave} className={styles.explore_navbar}>

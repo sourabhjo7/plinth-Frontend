@@ -1,0 +1,179 @@
+.maindiv {
+  background-color: transparent;
+  /* background-image: url("./compBg.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  background-attachment: fixed;
+
+  z-index: 2;
+}
+
+.body{
+  position: relative;
+}
+.animDiv {
+  background-color: transparent;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.title {
+  font-family: "Light";
+  color: white;
+  font-size: 1.6vw;
+  font-weight: 400;
+  z-index: 2;
+  display: flex;
+
+  text-align: center;
+  letter-spacing: 0.15vw;
+  word-spacing: 0.2vw;
+
+background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+
+text-shadow: 0px 0px 25px #b54eff;
+animation: floating2 5s infinite ease-in-out,filtermove2 6s infinite ease-in-out;
+
+position: relative;
+left: -1vw;
+/* top: -10px; */
+
+margin-top: 0vh;
+
+  /* animation: floating2 6s infinite ease-in-out; */
+}
+.textdiv {
+  font-family: "Poppins";
+  color: white;
+  font-size: 1.2vw;
+  font-weight: 400;
+  z-index: 2;
+  display: flex;
+  text-align: center;
+  width: 55%;
+  margin-top: 7vh;
+}
+.event_register_button {
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: fit-content;
+  padding: 7px 20px;
+  margin: 0;
+  margin-top: 7vh;
+  border: 0.1vw solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.8vw;
+  letter-spacing: 0.05vw;
+}
+.imgdiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 15vh;
+}
+.logo{
+  width: 35%;
+  filter: drop-shadow(0px 0px 25px #b54eff );
+  animation: filtermove 6s infinite ease-in-out,floating 5s infinite ease-in-out;
+}
+@keyframes floating {
+  0% { transform: translate(0,  0px) scale(1);
+  }
+  50%  { transform: translate(0, 15px) scale(0.97); }
+  100%   { transform: translate(0, -0px) scale(1);}   
+}
+@keyframes floating2 {
+  0% { transform: translate(0,  0px) scale(1);
+  }
+  50%  { transform: translate(0, 7px) scale(0.97); }
+  100%   { transform: translate(0, -0px) scale(1);}   
+}
+@keyframes filtermove {
+	0% {
+		filter: drop-shadow(0px 0px 25px #b54eff );
+	}
+	50% {
+		filter: drop-shadow(0px 0px 10px rgb(255, 0, 0) );
+	}
+	100% {
+		filter: drop-shadow(0px 0px 25px #b54eff);
+	}
+}
+@keyframes filtermove2 {
+	0% {
+		text-shadow: 0px 0px 25px #b54eff ;
+	}
+	50% {
+		text-shadow: 0px 0px 25px rgb(255, 0, 0) ;
+	}
+	100% {
+		text-shadow: 0px 0px 25px #b54eff ;
+}
+}
+.handle{
+  opacity: 1;
+  z-index: 40;
+  position: relative;
+}
+
+
+@media (max-width: 550px) {
+  .event_register_button {
+    font-size: 2vw;
+
+    position: relative;
+    left: 5vw;
+    /* padding: 0px 0px 0px 0px; */
+    /* width: 28vw; */
+    /* height: 4vh; */
+    /* margin-top: 1vh; */
+    /* margin-bottom: 2vh; */
+  }
+  .textdiv{
+    width: 60%;
+    font-size: 3vw;
+
+    position: relative;
+    left: 5vw;
+  }
+  .imgdiv{
+    position: relative;
+    left: 5vw;
+  }
+  .logo{
+    width: 60vw;
+  }
+  .title{
+    font-size: 3vw;
+    margin-top: 2vh;
+  }
+}
+@media (max-width:400px) {
+
+}
+
