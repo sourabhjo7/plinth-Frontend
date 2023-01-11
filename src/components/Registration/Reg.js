@@ -19,13 +19,15 @@ function Reg({serverSystemUrl ,auth,setAuth }) {
     // await console.log(container);
   }, []);
 
+  const isDesktop = window.screen.width > 600;
+
   return (
     <>
       <div className={styles.maindiv}>
       <Registration serverSystemUrl={serverSystemUrl} auth={auth} setAuth={setAuth}/>
       </div>
 
-      <Particles
+      {isDesktop &&<Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
@@ -143,7 +145,7 @@ function Reg({serverSystemUrl ,auth,setAuth }) {
             zIndex: 0,
           },
         }}
-      />
+      />}
     </>
   );
 }
