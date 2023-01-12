@@ -52,6 +52,7 @@ function App() {
         setAuth(response.data.user.role);
         setUserId(response.data.user.user_id)
         setAccomodation(response.data.user.accomodation)
+        console.log("==accomodation-",response.data.user.accomodation);
       }
     });
   }, [auth])
