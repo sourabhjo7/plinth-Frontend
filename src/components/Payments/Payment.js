@@ -6,10 +6,15 @@ import {events} from '../Competitions/data'
 import { motion } from "framer-motion/dist/framer-motion";
 import { useForm } from "react-hook-form";
 import {payment} from './data.js'
+import axios from "axios";
+
 function Payment(props) {
     const user_id=props.userID
+    const navigate=useNavigate()
     const {eventname,id} = useParams(); 
     const reqEvent=events.filter((event) => event.id === id)
+    const [flashMessage,setflashMessage]=useState(false);
+    const [message,setMessage]=useState("")
     // console.log(props.accomodation)
     let paid=reqEvent[0].payment;
     if(props.accomodation){
@@ -48,11 +53,25 @@ function Payment(props) {
     const onSubmit = async (data) => {
         // data.push({paid:'500'})
         const paymen={
-            "paid":`${reqEvent.payment}`
+            "paid":`${paid}`
         }
         const finalResult = Object.assign(data,paymen);
-        console.log(finalResult)
+        // console.log(finalResult)
+        const res = await axios.post(`${props.serverSystemUrl}/${eventname}/${user_id}`, finalResult, {
+          validateStatus: false,
+          withCredentials: true,
+        });
+        if (res.status === 200) {
+           
+           setMessage(res.data.msg)
+           setflashMessage(!flashMessage);
+          //  console.log("registered as=====", res.data.user.role);
+           setTimeout(() => {
+            // setAuth(res.data.user.role);
+            navigate("/competitions")  
+           }, 3000);
       };
+    }
 
       const [mousePosition, setMousePosition] = useState({
         x: 0,
@@ -136,57 +155,11 @@ function Payment(props) {
         }}
       />
         <div className={styles.payments}>
-            <div
+        <div
                 className={`${styles.heading}`}
                 onMouseEnter={textEnter} onMouseLeave={textLeave}
             >
                 Payments
-            </div>
-            <div className={`${styles.explore_heading} ${styles.notnone}`}>{payment[0].name}</div>
-            <div className={styles.payDets}>
-            <div>
-                {payment[0].basic.map((valuee,index)=>(
-                    <p className={styles.text}>{valuee}</p>
-                ))}
-                </div>
-            <div className={styles.explore_details}>
-           
-                <div  className={styles.explore_navbar}>
-                    <div
-                        className={section === "robowar" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
-                        style={{ border: 0 }}
-                        onClick={(e) => handleView(e)}
-                        id="robowar"
-                    >
-                        Robo War
-                    </div>
-                    <div
-                        className={section === "sharktank" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
-                        onClick={(e) => handleView(e)}
-                        id="sharktank"
-                    >
-                        Shark Tank
-                    </div>
-                    <div
-                        className={section === "mun" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
-                        onClick={(e) => handleView(e)}
-                        id="mun"
-                    >
-                        MUN
-                    </div>
-                    <div
-                        className={section === "jaipurCubeOpen" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
-                        onClick={(e) => handleView(e)}
-                        id="jaipurCubeOpen"
-                    >
-                        Jaipur Cube Open
-                    </div>
-                
-                </div>
-                <div className={styles.explore_description}>{val.map((value,index)=>(
-                    <p className={styles.text}>{value}</p>
-                ))}</div>
-            </div>
             </div>
             <form
                 onSubmit={handleSubmit(onSubmit)}
@@ -238,6 +211,53 @@ function Payment(props) {
                 </div>
 
             </form>
+           
+            <div className={`${styles.explore_heading} ${styles.notnone}`}>{payment[0].name}</div>
+            <div className={styles.payDets}>
+            <div>
+                {payment[0].basic.map((valuee,index)=>(
+                    <p className={styles.text}>{valuee}</p>
+                ))}
+                </div>
+            <div className={styles.explore_details}>
+           
+                <div  className={styles.explore_navbar}>
+                    <div
+                        className={section === "robowar" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
+                        style={{ border: 0 }}
+                        onClick={(e) => handleView(e)}
+                        id="robowar"
+                    >
+                        Robo War
+                    </div>
+                    <div
+                        className={section === "sharktank" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
+                        onClick={(e) => handleView(e)}
+                        id="sharktank"
+                    >
+                        Shark Tank
+                    </div>
+                    <div
+                        className={section === "mun" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
+                        onClick={(e) => handleView(e)}
+                        id="mun"
+                    >
+                        MUN
+                    </div>
+                    <div
+                        className={section === "jaipurCubeOpen" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
+                        onClick={(e) => handleView(e)}
+                        id="jaipurCubeOpen"
+                    >
+                        Jaipur Cube Open
+                    </div>
+                
+                </div>
+                <div className={styles.explore_description}>{val.map((value,index)=>(
+                    <p className={styles.text}>{value}</p>
+                ))}</div>
+            </div>
+            </div>
         </div >
         </>
     )

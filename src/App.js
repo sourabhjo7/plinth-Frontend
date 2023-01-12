@@ -70,7 +70,7 @@ function App() {
   return (
     <div className="App">
         <Router>
-          <Sidebar auth = {auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>
+          <Sidebar auth = {auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl} setUser={setUserId}/>
 
           <Suspense fallback={<p>Loading...</p>}>
           <Routes>
@@ -89,7 +89,7 @@ function App() {
             <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />
             {(auth==="false")&&(<Route path="/login" element={<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             )}
-            <Route path="/payments/:eventname/:id"  element={<Payment userid={userId} accomodation={accomodation}/>} />
+            <Route path="/payments/:eventname/:id"  element={auth==="false"?<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>:<Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl}/>} />
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
           </Routes>
           </Suspense>

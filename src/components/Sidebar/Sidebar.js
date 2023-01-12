@@ -21,7 +21,7 @@ import axios from "axios";
 
 const imgSrc = require("./plinth.png");
 
-export default function Sidebar({auth,setAuth,serverSystemUrl}) {
+export default function Sidebar({auth,setAuth,serverSystemUrl,setUser}) {
   const location = useLocation();
   const navigate=useNavigate();
   gsap.registerPlugin(CSSPlugin);
@@ -56,6 +56,7 @@ export default function Sidebar({auth,setAuth,serverSystemUrl}) {
           withCredentials: true}).then((res)=>{
           if(res.status===200){
           setAuth("false");
+          setUser("false")
           navigate("/")  
           console.log(res.data.msg);
           }
