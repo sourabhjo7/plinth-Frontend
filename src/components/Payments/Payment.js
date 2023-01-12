@@ -9,7 +9,7 @@ import {payment} from './data.js'
 import axios from "axios";
 
 function Payment(props) {
-    const user_id=props.userID
+    const user_id=props.userid 
     const navigate=useNavigate()
     const {eventname,id} = useParams(); 
     const reqEvent=events.filter((event) => event.id === id)
@@ -51,13 +51,18 @@ function Payment(props) {
         }
     };
     const onSubmit = async (data) => {
+      const formData =new FormData();
+      formData.append("file",data.file[0])
+      formData.append("paid",paid);
+      formData.append("upiId",data.upiId);
+
         // data.push({paid:'500'})
         const paymen={
             "paid":`${paid}`
         }
         const finalResult = Object.assign(data,paymen);
         // console.log(finalResult)
-        const res = await axios.post(`${props.serverSystemUrl}/${eventname}/${user_id}`, finalResult, {
+        const res = await axios.post(`${props.url}/${eventname}/${user_id}`,formData, {
           validateStatus: false,
           withCredentials: true,
         });

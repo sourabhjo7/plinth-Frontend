@@ -16,7 +16,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 export default function Login({ serverSystemUrl ,auth,setAuth}) {
-  console.log("===>", serverSystemUrl);
+
   gsap.registerPlugin(CSSPlugin);
   let item1 = useRef(null);
   let item2 = useRef(null);
@@ -37,7 +37,7 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
   });
 
   const onSubmit = async(data) => {
-    console.log("--->", data);
+    
     const res = await axios.post(
       `${serverSystemUrl}/auth/login`,
       data,
@@ -56,7 +56,7 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
     else{
       navigate("/registration")
     }
-    console.log("this is data of response ", res.data);
+   
 
     // axios
     //   .post(`http://localhost:5000/auth/login`, qs.stringify(data), {
