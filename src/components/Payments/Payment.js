@@ -17,9 +17,6 @@ function Payment(props) {
     const [message,setMessage]=useState("")
     // console.log(props.accomodation)
     let paid=reqEvent[0].payment;
-    if(props.accomodation==="yes"){
-        paid+=999
-    }
     const [section, setSection] = useState("robowar");
     const [val, setVal] = useState(payment[0].robowar);
     const {
@@ -60,7 +57,7 @@ function Payment(props) {
       });
       return;
     }
-    if (file.type != "image/png" || file.type!= "image/jpg") {
+    if (file.type != "image/png" && file.type != "image/jpg") {
       setError("file", {
         type: "file",
         message: "Only image is valid"

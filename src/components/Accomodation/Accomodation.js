@@ -308,7 +308,7 @@ const Accomodation = ({ auth }) => {
               <button
                 className={styles.event_register_button}
                 onMouseEnter={btnEnter} onMouseLeave={textLeave}
-                onClick={() => alert("Payments Opening Soon!!")} 
+                onClick={navigate(`/payments/accomodation/0`)} 
               >
                 Make Payment 
               </button></a>}

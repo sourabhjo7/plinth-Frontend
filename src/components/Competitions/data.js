@@ -12,7 +12,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment":0,
+    "payment":999,
     "contacts":
     [
       {
@@ -478,7 +478,7 @@ export const events = [
     "structure": "Points will be given by judges based on aggression, damage, and control. A team may win by knockout if it successfully immobilizes its opponent for 10 seconds. In case of a double KO, the winner will be decided by points.",
     "prizes": "1st Prize - ₹40000, 2nd Prize - ₹20000, Prizes worth ₹200000 ",
     "timeline": "27 JAN (2PM-5PM) & 29 JAN (3PM-6PM)",
-    "payment":1200,
+    "payment":1000,
     "contacts":
     [
       {
