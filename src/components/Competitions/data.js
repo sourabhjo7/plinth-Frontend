@@ -355,7 +355,7 @@ export const events = [
     "structure": "Model United Nations Organisation Conference",
     "prizes": "PMUN'23 has got a massive prize pool of Rs. 92,000/-",
     "timeline": "Application deadline: 21st Jaunary 2023     Conference dates: 27th January 2023 and 28th January 2023",
-    "payment":199,
+    "payment":1200,
     "contacts": 
     [
       {
