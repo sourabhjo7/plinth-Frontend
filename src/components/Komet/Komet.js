@@ -58,13 +58,13 @@ function Komet() {
       y: mousePosition.y - 20,
       backgroundColor: "white",
       //   borderWidth: '2px',
-      mixBlendMode: "difference"
+      mixBlendMode: "difference",
     },
     init: {
-      opacity:0
+      opacity: 0,
     },
     later: {
-      opacity:1
+      opacity: 1,
     },
   };
   const [cursorVariant, setCursorVariant] = useState("def");
@@ -99,44 +99,77 @@ function Komet() {
         transition={{
           x: { delay: 0 },
           y: { delay: 0 },
-          type: 'tween', stiffness: 10000 ,bounce:0
+          type: "tween",
+          stiffness: 10000,
+          bounce: 0,
         }}
       />
-      <motion.div 
-      variants={variants}
-      initial="init"
-      whileInView="later"
-      transition={{
-        duration: "1",
-      }} className={styles.body}>
-
+      <motion.div
+        variants={variants}
+        initial="init"
+        whileInView="later"
+        transition={{
+          duration: "1",
+        }}
+        className={styles.body}
+      >
         <div className={styles.maindiv}>
           <div className={styles.animDiv}>
             {/* <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={`${styles.title}`}>KOMET</div> */}
             <div className={`${styles.imgdiv}`}>
-              <img onMouseEnter={textEnter} onMouseLeave={textLeave} src="./images/Komet.png" className={`${styles.logo}`} alt="komet_logo"></img>
-              <div onMouseEnter={btnEnter} onMouseLeave={textLeave} className={`${styles.title}`}>Get your NFT Ticket here</div>
+              <img
+                onMouseEnter={textEnter}
+                onMouseLeave={textLeave}
+                src="./images/Komet.png"
+                className={`${styles.logo}`}
+                alt="komet_logo"
+              ></img>
+              <img
+                src="./images/plinth_komet.png"
+                className={`${styles.plinthlogo}`}
+                alt="plinth_logo"
+                onMouseEnter={btnEnter}
+                onMouseLeave={textLeave}
+              ></img>
+              <div
+                onMouseEnter={btnEnter}
+                onMouseLeave={textLeave}
+                className={`${styles.title}`}
+              >
+                Get your NFT Ticket here
+              </div>
             </div>
             <div className={`${styles.textdiv}`}>
-              <div onMouseEnter={btnEnter} onMouseLeave={textLeave} className={`${styles.text}`}>
-              Lorem ipsum dolor sit amet consectetur. Quam cras molestie consequat quis enim netus pharetra. Enim libero sed urna in. Faucibus justo tellus eget arcu. Turpis sed fermentum et risus cursus enim mauris suspendisse. 
-<br />
-Lorem at feugiat massa vitae sagittis at lectus ipsum. Suspendisse turpis laoreet natoque consectetur eget quisque quisque. Eget semper tempor sed tincidunt dolor purus arcu senectus et. Semper 
+              <div
+                onMouseEnter={btnEnter}
+                onMouseLeave={textLeave}
+                className={`${styles.text}`}
+              >
+                Lorem ipsum dolor sit amet consectetur. Quam cras molestie
+                consequat quis enim netus pharetra. Enim libero sed urna in.
+                Faucibus justo tellus eget arcu. Turpis sed fermentum et risus
+                cursus enim mauris suspendisse.
+                <br />
+                Lorem at feugiat massa vitae sagittis at lectus ipsum.
+                Suspendisse turpis laoreet natoque consectetur eget quisque
+                quisque. Eget semper tempor sed tincidunt dolor purus arcu
+                senectus et. Semper
               </div>
             </div>
 
-              <button
-                className={styles.event_register_button}
-                onMouseEnter={btnEnter} onMouseLeave={textLeave}
-                onClick={()=>alert("Claim Ticket")}
-              >
-                Claim your Tickets!
-              </button>
-
+            <button
+              className={styles.event_register_button}
+              onMouseEnter={btnEnter}
+              onMouseLeave={textLeave}
+              onClick={() => alert("Claim Ticket")}
+            >
+              Claim your Tickets!
+            </button>
           </div>
         </div>
 
-        <motion.div className={styles.handle}
+        <motion.div
+          className={styles.handle}
           onMouseEnter={handleEnter}
           onMouseLeave={textLeave}
           variants={variants}
@@ -148,129 +181,130 @@ Lorem at feugiat massa vitae sagittis at lectus ipsum. Suspendisse turpis laoree
           }}
         >
           <Handles />
-
         </motion.div>
 
-      { isDesktop&&<Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          particles: {
-            number: {
-              value: 40,
-              density: {
-                enable: true,
-                value_area: 500,
-              },
-            },
-            color: {
-              value: "#ffffff",
-            },
-            shape: {
-              type: "circle",
-              stroke: {
-                width: 0,
-                color: "#000000",
-              },
-              polygon: {
-                nb_sides: 3,
-              },
-              image: {
-                src: "",
-                width: 100,
-                height: 100,
-              },
-            },
-            opacity: {
-              value: 0.7,
-              random: true,
-              anim: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0,
-                sync: false,
-              },
-            },
-            size: {
-              value: 3,
-              random: true,
-              anim: {
-                enable: true,
-                speed: 4,
-                size_min: 0.3,
-                sync: false,
-              },
-            },
-            line_linked: {
-              enable: true,
-              distance: 64.09640098708464,
-              color: "#ffffff",
-              opacity: 0.5,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 1,
-              direction: "none",
-              random: true,
-              straight: false,
-              out_mode: "out",
-              bounce: false,
-              attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 600,
-              },
-            },
-          },
-          interactivity: {
-            detect_on: "window",
-            events: {
-              onhover: {
-                enable: true,
-                mode: "repulse",
-              },
-              onclick: {
-                enable: false,
-                mode: "bubble",
-              },
-              resize: true,
-            },
-            modes: {
-              grab: {
-                distance: 400,
+        {isDesktop && (
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={{
+              particles: {
+                number: {
+                  value: 40,
+                  density: {
+                    enable: true,
+                    value_area: 500,
+                  },
+                },
+                color: {
+                  value: "#ffffff",
+                },
+                shape: {
+                  type: "circle",
+                  stroke: {
+                    width: 0,
+                    color: "#000000",
+                  },
+                  polygon: {
+                    nb_sides: 3,
+                  },
+                  image: {
+                    src: "",
+                    width: 100,
+                    height: 100,
+                  },
+                },
+                opacity: {
+                  value: 0.7,
+                  random: true,
+                  anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0,
+                    sync: false,
+                  },
+                },
+                size: {
+                  value: 3,
+                  random: true,
+                  anim: {
+                    enable: true,
+                    speed: 4,
+                    size_min: 0.3,
+                    sync: false,
+                  },
+                },
                 line_linked: {
-                  opacity: 1,
+                  enable: true,
+                  distance: 64.09640098708464,
+                  color: "#ffffff",
+                  opacity: 0.5,
+                  width: 1,
+                },
+                move: {
+                  enable: true,
+                  speed: 1,
+                  direction: "none",
+                  random: true,
+                  straight: false,
+                  out_mode: "out",
+                  bounce: false,
+                  attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 600,
+                  },
                 },
               },
-              bubble: {
-                distance: 85.20998174071826,
-                size: 0,
-                duration: 2,
-                opacity: 0,
-                speed: 3,
+              interactivity: {
+                detect_on: "window",
+                events: {
+                  onhover: {
+                    enable: true,
+                    mode: "repulse",
+                  },
+                  onclick: {
+                    enable: false,
+                    mode: "bubble",
+                  },
+                  resize: true,
+                },
+                modes: {
+                  grab: {
+                    distance: 400,
+                    line_linked: {
+                      opacity: 1,
+                    },
+                  },
+                  bubble: {
+                    distance: 85.20998174071826,
+                    size: 0,
+                    duration: 2,
+                    opacity: 0,
+                    speed: 3,
+                  },
+                  repulse: {
+                    distance: 170,
+                    duration: 0.4,
+                  },
+                  push: {
+                    particles_nb: 4,
+                  },
+                  remove: {
+                    particles_nb: 2,
+                  },
+                },
               },
-              repulse: {
-                distance: 170,
-                duration: 0.4,
+              retina_detect: true,
+              fpsLimit: 120,
+              fullScreen: {
+                enable: true,
+                zIndex: 0,
               },
-              push: {
-                particles_nb: 4,
-              },
-              remove: {
-                particles_nb: 2,
-              },
-            },
-          },
-          retina_detect: true,
-          fpsLimit: 120,
-          fullScreen: {
-            enable: true,
-            zIndex: 0,
-          },
-        }}
-      />}
+            }}
+          />
+        )}
       </motion.div>
     </>
   );
