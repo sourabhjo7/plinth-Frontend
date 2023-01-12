@@ -7,7 +7,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { useForm } from "react-hook-form";
 import {payment} from './data.js'
 import axios from "axios";
-
+import FlashMessage from "../FlashMessage/FlashMessage";
 function Payment(props) {
     const user_id=props.userid 
     const navigate=useNavigate()
@@ -17,13 +17,13 @@ function Payment(props) {
     const [message,setMessage]=useState("")
     // console.log(props.accomodation)
     let paid=reqEvent[0].payment;
-    if(props.accomodation){
+    if(props.accomodation==="yes"){
         paid+=999
     }
     const [section, setSection] = useState("robowar");
     const [val, setVal] = useState(payment[0].robowar);
     const {
-        register,
+        register,setError,
         formState: { errors },
         handleSubmit,
       } = useForm({
@@ -33,7 +33,7 @@ function Payment(props) {
         const { id } = e.target;
         // console.log(e.target.id);
         if (id === "robowar") {
-            console.log(payment[0])
+
             setVal(payment[0].robowar);
             setSection("robowar");
 
@@ -51,17 +51,29 @@ function Payment(props) {
         }
     };
     const onSubmit = async (data) => {
+      
+    const file = data.file[0];
+    if (!file) {
+      setError("file", {
+        type: "file",
+        message: "Upload screenshot"
+      });
+      return;
+    }
+    if (file.type != "image/png" || file.type!= "image/jpg") {
+      setError("file", {
+        type: "file",
+        message: "Only image is valid"
+      });
+      return;
+    }
       const formData =new FormData();
       formData.append("file",data.file[0])
       formData.append("paid",paid);
       formData.append("upiId",data.upiId);
 
         // data.push({paid:'500'})
-        const paymen={
-            "paid":`${paid}`
-        }
-        const finalResult = Object.assign(data,paymen);
-        // console.log(finalResult)
+
         const res = await axios.post(`${props.url}/${eventname}/${user_id}`,formData, {
           validateStatus: false,
           withCredentials: true,
@@ -159,6 +171,7 @@ function Payment(props) {
           type: 'tween', stiffness: 10000 ,bounce:0
         }}
       />
+      {flashMessage?<FlashMessage message={message} />:null}
         <div className={styles.payments}>
         <div
                 className={`${styles.heading}`}
@@ -191,8 +204,8 @@ function Payment(props) {
                             },
                         })}
                     />
-                    {errors.userUpiId && (
-                        <p className={`${styles.p}`}>{errors.userUpiId.message}</p>
+                    {errors.upiId && (
+                        <p className={`${styles.p}`}>{errors.upiId.message}</p>
                     )}
                     <div className={styles.qrDiv}>
                     <div className={styles.input}>QR code for payment </div>
@@ -201,8 +214,9 @@ function Payment(props) {
                     <div className={styles.input}>Upi ID to pay to : 7015824452@paytm</div>
                     <input
                     className={`${styles.input}`} type="file" {...register("file", {
-                        required: "This Field is required",
+                      required: "Please upload payment screenshot",
                     })} />
+                    <label  className={styles.label} for="file">Payment Screenshot</label>
 
                     {errors.file && (
                         <p className={`${styles.p}`}>{errors.file.message}</p>
