@@ -8,11 +8,11 @@ import { useNavigate } from "react-router-dom";
 function Card(props) {
   const navigate = useNavigate();
   const handleRegister = (e, name,key) => {
-    const path=(props.auth == "false") ? "/login" : `/${name}/${key}`;
+    const path=(props.auth == "false") ? "/login" : `/${name}`;
     navigate(path)
   };
   const handleClick = (e, name,key) => {
-    navigate(`/${name}/${key}`);
+    navigate(`/${name}`);
   };
   return (
     <motion.div

@@ -19,7 +19,7 @@ const Explore = ({ auth, setAuth }) => {
   const params = useParams();
   const location = useLocation();
   const navigate = useNavigate();
-  const { name, id } = params;
+  const { name } = params;
   const nameMod = name.replaceAll("_", " ");
   const data = events.filter((event) => event.name.toLowerCase() === nameMod);
   const [val, setVal] = useState(data[0].about);
@@ -268,7 +268,7 @@ const Explore = ({ auth, setAuth }) => {
             {data[0].link === "" ? 
             <button
               className={styles.event_register_button}
-              onClick={() => navigate(`/payments/${data[0].name}/${data[0].id}`)} onMouseEnter={btnEnter} onMouseLeave={textLeave}
+              onClick={() => navigate(`/payments/${name}`)} onMouseEnter={btnEnter} onMouseLeave={textLeave}
             >
               Payment
             </button> :

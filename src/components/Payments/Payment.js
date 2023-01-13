@@ -11,8 +11,9 @@ import FlashMessage from "../FlashMessage/FlashMessage";
 function Payment(props) {
   const user_id = props.userid
   const navigate = useNavigate()
-  const { eventname, id } = useParams();
-  const reqEvent = events.filter((event) => event.id === id)
+  const { eventname } = useParams();
+  console.log(eventname);
+  const reqEvent = events.filter((event) => event.name.toLowerCase() === eventname.replaceAll("_", " "))
   const [flashMessage, setflashMessage] = useState(false);
   const [message, setMessage] = useState("")
   // console.log(props.accomodation)
