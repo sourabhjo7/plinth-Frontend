@@ -14,7 +14,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import Contact from "./Contacts/Contact";
 
-const Explore = ({auth,setAuth}) => {
+const Explore = ({ auth, setAuth }) => {
   const [section, setSection] = useState("about");
   const params = useParams();
   const location = useLocation();
@@ -30,7 +30,7 @@ const Explore = ({auth,setAuth}) => {
     const { id } = e.target;
     // console.log(e.target.id);
     if (id === "contact") {
-      setVal(<Contact contacts = {data[0].contacts}/>);
+      setVal(<Contact contacts={data[0].contacts} />);
       setSection("contact");
     } else if (id === "about") {
       setVal(data[0].about);
@@ -155,13 +155,13 @@ const Explore = ({auth,setAuth}) => {
         transition={{
           x: { delay: 0 },
           y: { delay: 0 },
-          type: 'tween', stiffness: 10000 ,bounce:0
+          type: 'tween', stiffness: 10000, bounce: 0
         }}
       />
       <div className={styles.explore_body}>
         <div className={styles.explore}>
 
-        <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={`${styles.explore_heading} ${styles.none}`}>{data[0].name}</div>
+          <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={`${styles.explore_heading} ${styles.none}`}>{data[0].name}</div>
 
           <motion.div variants={variants}
             initial="imgInitial"
@@ -173,15 +173,15 @@ const Explore = ({auth,setAuth}) => {
             <div className={styles.imgCon}>
               <LazyLoadImage
 
-                src = {data[0].poster}
+                src={data[0].poster}
                 alt={`${data[0].name.toLowerCase()} poster`}
-                effect = "blur"
-                height = "100%"
-                width = "100%"
+                effect="blur"
+                height="100%"
+                width="100%"
                 placeholderSrc="./Images/dark-bg-preloader2.jpg"
                 className={styles.explore_image}
                 onMouseEnter={cardEnter} onMouseLeave={textLeave}
-               />
+              />
             </div>
 
             <a href={data[0].rulebook} target="_blank">
@@ -212,7 +212,7 @@ const Explore = ({auth,setAuth}) => {
               duration: 1,
               delay: 0
             }} className={styles.explore_content}>
-              
+
             <div onMouseEnter={textEnter} onMouseLeave={textLeave} className={`${styles.explore_heading} ${styles.notnone}`}>{data[0].name}</div>
             <div className={styles.explore_details}>
               <div onMouseEnter={btnEnter} onMouseLeave={textLeave} className={styles.explore_navbar}>
@@ -231,14 +231,14 @@ const Explore = ({auth,setAuth}) => {
                 >
                   Structure
                 </div>}
-               {data[0].prizes == "" ? null : <div
+                {data[0].prizes == "" ? null : <div
                   className={section === "prizes" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
                   onClick={(e) => handleView(e)}
                   id="prizes"
                 >
                   Prizes
-                </div> }
-                
+                </div>}
+
                 {data[0].timeline == "" ? null : <div
                   className={section === "timeline" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
                   onClick={(e) => handleView(e)}
@@ -246,7 +246,7 @@ const Explore = ({auth,setAuth}) => {
                 >
                   Timeline
                 </div>}
-                
+
                 <div
                   className={section === "contact" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
                   onClick={(e) => handleView(e)}
@@ -265,12 +265,23 @@ const Explore = ({auth,setAuth}) => {
               Register
             </button> */}
 
+            {data[0].link === "" ? 
             <button
               className={styles.event_register_button}
               onClick={() => navigate(`/payments/${data[0].name}/${data[0].id}`)} onMouseEnter={btnEnter} onMouseLeave={textLeave}
             >
               Payment
-            </button>
+            </button> :
+            <a href = {data[0].link} target = "_blank">
+              <button
+                className={styles.event_register_button}
+                onMouseEnter={btnEnter} onMouseLeave={textLeave}
+              >
+                Register
+              </button>
+            </a>  
+            }
+
 
             {/* <div className={styles.explore_details1}>
                 <div className={styles.explore_description1}>
@@ -292,7 +303,7 @@ const Explore = ({auth,setAuth}) => {
           <Handles />
         </motion.div>
 
-        {isDesktop&&<Particles
+        {isDesktop && <Particles
           id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}
