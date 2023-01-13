@@ -1,12 +1,21 @@
 import styles from "./Filter.module.css";
 import React from 'react';
 import Card from "../Card/Card";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { AnimatePresence } from 'framer-motion/dist/framer-motion';
 import { clubs, events } from "../../data";
 
 function Filter(props) {
   const [tag, setTag] = useState("Astronomy");
+
+  useEffect(() => {
+    if(window.localStorage.getItem('tag') === null) window.localStorage.setItem('tag',"Astronomy");
+    setTag(window.localStorage.getItem('tag'));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('tag', tag);
+  }, [tag]);
 
   return (
     <div className={styles.outer}>

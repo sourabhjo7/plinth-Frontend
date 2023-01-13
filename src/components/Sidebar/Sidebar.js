@@ -81,7 +81,7 @@ export default function Sidebar({auth,setAuth,serverSystemUrl,setUser}) {
               style={{
                 fontWeight: "bolder",
                 marginRight: "3",
-                left: "10%",
+                left: "6%",
               }}
             >
               Plinth 2k23
