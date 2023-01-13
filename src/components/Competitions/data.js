@@ -898,7 +898,7 @@ export const events = [
   },  
   {
     "id": "31",
-    "name": "BloodBank",
+    "name": "BloodConnect",
     "club": "Fun Events",
     "participation": "Solo Participation",
     "imgName": "",
@@ -910,6 +910,16 @@ export const events = [
     "payment":199,
     "contacts":
     [
+      {
+        "name": "Shivam Yadav",
+        "number" : "+91 63888 09962",
+        "email" : "20uec121@lnmiit.ac.in",
+      },
+      {
+        "name": "Arin Khandelwal",
+        "number" : "+91 70963 56002",
+        "email" : "21ucs027@lnmiit.ac.in",
+      },
       {
         "name": "Bhavika Agarwal",
         "number" : "+91 98293 00345",

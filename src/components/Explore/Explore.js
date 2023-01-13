@@ -20,7 +20,6 @@ const Explore = ({auth,setAuth}) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { name, id } = params;
-  console.log(name);
   const nameMod = name.replaceAll("_", " ");
   const data = events.filter((event) => event.name.toLowerCase() === nameMod);
   const [val, setVal] = useState(data[0].about);
@@ -225,27 +224,29 @@ const Explore = ({auth,setAuth}) => {
                 >
                   About
                 </div>
-                <div
+                {data[0].structure == "" ? null : <div
                   className={section === "structure" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
                   onClick={(e) => handleView(e)}
                   id="structure"
                 >
                   Structure
-                </div>
-                <div
+                </div>}
+               {data[0].prizes == "" ? null : <div
                   className={section === "prizes" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
                   onClick={(e) => handleView(e)}
                   id="prizes"
                 >
                   Prizes
-                </div>
-                <div
+                </div> }
+                
+                {data[0].timeline == "" ? null : <div
                   className={section === "timeline" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
                   onClick={(e) => handleView(e)}
                   id="timeline"
                 >
                   Timeline
-                </div>
+                </div>}
+                
                 <div
                   className={section === "contact" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
                   onClick={(e) => handleView(e)}

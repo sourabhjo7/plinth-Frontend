@@ -243,4 +243,7 @@ nav.main-menu li.active > a,
   .top-header{
     margin-top: 15px;
   }
+  .plinth-text{
+    font-size: 20px;
+  }
 }
