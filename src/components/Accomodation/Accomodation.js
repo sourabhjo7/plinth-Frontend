@@ -94,6 +94,15 @@ const Accomodation = ({ auth }) => {
     // isChecked?:
     // isChecked?setHref('/login'):setHref('')
   }
+  const handlePayment=()=>{
+    if(isChecked){
+      navigate(`/payments/accomodation/0`)
+    }
+    else{
+      // console.log(flashMessage)
+      setFlashMessage(!flashMessage)
+    }
+  }
   //Particle Bg
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
@@ -308,7 +317,7 @@ const Accomodation = ({ auth }) => {
               <button
                 className={styles.event_register_button}
                 onMouseEnter={btnEnter} onMouseLeave={textLeave}
-                onClick={() => alert("Payments Opening Soon!!")} 
+                onClick={()=>handlePayment()} 
               >
                 Make Payment 
               </button></a>}

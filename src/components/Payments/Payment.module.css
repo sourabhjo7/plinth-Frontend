@@ -254,7 +254,9 @@ z-index: 2;
     font-weight: bolder ;
     font-size: 1.4vw ;
 }
-
+.label{
+  font-size: 1.5vw;
+}
 .none{
     display:  none;
   }

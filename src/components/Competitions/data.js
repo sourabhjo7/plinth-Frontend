@@ -12,7 +12,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment":0,
+    "payment":999,
     "contacts":
     [
       {
@@ -355,7 +355,7 @@ export const events = [
     "structure": "Model United Nations Organisation Conference",
     "prizes": "PMUN'23 has got a massive prize pool of Rs. 92,000/-",
     "timeline": "Application deadline: 21st Jaunary 2023     Conference dates: 27th January 2023 and 28th January 2023",
-    "payment":199,
+    "payment":1200,
     "contacts": 
     [
       {
@@ -478,7 +478,7 @@ export const events = [
     "structure": "Points will be given by judges based on aggression, damage, and control. A team may win by knockout if it successfully immobilizes its opponent for 10 seconds. In case of a double KO, the winner will be decided by points.",
     "prizes": "1st Prize - ₹40000, 2nd Prize - ₹20000, Prizes worth ₹200000 ",
     "timeline": "27 JAN (2PM-5PM) & 29 JAN (3PM-6PM)",
-    "payment":1200,
+    "payment":1000,
     "contacts":
     [
       {

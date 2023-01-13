@@ -6,19 +6,21 @@ import {events} from '../Competitions/data'
 import { motion } from "framer-motion/dist/framer-motion";
 import { useForm } from "react-hook-form";
 import {payment} from './data.js'
+import axios from "axios";
+import FlashMessage from "../FlashMessage/FlashMessage";
 function Payment(props) {
-    const user_id=props.userID
+    const user_id=props.userid 
+    const navigate=useNavigate()
     const {eventname,id} = useParams(); 
     const reqEvent=events.filter((event) => event.id === id)
+    const [flashMessage,setflashMessage]=useState(false);
+    const [message,setMessage]=useState("")
     // console.log(props.accomodation)
     let paid=reqEvent[0].payment;
-    if(props.accomodation){
-        paid+=999
-    }
     const [section, setSection] = useState("robowar");
     const [val, setVal] = useState(payment[0].robowar);
     const {
-        register,
+        register,setError,
         formState: { errors },
         handleSubmit,
       } = useForm({
@@ -28,7 +30,7 @@ function Payment(props) {
         const { id } = e.target;
         // console.log(e.target.id);
         if (id === "robowar") {
-            console.log(payment[0])
+
             setVal(payment[0].robowar);
             setSection("robowar");
 
@@ -46,13 +48,44 @@ function Payment(props) {
         }
     };
     const onSubmit = async (data) => {
+      
+    const file = data.file[0];
+    if (!file) {
+      setError("file", {
+        type: "file",
+        message: "Upload screenshot"
+      });
+      return;
+    }
+    if (file.type != "image/png" && file.type != "image/jpg") {
+      setError("file", {
+        type: "file",
+        message: "Only image is valid"
+      });
+      return;
+    }
+      const formData =new FormData();
+      formData.append("file",data.file[0])
+      formData.append("paid",paid);
+      formData.append("upiId",data.upiId);
+
         // data.push({paid:'500'})
-        const paymen={
-            "paid":`${reqEvent.payment}`
-        }
-        const finalResult = Object.assign(data,paymen);
-        console.log(finalResult)
+
+        const res = await axios.post(`${props.url}/${eventname}/${user_id}`,formData, {
+          validateStatus: false,
+          withCredentials: true,
+        });
+        if (res.status === 200) {
+           
+           setMessage(res.data.msg)
+           setflashMessage(!flashMessage);
+          //  console.log("registered as=====", res.data.user.role);
+           setTimeout(() => {
+            // setAuth(res.data.user.role);
+            navigate("/competitions")  
+           }, 3000);
       };
+    }
 
       const [mousePosition, setMousePosition] = useState({
         x: 0,
@@ -135,13 +168,66 @@ function Payment(props) {
           type: 'tween', stiffness: 10000 ,bounce:0
         }}
       />
+      {flashMessage?<FlashMessage message={message} />:null}
         <div className={styles.payments}>
-            <div
+        <div
                 className={`${styles.heading}`}
                 onMouseEnter={textEnter} onMouseLeave={textLeave}
             >
                 Payments
             </div>
+            <form
+                onSubmit={handleSubmit(onSubmit)}
+                className={`${styles.Form}`}
+            >
+                <div className={`${styles.Personal}`}>
+                    <div
+                        className={`${styles.h3}`}
+                    >
+                        Payments Information
+                    </div>
+
+
+                    <div className={styles.input}>Amount to Pay:{paid}</div>
+                    <input
+                        className={`${styles.input}`}
+                        placeholder="UPI ID used for payment"
+                        type="text"
+                        {...register("upiId", {
+                            required: "This field is required",
+                            pattern: {
+                                value: /[a-z0-9]*@[a-z]*/,
+                                message: "Invalid upi id",
+                            },
+                        })}
+                    />
+                    {errors.upiId && (
+                        <p className={`${styles.p}`}>{errors.upiId.message}</p>
+                    )}
+                    <div className={styles.qrDiv}>
+                    <div className={styles.input}>QR code for payment </div>
+                        <img src={qr} className={styles.qrImg}/>
+                    </div>
+                    <div className={styles.input}>Upi ID to pay to : 7015824452@paytm</div>
+                    <input
+                    className={`${styles.input}`} type="file" {...register("file", {
+                      required: "Please upload payment screenshot",
+                    })} />
+                    <label  className={styles.label} for="file">Payment Screenshot</label>
+
+                    {errors.file && (
+                        <p className={`${styles.p}`}>{errors.file.message}</p>
+                    )}
+      <input
+         
+            type="submit"
+            value="Confirm Payment"
+            className={`${styles.btn}`}
+          />
+                </div>
+
+            </form>
+           
             <div className={`${styles.explore_heading} ${styles.notnone}`}>{payment[0].name}</div>
             <div className={styles.payDets}>
             <div>
@@ -188,56 +274,6 @@ function Payment(props) {
                 ))}</div>
             </div>
             </div>
-            <form
-                onSubmit={handleSubmit(onSubmit)}
-                className={`${styles.Form}`}
-            >
-                <div className={`${styles.Personal}`}>
-                    <div
-                        className={`${styles.h3}`}
-                    >
-                        Payments Information
-                    </div>
-
-
-                    <div className={styles.input}>Amount to Pay:{paid}</div>
-                    <input
-                        className={`${styles.input}`}
-                        placeholder="UPI ID used for payment"
-                        type="text"
-                        {...register("upiId", {
-                            required: "This field is required",
-                            pattern: {
-                                value: /[a-z0-9]*@[a-z]*/,
-                                message: "Invalid upi id",
-                            },
-                        })}
-                    />
-                    {errors.userUpiId && (
-                        <p className={`${styles.p}`}>{errors.userUpiId.message}</p>
-                    )}
-                    <div className={styles.qrDiv}>
-                    <div className={styles.input}>QR code for payment </div>
-                        <img src={qr} className={styles.qrImg}/>
-                    </div>
-                    <div className={styles.input}>Upi ID to pay to : 7015824452@paytm</div>
-                    <input
-                    className={`${styles.input}`} type="file" {...register("file", {
-                        required: "This Field is required",
-                    })} />
-
-                    {errors.file && (
-                        <p className={`${styles.p}`}>{errors.file.message}</p>
-                    )}
-      <input
-         
-            type="submit"
-            value="Confirm Payment"
-            className={`${styles.btn}`}
-          />
-                </div>
-
-            </form>
         </div >
         </>
     )
