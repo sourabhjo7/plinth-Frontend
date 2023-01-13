@@ -401,22 +401,6 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
             </div>
           </div>
           <input
-            onMouseEnter={subtextEnter}
-            onMouseLeave={textLeave}
-            className={`${styles.input}`}
-            placeholder="Referral Code(from CA)"
-            type="text"
-            {...register("referral", {
-              pattern: {
-                value: /^[a-zA-Z0-9]*$/,
-                message: "Invalid Referral Code",
-              },
-            })}
-          />
-          {errors.referral && (
-            <p className={`${styles.p}`}>{errors.email.message}</p>
-          )}
-          <input
             onMouseEnter={btnEnter}
             onMouseLeave={textLeave}
             type="submit"
