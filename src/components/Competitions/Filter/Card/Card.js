@@ -25,7 +25,7 @@ function Card(props) {
     >
       <div className={styles.imgContainer}>
         <LazyLoadImage 
-        src={ props.imgName ? "https://drive.google.com/uc?export=view&id=".concat(props.imgName.split('/d/').pop().split('/view')[0]) : "./Images/Coming-soon.jpg"} 
+        src={ props.imgName == "" ? "./images/coming-soon.jpg" : props.imgName  } 
         alt="" 
         effect = "blur"
         placeholderSrc="./Images/dark-bg-preloader.jpg"

@@ -173,14 +173,15 @@ const Explore = ({auth,setAuth}) => {
             }} className={styles.imgdiv}>
             <div className={styles.imgCon}>
               <LazyLoadImage
-                className={styles.explore_image}
-                onMouseEnter={cardEnter} onMouseLeave={textLeave}
-                src={"https://drive.google.com/uc?export=view&id=".concat(data[0].poster.split('/d/').pop().split('/view')[0])}
+
+                src = {data[0].poster}
                 alt={`${data[0].name.toLowerCase()} poster`}
                 effect = "blur"
                 height = "100%"
                 width = "100%"
                 placeholderSrc="./Images/dark-bg-preloader2.jpg"
+                className={styles.explore_image}
+                onMouseEnter={cardEnter} onMouseLeave={textLeave}
                />
             </div>
 

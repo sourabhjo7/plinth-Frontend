@@ -167,6 +167,7 @@ const CampusAmb = ({auth,setAuth}) => {
                 className={styles.explore_image}
                 onMouseEnter={cardEnter} onMouseLeave={textLeave}
                 src={"https://drive.google.com/uc?export=view&id=".concat("https://drive.google.com/file/d/1sUvoVdmNWaRNR-3wEUChQUMWa-FIi8HX/view?usp=share_link".split('/d/').pop().split('/view')[0])}
+                // src = "./images/events/astronomy/astrohunt/poster.jpg"
                 alt="Campus Ambassador Program Poster"
                 effect="blur"
                 height="100%"
