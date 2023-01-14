@@ -139,7 +139,7 @@ nav.main-menu.expanded {
 .main-menu > ul.logout {
   position: absolute;
   left: 4px;
-  bottom: -8px;
+  bottom: -7px;
 }
 
 .no-touch .scrollable.hover {
