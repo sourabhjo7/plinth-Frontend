@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from "./Explore.module.css";
 import { events } from "../Competitions/data";
@@ -13,8 +13,10 @@ import { motion } from "framer-motion/dist/framer-motion";
 
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import Contact from "./Contacts/Contact";
+import { payment } from "../Payments/data";
+import FlashMessage from "../FlashMessage/FlashMessage";
 
-const Explore = ({ auth, setAuth }) => {
+const Explore = ({ auth, setAuth, userid, serverSystemUrl }) => {
   const [section, setSection] = useState("about");
   const params = useParams();
   const location = useLocation();
@@ -23,9 +25,41 @@ const Explore = ({ auth, setAuth }) => {
   const nameMod = name.replaceAll("_", " ");
   const data = events.filter((event) => event.name.toLowerCase() === nameMod);
   const [val, setVal] = useState(data[0].about);
+  const [pay, setPay] = useState(false);
+  const [flashMessage, setflashMessage] = useState(false);
+  const [message, setMessage] = useState("");
   const handleClick = () => {
     navigate(`${location.pathname}/registration`);
   };
+
+  useEffect(() => {
+    const res = axios.get(`${serverSystemUrl}/checkevents/${name}/${userid}`, {
+      validateStatus: false,
+      withCredentials: true,
+    });
+    if (res.status === 200) {
+      setPay(res.data.pay);
+    };
+  }, []);
+
+  const payment = () => {
+    if (pay) {
+      () => navigate(`/payments/${name}`);
+    }
+    else {
+      const res = axios.post(`${serverSystemUrl}/addevents/${name}/${userid}`, {
+        validateStatus: false,
+        withCredentials: true,
+      });
+      if (res.status === 200) {
+        setMessage(res.data.msg)
+        setflashMessage(!flashMessage);
+      };
+    }
+  }
+
+
+
   const handleView = (e) => {
     const { id } = e.target;
     // console.log(e.target.id);
@@ -264,23 +298,26 @@ const Explore = ({ auth, setAuth }) => {
             >
               Register
             </button> */}
+            <div className={styles.btnsRegPay}>
+              <a href={data[0].link} target="_blank">
+                <button
+                  className={styles.event_register_button}
+                  onMouseEnter={btnEnter} onMouseLeave={textLeave}
+                >
+                  Register
+                </button>
+              </a>
 
-            {data[0].link === "" ? 
-            <button
-              className={styles.event_register_button}
-              onClick={() => navigate(`/payments/${name}`)} onMouseEnter={btnEnter} onMouseLeave={textLeave}
-            >
-              Payment
-            </button> :
-            <a href = {data[0].link} target = "_blank">
-              <button
-                className={styles.event_register_button}
-                onMouseEnter={btnEnter} onMouseLeave={textLeave}
-              >
-                Register
-              </button>
-            </a>  
-            }
+              {data[0].payment > 0 ?
+                <button
+                  className={styles.event_register_button}
+                  onClick={payment} onMouseEnter={btnEnter} onMouseLeave={textLeave}
+                >
+                  Payment
+                </button> : null}
+            </div>
+
+
 
 
             {/* <div className={styles.explore_details1}>

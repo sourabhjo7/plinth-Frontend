@@ -26,7 +26,7 @@ function Filter(props) {
       <div className={styles.cards}>
         {events
           .filter((event) => event.club === tag)
-          .map((filteredEvent, index) => (
+          .map((filteredEvent, index) =>  (
             <AnimatePresence mode="wait" >
             <Card
               index={index}
@@ -37,6 +37,7 @@ function Filter(props) {
               club={filteredEvent.club}
               participation={filteredEvent.participation}
               imgName={filteredEvent.imgName}
+              payment = {filteredEvent.payment}
               btnEnter={props.btnEnter}
               textLeave={props.textLeave}
             />

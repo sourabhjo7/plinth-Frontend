@@ -14,6 +14,7 @@ function Card(props) {
   const handleClick = (e, name,key) => {
     navigate(`/${name}`);
   };
+  console.log(typeof props.payment)
   return (
     <motion.div
       key={props.key}
@@ -37,7 +38,8 @@ function Card(props) {
         <div className={styles.name} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>{props.name}</div>
         <div className={styles.tag}>
           <div className={styles.teamTag}>{props.participation}</div>
-          <div className={`${styles.teamTag} ${styles.clubName}`}>{props.club}</div>
+          <div className={`${styles.teamTag} ${styles.clubName}`}>
+          {props.payment > 0 ? "Paid" : "Free"}</div>
         </div>
         <div className={styles.btn}>
           {/* <button className={styles.regbtn} onClick={(e) => handleRegister(e, props.name, props.index)}>

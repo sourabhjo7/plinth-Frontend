@@ -66,7 +66,7 @@ export const events = [
         },
       ],
     "rulebook": "https://drive.google.com/file/d/17Rmi03aB5-fmxWbvhjAJapWq6K10gYme/view?usp=share_link",
-    "link": "",
+    "link": "https://unstop.com/creative-cultural-event/starpix-lnm-institute-of-information-technology-lnmiit-jaipur-585843",
     "clubemail": "astronomyclub@lnmiit.ac.in",
   },
   {
@@ -80,7 +80,7 @@ export const events = [
     "structure": "Online Meme-Making competition themed on Astronomy.",
     "prizes": "Prizes Worth 10K!",
     "timeline": "13 January 2023 - Contest Starts 20 January 2023 - Submissions Close",
-    "payment": 199,
+    "payment": 0,
     "contacts":
       [
         {
@@ -100,7 +100,7 @@ export const events = [
         },
       ],
     "rulebook": "https://drive.google.com/file/d/17PlRzH0VoFvmGduWgDuNh0u04yA9Lrjn/view?usp=share_link",
-    "link": "",
+    "link": "https://unstop.com/creative-cultural-event/astromemia-lnm-institute-of-information-technology-lnmiit-jaipur-585840",
     "clubemail": "astronomyclub@lnmiit.ac.in",
   },
   {
@@ -114,7 +114,7 @@ export const events = [
     "structure": "Presentation making competition conducted in two rounds. Shortlisted candidates from the online round will be asked to present in offline mode in LNMIIT.",
     "prizes": "Prizes Worth 15K!",
     "timeline": "17:00 PM, 13 January 2023 - Problem statement will be released 23:59 PM, 15 January 2023 - Submission Deadline, 16:00 PM, 27 January 2023 - Shortlisted teams will get a chance to present their case studies to judges in offline mode",
-    "payment": 199,
+    "payment": 0,
     "contacts":
       [
         {
@@ -182,7 +182,7 @@ export const events = [
     "structure": "Online Astrophotography Event.",
     "prizes": "Prizes Worth 15K!",
     "timeline": "13th January 2023 to 23rd January 2023",
-    "payment": 199,
+    "payment": 0,
     "contacts":
       [
         {
@@ -216,7 +216,7 @@ export const events = [
     "structure": "",
     "prizes": "Top rankers will get Exciting goodies",
     "timeline": "27-28 January 2023",
-    "payment": 199,
+    "payment": 0,
     "contacts":
       [
         {
@@ -245,7 +245,7 @@ export const events = [
     "structure": "1V1 with fast thinking",
     "prizes": "Top rankers will get Exciting goodies",
     "timeline": "27-28 January 2023",
-    "payment": 199,
+    "payment": 0,
     "contacts":
       [
         {

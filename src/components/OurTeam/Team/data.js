@@ -27,6 +27,7 @@ export const teams = [
     ],
     members: [],
   },
+  
   {
     team: "Council Members",
     leads: [
