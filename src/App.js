@@ -23,7 +23,7 @@ const Accomodation = lazy(()=>import("./components/Accomodation/Accomodation"));
 
 
 console.log(process.env.REACT_APP_API_URL);
-const serverSystemUrl= "https://api.plinth.co.in";// "http://localhost:5000"
+const serverSystemUrl= "http://localhost:5000"//"https://api.plinth.co.in";// 
 function App() {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState("false");
