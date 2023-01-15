@@ -23,7 +23,7 @@ const Accomodation = lazy(()=>import("./components/Accomodation/Accomodation"));
 
 
 console.log(process.env.REACT_APP_API_URL);
-const serverSystemUrl="https://api.plinth.co.in";
+const serverSystemUrl= "https://api.plinth.co.in";// "http://localhost:5000"
 function App() {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState("false");
@@ -50,6 +50,9 @@ function App() {
       console.log("---------", response);
       if (response.status == 200) {
         setAuth(response.data.user.role);
+        console.log('====================================');
+        console.log(response.data.user.user_id);
+        console.log('====================================');
         setUserId(response.data.user.user_id)
         setAccomodation(response.data.user.accomodation)
         console.log("==accomodation-",response.data.user.accomodation);
@@ -58,6 +61,7 @@ function App() {
   }, [auth])
   
   useEffect(() => {
+    
     // console.log((user));
     setLoading(true);
     setTimeout(() => {
@@ -84,7 +88,7 @@ function App() {
             <Route path="komet" element={<Komet />} />
             <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
             <Route path="accomodation" element={<Accomodation auth={auth} />} />
-            <Route path="/:name" element={<Explore serverSystemUrl={serverSystemUrl} userid={userId} auth={auth} setAuth={setAuth}/>}/>
+            <Route path="/:name" element={<Explore serverSystemUrl={serverSystemUrl} setUserId={setUserId} userid={userId} auth={auth} setAuth={setAuth}/>}/>
             {(auth==="false")&&<Route path="/registration" element={<Reg auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             }<Route path="campus_ambassador" element={<CampusAmb auth={auth} setAuth={setAuth}/>} />
             <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />

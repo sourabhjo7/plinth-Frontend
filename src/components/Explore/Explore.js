@@ -15,8 +15,9 @@ import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import Contact from "./Contacts/Contact";
 import { payment } from "../Payments/data";
 import FlashMessage from "../FlashMessage/FlashMessage";
+import axios from "axios";
 
-const Explore = ({ auth, setAuth, userid, serverSystemUrl }) => {
+const Explore = ({ auth, setAuth,setUserId, userid, serverSystemUrl }) => {
   const [section, setSection] = useState("about");
   const params = useParams();
   const location = useLocation();
@@ -25,7 +26,7 @@ const Explore = ({ auth, setAuth, userid, serverSystemUrl }) => {
   const nameMod = name.replaceAll("_", " ");
   const data = events.filter((event) => event.name.toLowerCase() === nameMod);
   const [val, setVal] = useState(data[0].about);
-  const [pay, setPay] = useState(false);
+  const [pay, setPay] = useState(true);
   const [flashMessage, setflashMessage] = useState(false);
   const [message, setMessage] = useState("");
   const handleClick = () => {
@@ -33,25 +34,47 @@ const Explore = ({ auth, setAuth, userid, serverSystemUrl }) => {
   };
 
   useEffect(() => {
-    const res = axios.get(`${serverSystemUrl}/checkevents/${name}/${userid}`, {
-      validateStatus: false,
-      withCredentials: true,
-    });
-    if (res.status === 200) {
-      setPay(res.data.pay);
-    };
-  }, []);
+    // axios
+    // .get(`${serverSystemUrl}/`, {
+    //   validateStatus: false,
+    //   withCredentials: true,
+    // })
+    // .then((response) => {
+    //   console.log("---------", response);
+    //   if (response.status == 200) {
+    //     console.log('====================================');
+    //     console.log(response.data.user.user_id);
+    //     console.log('====================================');
+    //     setUserId(response.data.user.user_id)
+    //   }
+    // });
+
+    
+      axios.get(`${serverSystemUrl}/checkevents/${name}/${userid}`, {
+        validateStatus: false,
+        withCredentials: true,
+      }).then((res)=>{
+        if (res.status === 200) {
+          setPay(res.data.pay);
+          console.log("===pay==",res.data.pay
+          );
+        };
+      })
+     
+    
+  },[userid]);
 
   const payment = () => {
     if (pay) {
-      () => navigate(`/payments/${name}`);
+      navigate(`/payments/${name}`);
     }
     else {
-      const res = axios.post(`${serverSystemUrl}/addevents/${name}/${userid}`, {
+      const res = axios.get(`${serverSystemUrl}/addevent/${name}/${userid}`, {
         validateStatus: false,
         withCredentials: true,
       });
       if (res.status === 200) {
+        console.log("-->added");
         setMessage(res.data.msg)
         setflashMessage(!flashMessage);
       };
@@ -192,6 +215,7 @@ const Explore = ({ auth, setAuth, userid, serverSystemUrl }) => {
           type: 'tween', stiffness: 10000, bounce: 0
         }}
       />
+      {flashMessage ? <FlashMessage message={message} /> : null}
       <div className={styles.explore_body}>
         <div className={styles.explore}>
 
