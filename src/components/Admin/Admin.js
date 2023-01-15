@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import styles from "./Admin.module.css";
 import "../../fonts/Absolute_Xero/Absolute_Xero.ttf";
 import List from "./List";
+import List2 from "./List2";
 import { motion } from "framer-motion/dist/framer-motion";
 import axios from "axios";
 
 
 function Admin({serverSystemUrl}) {
 const [users,setUsers]=useState([]);
+const [payments, setPayments] = useState([]);
 const [count,setCount]=useState(0);
   useEffect(() => { 
     axios
@@ -24,7 +26,23 @@ const [count,setCount]=useState(0);
         console.log("---",count );
       }
     });
+
+    axios
+    .get(`${serverSystemUrl}/auth/getallpendingpayments`, {
+      validateStatus: false,
+      withCredentials: true,
+    })
+    .then((response) => {
+      if (response.status == 200) {
+         setPayments((prev)=>{
+          return [...response.data.pendingPayments]
+         })
+      }
+    });
+
   }, [])
+
+
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -72,6 +90,10 @@ const [count,setCount]=useState(0);
         </div>
         <div className={styles.total}>
           <div className={styles.text}>Total Users : {count}</div>
+        </div>
+        <div className={`${styles.heading} ${styles.sub}`}>Payment Portal</div>
+        <div className={styles.pages}>
+          <List2 payments={payments} serverSystemUrl={serverSystemUrl}/>
         </div>
       </div>
     </>
