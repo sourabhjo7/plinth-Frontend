@@ -14,7 +14,6 @@ function Card(props) {
   const handleClick = (e, name,key) => {
     navigate(`/${name}`);
   };
-  console.log(typeof props.payment)
   return (
     <motion.div
       key={props.key}
@@ -45,8 +44,11 @@ function Card(props) {
           {/* <button className={styles.regbtn} onClick={(e) => handleRegister(e, props.name, props.index)}>
             Register
           </button> */}
-           <button className={styles.regbtn} onClick={(e) => handleRegister(e, props.name.toLowerCase().replaceAll(" ", "_"),props.id)} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>
-            Register
+           {/* <button className={styles.regbtn} onClick={(e) => handleRegister(e, props.name.toLowerCase().replaceAll(" ", "_"),props.id)} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>
+            Team Register
+          </button> */}
+          <button className={styles.regbtn} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>
+            Team Register
           </button>
           <button className={styles.expbtn} onClick={(e) => handleClick(e, props.name.toLowerCase().replaceAll(" ", "_"),props.id)} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>
             Explore

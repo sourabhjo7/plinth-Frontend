@@ -281,43 +281,30 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
             <p className={`${styles.p}`}>{errors.Phone.message}</p>
           )}
 
-          <select
+          <input
             onMouseEnter={subtextEnter}
             onMouseLeave={textLeave}
             className={`${styles.input}`}
+            placeholder="Country*"
             {...register("country", {
               required: "This field is required",
             })}
-            onChange={(e) => {
-              handleCountry(e.target.value);
-            }}
-          >
-            <option disabled selected value>
-              Country*
-            </option>
-            {country.map((value, index) => (
-              <option value={value.name} key={index}>
-                {value.name}
-              </option>
-            ))}
-          </select>
-          <select
+          />
+          {errors.country && (
+            <p className={`${styles.p}`}>{errors.country.message}</p>
+          )}
+          <input
             onMouseEnter={subtextEnter}
             onMouseLeave={textLeave}
             className={`${styles.input}`}
+            placeholder="City*"
             {...register("city", {
               required: "This field is required",
             })}
-          >
-            <option disabled selected value>
-              City*
-            </option>
-            {cities.map((value, index) => (
-              <option value={value.name} key={index}>
-                {value.name}
-              </option>
-            ))}
-          </select>
+          />
+          {errors.city && (
+            <p className={`${styles.p}`}>{errors.city.message}</p>
+          )}
           <input
             onMouseEnter={subtextEnter}
             onMouseLeave={textLeave}

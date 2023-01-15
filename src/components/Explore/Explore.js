@@ -328,7 +328,7 @@ const Explore = ({ auth, setAuth,setUserId, userid, serverSystemUrl }) => {
                   className={styles.event_register_button}
                   onMouseEnter={btnEnter} onMouseLeave={textLeave}
                 >
-                  Register
+                  Team Register
                 </button>
               </a>
 
