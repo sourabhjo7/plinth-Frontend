@@ -1,6 +1,8 @@
 .flash-message {
     position: absolute;
     bottom: 50px;
+    left:50%;
+    transform:translateX(-50%);
   width: fit-content;
   z-index: 9;
   width: fit-content;

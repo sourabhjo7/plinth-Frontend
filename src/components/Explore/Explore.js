@@ -64,19 +64,20 @@ const Explore = ({ auth, setAuth,setUserId, userid, serverSystemUrl }) => {
     
   },[userid]);
 
-  const payment = () => {
+  const payment = async() => {
     if (pay) {
       navigate(`/payments/${name}`);
     }
     else {
-      const res = axios.get(`${serverSystemUrl}/addevent/${name}/${userid}`, {
+      const res = await axios.get(`${serverSystemUrl}/addevent/${name}/${userid}`, {
         validateStatus: false,
         withCredentials: true,
       });
-      if (res.status === 200) {
+      if (res.status===200) {
         console.log("-->added");
         setMessage(res.data.msg)
         setflashMessage(!flashMessage);
+        
       };
     }
   }

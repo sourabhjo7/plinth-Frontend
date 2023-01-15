@@ -1,10 +1,14 @@
+import axios, { Axios } from "axios";
 import React from "react";
 import S_v_listitemcss from "./Listitem.module.css"
 
 export default function S_v_listitem(props) {
 
-    const Chandler = () =>{
-        axios.get(`${props.serverSystemUrl}/auth/confirmpayment/${props.details._id}`).then((res)=>{
+    const Chandler = async() =>{
+        await axios.get(`${props.serverSystemUrl}/auth/confirmpayment/${props.details._id}`,{
+            validateStatus: false,
+            withCredentials: true,
+          }).then((res)=>{
             if(res.status===200){
                 console.log("success");
             }
