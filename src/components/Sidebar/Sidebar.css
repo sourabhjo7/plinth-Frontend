@@ -16,7 +16,7 @@
 
 .main-menu:hover,
 nav.main-menu.expanded {
-  width: 182px;
+  width: 186px;
   overflow: visible;
   overflow-x: hidden;
 
@@ -34,11 +34,10 @@ nav.main-menu.expanded {
   backdrop-filter: blur(3.3px);
   -webkit-backdrop-filter: blur(3.3px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  height: 85%;
+  height: 88%;
   left: 1.5%;
   width: 60px;
   overflow: hidden;
@@ -48,6 +47,7 @@ nav.main-menu.expanded {
   z-index: 150;
   border-radius: 1rem;
   overflow: hidden;
+  overflow-y: hidden;
 }
 .top-header > a {
   position: relative;
@@ -138,8 +138,8 @@ nav.main-menu.expanded {
 
 .main-menu > ul.logout {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: 4px;
+  bottom: -7px;
 }
 
 .no-touch .scrollable.hover {
@@ -211,6 +211,7 @@ nav.main-menu li.active > a,
 }
 .plinth-text{
   opacity: 0.9;
+  white-space: nowrap; 
     left:75%;
     font-size: 19px;
     transition: all 0.5s;
