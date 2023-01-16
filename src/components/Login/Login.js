@@ -48,7 +48,8 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
     if (res.status === 200) {
       console.log("logged as -",res.data.user.role);
       setMessage(res.data.msg)
-      setflashMessage(!flashMessage);
+      setflashMessage(true);
+      setTimeout(()=>{setflashMessage(false);},2800)
       setTimeout(() => {
        setAuth(res.data.user.role);
        navigate("/competitions")  

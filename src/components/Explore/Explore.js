@@ -61,7 +61,8 @@ const Explore = ({ auth, setAuth, setUserId, userid, serverSystemUrl }) => {
       if (res.status === 200) {
         console.log("-->added");
         setMessage(res.data.msg);
-        setflashMessage(!flashMessage);
+        setflashMessage(true);
+        setTimeout(()=>{setflashMessage(false);},2800)
       }
     }
   };
@@ -202,7 +203,7 @@ const Explore = ({ auth, setAuth, setUserId, userid, serverSystemUrl }) => {
           bounce: 0,
         }}
       />
-      {flashMessage ? <FlashMessage message={message} /> : null}
+      {flashMessage ?  <FlashMessage message={message} /> : null}
       <div className={styles.explore_body}>
         <div className={styles.explore}>
           <div
@@ -350,7 +351,8 @@ const Explore = ({ auth, setAuth, setUserId, userid, serverSystemUrl }) => {
                 <button
                   onClick={() => {
                     setMessage("Team Registrations Opening Soon!!");
-                    setflashMessage(!flashMessage);
+                    setflashMessage(true);
+                    setTimeout(()=>{setflashMessage(false);},2800)
                   }}
                   className={styles.event_register_button}
                   onMouseEnter={btnEnter}

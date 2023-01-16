@@ -44,7 +44,7 @@ function Card(props) {
         <div className={styles.btn}>
         
            <button className={styles.regbtn} onClick={(e) => handleRegister(e)} onMouseEnter={()=>{props.btnEnter();}} onMouseLeave={()=>{props.textLeave();}}>
-            {props.link == "" ? "Team Regsiter" : 
+            {props.link == "" ? "Team Register" : 
            <a href={props.link} target="_blank">Team Register </a>}
           </button>
           

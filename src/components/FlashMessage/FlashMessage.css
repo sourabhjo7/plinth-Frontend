@@ -5,20 +5,21 @@
 
     left: 50%;
     transform: translateX(-50%) !important;
-
+  font-family: "Poppins";
+  font-weight: bolder;
   width: fit-content;
   z-index: 9;
   width: fit-content;
   height: fit-content;
   color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(79, 70, 70, 0.21);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 16px 30px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 
 }
 
