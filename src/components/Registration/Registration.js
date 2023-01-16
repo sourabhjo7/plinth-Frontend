@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { Power3 } from "gsap";
 import { TimelineLite } from "gsap/gsap-core.js";
 import { CSSPlugin } from "gsap/CSSPlugin";
+import { Fragment } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
 function Registration({ serverSystemUrl, auth, setAuth }) {
@@ -49,6 +50,8 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
     setCities(City.getCitiesOfCountry(obj.isoCode));
   };
   const onSubmit = async (data) => {
+    handleBtnClick();
+
     console.log("--->", {...data,accomodation});
 
     
@@ -161,6 +164,11 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
       window.removeEventListener("mousemove", mouseMove);
     };
   }, []);
+
+  const [BtnText, setBtnText] = useState("Register");
+  const handleBtnClick = () => {
+    setBtnText(<Fragment><p className={styles.typewriter}>Loading...</p></Fragment>);
+  };
  
   return (
     <div className={`${styles.background}`}>
@@ -387,13 +395,12 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
               <label htmlFor="no" className={styles.radioLabel}>No</label>
             </div>
           </div>
-          <input
+          <button
             onMouseEnter={btnEnter}
             onMouseLeave={textLeave}
             type="submit"
-            value="Register"
             className={`${styles.btn}`}
-          />
+          >{BtnText}</button>
         </div>
       </form>
     </div>
