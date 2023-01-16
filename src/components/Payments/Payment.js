@@ -86,7 +86,7 @@ function Payment(props) {
       //  console.log("registered as=====", res.data.user.role);
       setTimeout(() => {
         // setAuth(res.data.user.role);
-        navigate("/competitions")
+        navigate(-1)
       }, 3000);
     }; 
   }

@@ -1,7 +1,7 @@
 import "./App.css";
 import React,{lazy,Suspense} from "react";
 import Home from "./components/HomePage/Home/Home";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader/Loader";
 import axios from "axios";
@@ -29,6 +29,13 @@ function App() {
   const [auth, setAuth] = useState("false");
   const [userId,setUserId]=useState(null)
   const [accomodation,setAccomodation]=useState(false)
+  const [prevLoc,setPrevLoc]=useState(null)
+  // const location=useLocation();
+  // useEffect(()=>{
+  //   setPrevLoc(location.pathname)
+  // },[location])
+
+
   // const getUser = async () => {
   //   try {
   //     const url = `http://localhost:3000/auth/google`;
@@ -74,7 +81,7 @@ function App() {
 
   return (
     <div className="App">
-        <Router>
+        
           <Sidebar auth = {auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl} setUser={setUserId}/>
 
           <Suspense fallback={<p>Loading...</p>}>
@@ -92,14 +99,15 @@ function App() {
             {(auth==="false")&&<Route path="/registration" element={<Reg auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             }<Route path="campus_ambassador" element={<CampusAmb auth={auth} setAuth={setAuth}/>} />
             <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />
-            {(auth==="false")&&(<Route path="/login" element={<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
+            {(auth==="false")&&(<Route path="/login" element={<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl} 
+            prevPath={prevLoc} />}/>
             )}
-            <Route path="/payments/:eventname"  element={auth==="false"?<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>:<Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl}/>} />
+            <Route path="/payments/:eventname/:id"  element={auth==="false"?<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl} prevPath={prevLoc}/>:<Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl} prevPath={prevLoc} />} />
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
           </Routes>
           </Suspense>
 
-        </Router>
+        
         
       
     </div>
