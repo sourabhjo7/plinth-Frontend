@@ -199,6 +199,8 @@ a{
   text-decoration: none;
   color: white;
   opacity: 0.5;
+  font-family: "Poppins";
+  font-size: 1vw;
 }
 @media only screen and (max-width:965px){
   .Form{
