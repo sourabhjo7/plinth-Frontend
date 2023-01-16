@@ -7,6 +7,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { useForm } from "react-hook-form";
 import { payment } from './data.js'
 import axios from "axios";
+import { Fragment } from "react";
 import FlashMessage from "../FlashMessage/FlashMessage";
 function Payment(props) {
   const user_id = props.userid
@@ -49,7 +50,7 @@ function Payment(props) {
     }
   };
   const onSubmit = async (data) => {
-
+    handleBtnClick();
     const file = data.file[0];
     if (!file) {
       setError("file", {
@@ -86,7 +87,7 @@ function Payment(props) {
         // setAuth(res.data.user.role);
         navigate("/competitions")
       }, 3000);
-    };
+    }; 
   }
 
   const [mousePosition, setMousePosition] = useState({
@@ -140,10 +141,8 @@ function Payment(props) {
 
   const [cursorVariant, setCursorVariant] = useState("def");
   const textEnter = () => setCursorVariant("text");
-  //   const handleEnter = () => setCursorVariant("handle");
-  //   const diamondEnter = () => setCursorVariant("diamond");
   const textLeave = () => setCursorVariant("def");
-  //   const btnEnter = () => setCursorVariant("btn");
+    const btnEnter = () => setCursorVariant("btn");
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -158,6 +157,11 @@ function Payment(props) {
       window.removeEventListener("mousemove", mouseMove);
     };
   }, []);
+
+  const [BtnText, setBtnText] = useState("Confirm Payment");
+  const handleBtnClick = () => {
+    setBtnText(<Fragment><p className={styles.typewriter}>Loading...</p></Fragment>);
+  };
 
   return (<>
     <motion.div
@@ -235,12 +239,12 @@ function Payment(props) {
           {errors.file && (
             <p className={`${styles.p}`}>{errors.file.message}</p>
           )}
-          <input
-
+          <button
+            onMouseEnter={btnEnter}
+            onMouseLeave={textLeave}
             type="submit"
-            value="Confirm Payment"
             className={`${styles.btn}`}
-          />
+          >{BtnText}</button>
         </div>
 
       </form>

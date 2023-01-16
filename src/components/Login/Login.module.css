@@ -48,6 +48,18 @@
     background-position: 0% 50%;
   }
 }
+.typewriter{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typing 2s infinite;
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
 .heading{   font-family: 'Dark';
     font-style: normal;
     font-weight: 400;
