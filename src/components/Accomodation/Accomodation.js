@@ -96,7 +96,7 @@ const Accomodation = ({ auth }) => {
   }
   const handlePayment=()=>{
     if(isChecked){
-      navigate(`/payments/accomodation/0`)
+      navigate(`/payments/accomodation`)
     }
     else{
       // console.log(flashMessage)
