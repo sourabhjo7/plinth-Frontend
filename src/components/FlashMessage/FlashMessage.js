@@ -25,7 +25,7 @@ const FlashMessage = ({ message }) => {
     className="flash-message">
         {message}
     </motion.div>
-      {/* <button onClick={() => setVisible(false)}>Dismiss</button> */}
+
     </>
   );
 };

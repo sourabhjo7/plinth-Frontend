@@ -44,6 +44,7 @@ function Filter(props) {
               id={filteredEvent.id}
               name={filteredEvent.name}
               club={filteredEvent.club}
+              link = {filteredEvent.link}
               participation={filteredEvent.participation}
               imgName={filteredEvent.imgName}
               payment = {filteredEvent.payment}

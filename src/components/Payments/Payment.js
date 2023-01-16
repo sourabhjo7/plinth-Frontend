@@ -190,7 +190,7 @@ function Payment(props) {
           </div>
 
 
-          <div className={`${styles.pay}`}>Amount to Pay:{paid}</div>
+          <div className={`${styles.pay}`}>Amount to Pay: Rs. {paid}</div>
           <input
             className={`${styles.input}`}
             placeholder="UPI ID used for payment"
@@ -225,7 +225,7 @@ function Payment(props) {
             <div className={styles.input}>QR code for payment </div>
             <img src={qr} className={styles.qrImg} />
           </div>
-          <div className={styles.input}>Upi ID to pay to : 7015824452@paytm</div>
+          <div className={`${styles.pay}`}>Upi ID to pay to : 7015824452@paytm</div>
           <input
             className={`${styles.input}`} type="file" {...register("file", {
               required: "Please upload payment screenshot",

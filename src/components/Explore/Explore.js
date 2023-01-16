@@ -17,7 +17,7 @@ import { payment } from "../Payments/data";
 import FlashMessage from "../FlashMessage/FlashMessage";
 import axios from "axios";
 
-const Explore = ({ auth, setAuth,setUserId, userid, serverSystemUrl }) => {
+const Explore = ({ auth, setAuth, setUserId, userid, serverSystemUrl }) => {
   const [section, setSection] = useState("about");
   const params = useParams();
   const location = useLocation();
@@ -34,37 +34,23 @@ const Explore = ({ auth, setAuth,setUserId, userid, serverSystemUrl }) => {
   };
 
   useEffect(() => {
-    // axios
-    // .get(`${serverSystemUrl}/`, {
-    //   validateStatus: false,
-    //   withCredentials: true,
-    // })
-    // .then((response) => {
-    //   console.log("---------", response);
-    //   if (response.status == 200) {
-    //     console.log('====================================');
-    //     console.log(response.data.user.user_id);
-    //     console.log('====================================');
-    //     setUserId(response.data.user.user_id)
-    //   }
-    // });
 
-    
-      axios.get(`${serverSystemUrl}/checkevents/${name}/${userid}`, {
-        validateStatus: false,
-        withCredentials: true,
-      }).then((res)=>{
-        if (res.status === 200) {
-          setPay(res.data.pay);
-          console.log("===pay==",res.data.pay
-          );
-        };
-      })
-     
-    
-  },[userid]);
 
-  const payment = async() => {
+    axios.get(`${serverSystemUrl}/checkevents/${name}/${userid}`, {
+      validateStatus: false,
+      withCredentials: true,
+    }).then((res) => {
+      if (res.status === 200) {
+        setPay(res.data.pay);
+        console.log("===pay==", res.data.pay
+        );
+      };
+    })
+
+
+  }, [userid]);
+
+  const payment = async () => {
     if (pay) {
       navigate(`/payments/${name}`);
     }
@@ -73,11 +59,11 @@ const Explore = ({ auth, setAuth,setUserId, userid, serverSystemUrl }) => {
         validateStatus: false,
         withCredentials: true,
       });
-      if (res.status===200) {
+      if (res.status === 200) {
         console.log("-->added");
         setMessage(res.data.msg)
         setflashMessage(!flashMessage);
-        
+
       };
     }
   }
@@ -243,24 +229,14 @@ const Explore = ({ auth, setAuth,setUserId, userid, serverSystemUrl }) => {
               />
             </div>
 
-            <a href={data[0].rulebook} target="_blank">
-
-              <button
-                className={styles.event_register_button1}
-                onMouseEnter={btnEnter} onMouseLeave={textLeave}
-              >
-                Rulebook
-
-              </button>
-            </a>
-
-
-            {/* <a href="/create-team"><button
-                className={styles.event_register_button1}
-                 onMouseEnter={btnEnter} onMouseLeave={textLeave}
-              >
-                Create Team
-              </button></a> */}
+            {data[0].rulebook == "" ? null :
+              <a href={data[0].rulebook} target="_blank" className={styles.a}>
+                <button
+                  className={styles.event_register_button1}
+                  onMouseEnter={btnEnter} onMouseLeave={textLeave}
+                >Rulebook
+                </button>
+              </a>}
 
           </motion.div>
 
@@ -317,21 +293,26 @@ const Explore = ({ auth, setAuth,setUserId, userid, serverSystemUrl }) => {
               <div className={styles.explore_description}><div onMouseEnter={btnEnter} onMouseLeave={textLeave}>{val}</div></div>
             </div>
 
-            {/* <button
-              className={styles.event_register_button}
-              onClick={handleClick} onMouseEnter={btnEnter} onMouseLeave={textLeave}
-            >
-              Register
-            </button> */}
             <div className={styles.btnsRegPay}>
-              <a href={data[0].link} target="_blank">
-                <button
+              {
+                data[0].club == "Web3" ? null : data[0].link == "" ? <button
+                  onClick={() =>{ setMessage("Team Registrations Opening Soon!!"); setflashMessage(!flashMessage);}}
                   className={styles.event_register_button}
                   onMouseEnter={btnEnter} onMouseLeave={textLeave}
                 >
                   Team Register
-                </button>
-              </a>
+                </button> :
+                  <a href={data[0].link} target="_blank" className={styles.a}>
+                    <button
+                      className={styles.event_register_button}
+                      onMouseEnter={btnEnter} onMouseLeave={textLeave}
+                    >
+                      Team Register
+                    </button>
+                  </a>
+              }
+
+
 
               {data[0].payment > 0 ?
                 <button

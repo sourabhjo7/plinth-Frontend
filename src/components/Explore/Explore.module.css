@@ -74,7 +74,7 @@
     border-radius: 16px;
     object-fit: cover;
 }
-a{
+.a{
     color: white;
 }
 @keyframes floating {
