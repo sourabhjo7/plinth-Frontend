@@ -25,8 +25,8 @@ function Section(props) {
                     <div className={styles.members}>
                         {props.members.map((member) => {
                             return(<div className={styles.subteam}>
-                                <div onMouseEnter={()=>{props.handleEnter();}} onMouseLeave={()=>{props.textLeave();}} className={styles.subHeading}>{member.subteam}</div>
-                                <hr />
+                                {/* <div onMouseEnter={()=>{props.handleEnter();}} onMouseLeave={()=>{props.textLeave();}} className={styles.subHeading}>{member.subteam}</div>
+                                <hr /> */}
                                 {member.members.map((mem) => <ContactCard details = {mem}/>)}
                             </div>)})
                         }       

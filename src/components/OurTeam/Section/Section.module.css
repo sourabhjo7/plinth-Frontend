@@ -21,6 +21,10 @@ hr{
     margin: auto;
 }
 
+.separation hr{
+    width: 70%;
+}
+
 .section .subSection .leads,
 .section .subSection .subteam{
 
