@@ -13,7 +13,7 @@ function Card(props) {
     }
   };
   const handleClick = (e, name,key) => {
-    navigate(`/${name}`);
+    navigate(`/competitions/${name}`);
   };
   return (
     <motion.div
