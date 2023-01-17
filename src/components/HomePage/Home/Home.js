@@ -116,13 +116,9 @@ function Home({auth,setAuth}) {
     };
 
     const fetchData = () => {
-      if(auth==="false"){
-        navigate("/registration")
-        console.log("navigated")
-      }
-      else{
+
         navigate("/competitions")
-      }
+      
       
     };
 

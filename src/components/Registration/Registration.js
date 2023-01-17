@@ -61,14 +61,13 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
       withCredentials: true,
     });
     if (res.status === 200) {
-       
-       setMessage(res.data.msg)
-       setflashMessage(true);
-       setTimeout(()=>{setflashMessage(false);},2800)
-       console.log("registered as=====", res.data.user.role);
-       setTimeout(() => {
+      setMessage(res.data.msg)
+      setflashMessage(true);
+      setTimeout(()=>{setflashMessage(false);},2800)
+      console.log("registered as=====", res.data.user.role);
+      setTimeout(() => {
         setAuth(res.data.user.role);
-        navigate("/competitions")  
+        navigate("/komet")  
        }, 2000);
       
       // alert("")
