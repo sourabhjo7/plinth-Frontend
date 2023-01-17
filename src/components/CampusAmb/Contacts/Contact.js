@@ -26,7 +26,7 @@ function Contact() {
                     <div className={styles.number}>{contact.phone}</div>
                 </div>
                 <div className = {styles.mail}>
-                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to= ${contact.email}`} target = "_blank">
+                    <a style={{color:"white"}} href={`https://mail.google.com/mail/?view=cm&fs=1&to= ${contact.email}`} target = "_blank">
                         <HiOutlineMail size= {25}/>
                     </a>
                 </div>

@@ -16,7 +16,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { Fragment } from "react";
 
-export default function Login({ serverSystemUrl ,auth,setAuth}) {
+export default function Login({ serverSystemUrl ,auth,setAuth,prevPath}) {
 
   gsap.registerPlugin(CSSPlugin);
   let item1 = useRef(null);
@@ -49,9 +49,10 @@ export default function Login({ serverSystemUrl ,auth,setAuth}) {
       console.log("logged as -",res.data.user.role);
       setMessage(res.data.msg)
       setflashMessage(!flashMessage);
+      setTimeout(()=>{setflashMessage(false);},2800)
       setTimeout(() => {
        setAuth(res.data.user.role);
-       navigate("/competitions")  
+       navigate(-1)  
       }, 2000);
     }
     else{

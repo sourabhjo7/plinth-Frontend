@@ -81,11 +81,12 @@ function Payment(props) {
     if (res.status === 200) {
 
       setMessage(res.data.msg)
-      setflashMessage(!flashMessage);
+      setflashMessage(true);
+      setTimeout(()=>{setflashMessage(false);},2800)
       //  console.log("registered as=====", res.data.user.role);
       setTimeout(() => {
         // setAuth(res.data.user.role);
-        navigate("/competitions")
+        navigate(-1)
       }, 3000);
     }; 
   }

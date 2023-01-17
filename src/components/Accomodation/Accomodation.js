@@ -12,13 +12,18 @@ import { motion } from "framer-motion/dist/framer-motion";
 
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 import Contact from "./Contacts/Contact";
+import axios from "axios";
 
-const Accomodation = ({ auth }) => {
+const Accomodation = ({ auth,userid, serverSystemUrl  }) => {
   const [section, setSection] = useState("about");
-  const navigate=useNavigate()
+  const navigate=useNavigate();
+
+  const [pay, setPay] = useState(true);
   const [isChecked, setIsChecked] = useState(false)
   const [href,setHref]=useState('')
   const [flashMessage,setFlashMessage]=useState(false)
+
+  const [message, setMessage] = useState("");
   const [val, setVal] = useState(<Fragment>
     <div style={{display:"flex",flexDirection:"column"}}>
     <div style={{alignSelf:"center",justifySelf:"center",margin:"auto auto",fontWeight:"bold"}}>Accomodation Passes also includes ProNite Passes.</div>
@@ -94,9 +99,42 @@ const Accomodation = ({ auth }) => {
     // isChecked?:
     // isChecked?setHref('/login'):setHref('')
   }
-  const handlePayment=()=>{
+
+  useEffect(() => {
+    axios
+      .get(`${serverSystemUrl}/checkevents/accomodation/${userid}`, {
+        validateStatus: false,
+        withCredentials: true,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          setPay(res.data.pay);
+          console.log("===pay==", res.data.pay);
+        }
+      });
+  }, [userid]);
+
+  const handlePayment= async ()=>{
     if(isChecked){
-      navigate(`/payments/accomodation`)
+      if (pay) {
+        navigate(`/payments/accomodation`);
+      } else {
+        const res = await axios.get(
+          `${serverSystemUrl}/addevent/accomodation/${userid}`,
+          {
+            validateStatus: false,
+            withCredentials: true,
+          }
+        );
+        if (res.status === 200) {
+          console.log("-->added");
+          setMessage(res.data.msg);
+          setFlashMessage(true);
+          setTimeout(()=>{setFlashMessage(false);},2800)
+        }
+      }
+
+      
     }
     else{
       // console.log(flashMessage)

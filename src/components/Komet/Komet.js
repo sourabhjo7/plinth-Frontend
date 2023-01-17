@@ -7,9 +7,11 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { useNavigate } from "react-router-dom";
 
 function Komet() {
   //Particle Bg
+  const navigate=useNavigate();
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
     await loadFull(engine);
@@ -156,15 +158,17 @@ function Komet() {
                 senectus et. Semper
               </div>
             </div>
+        <a href="https://www.wallet.komet.me/nfts/Plinth_2023_Entry_+_Pro_Night_Pass/303" target="_blank">
 
             <button
               className={styles.event_register_button}
               onMouseEnter={btnEnter}
               onMouseLeave={textLeave}
-              onClick={() => alert("Claim Ticket")}
-            >
+              onClick={() =>navigate(-3)}
+              >
               Claim your Tickets!
             </button>
+              </a>
           </div>
         </div>
 
