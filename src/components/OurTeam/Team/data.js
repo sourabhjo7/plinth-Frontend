@@ -6,7 +6,7 @@ export const teams = [
     leads: [
       {
         name: "Gunit Varshney",
-        image: "./images/teams/gunitY19.jfif",
+        image: "./images/teams/fest_heads/gunitY19.jfif",
         designation: "Fest Head",
         phone: "+91 88755 10652",
         mail: "/",
@@ -16,7 +16,7 @@ export const teams = [
       },
       {
         name: "Raja Kumar Singh",
-        image: "./images/teams/raja.jpg",
+        image: "./images/teams/fest_heads/raja.jpg",
         designation: "Fest Head",
         phone: "+91 96803 72941",
         mail: "/",
@@ -33,7 +33,7 @@ export const teams = [
     leads: [
       {
         name: "Ayush Sharma",
-        image: "./images/teams/sharma.jpg",
+        image: "./images/teams/council_members/sharma.jpg",
         designation: "General Secretary",
         phone: "+91 94602 57928",
         mail: "/",
@@ -43,7 +43,7 @@ export const teams = [
       },
       {
         name: "Muskan Singla",
-        image: "./images/teams/muskan.jpg",
+        image: "./images/teams/council_members/muskan.jpg",
         designation: "As. General Secretary",
         phone: "+91 83770 89610",
         mail: "/",
@@ -53,7 +53,7 @@ export const teams = [
       },
       {
         name: "Dev Gupta",
-        image: "./images/teams/dev.jpg",
+        image: "./images/teams/council_members/dev.jpg",
         designation: "Finance Convener",
         phone: "+91 77289 70727",
         mail: "/",
@@ -69,7 +69,7 @@ export const teams = [
     leads: [
       {
         name: "Ketan Jakhar",
-        image: "./images/teams/ketan.jpg",
+        image: "./images/teams/tech_team/ketan.jpg",
         designation: "Tech Lead",
         phone: "+91 94617 21651",
         mail: "/",
@@ -79,7 +79,7 @@ export const teams = [
       },
       {
         name: "Kingshuk Ghosh",
-        image: "./images/teams/kingshuk.jpg",
+        image: "./images/teams/tech_team/kingshuk.jpg",
         designation: "Tech Sub-Lead",
         phone: "+91 93216 67834",
         mail: "/",
@@ -89,7 +89,7 @@ export const teams = [
       },
       {
         name: "Sourabh Joshi",
-        image: "./images/teams/sourabh.jpeg",
+        image: "./images/teams/tech_team/sourabh.jpeg",
         designation: "Tech Sub-Lead",
         phone: "+91 95494 08165",
         mail: "/",
@@ -104,7 +104,7 @@ export const teams = [
         members: [
           {
             name: "Aditya Mittal",
-            image: "./images/teams/mittal.jpg",
+            image: "./images/teams/tech_team/mittal.jpg",
             designation: "Design Mentor",
             phone: "+91 84400 74101",
             mail: "/",
@@ -114,7 +114,7 @@ export const teams = [
           },
           {
             name: "Aryan Bansal",
-            image: "./images/teams/aryan-bansal.jpg",
+            image: "./images/teams/tech_team/aryan-bansal.jpg",
             designation: "UI/UX Designer",
             phone: "+91 93510 36367",
             mail: "/",
@@ -124,7 +124,7 @@ export const teams = [
           },
           {
             name: "Vishal Kumar",
-            image: "./images/teams/vishal.jpg",
+            image: "./images/teams/tech_team/vishal.jpg",
             designation: <Fragment>Frontend Developer<br/>UI/UX Designer</Fragment>,
             phone: "+91 92057 34004",
             mail: "/",
@@ -134,7 +134,7 @@ export const teams = [
           },
           {
             name: "Aryan Gupta",
-            image: "./images/teams/aryan-gupta.jpg",
+            image: "./images/teams/tech_team/aryan-gupta.jpg",
             designation: "Frontend Developer",
             phone: "+91 90642 80911",
             mail: "/",
@@ -144,7 +144,7 @@ export const teams = [
           },
           {
             name: "Ayush Mathpal",
-            image: "./images/teams/ayush.jpg",
+            image: "./images/teams/tech_team/ayush.jpg",
             designation: "Frontend Developer",
             phone: "+91 90136 66250",
             mail: "/",
@@ -154,7 +154,7 @@ export const teams = [
           },
           {
             name: "Arnit Gupta",
-            image: "./images/teams/arnit.jpg",
+            image: "./images/teams/tech_team/arnit.jpg",
             designation: "Backend Developer",
             phone: "+91 6367 880 107",
             mail: "/",
@@ -164,7 +164,7 @@ export const teams = [
           },
           {
             name: "Ashutosh Jha",
-            image: "./images/teams/ashutosh.jpg",
+            image: "./images/teams/tech_team/ashutosh.jpg",
             designation: "Backend Developer",
             phone: "+91 93284 09963",
             mail: "/",
