@@ -23,7 +23,7 @@ const Accomodation = lazy(()=>import("./components/Accomodation/Accomodation"));
 
 
 console.log(process.env.REACT_APP_API_URL);
-const serverSystemUrl= "https://api.plinth.co.in";// 
+const serverSystemUrl="https://api.plinth.co.in";// 
 function App() {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState("false");
@@ -94,7 +94,7 @@ function App() {
             <Route path="/admin" element={(auth==="admin") && (<Admin serverSystemUrl={serverSystemUrl}/>)} />
             <Route path="komet" element={<Komet />} />
             <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
-            <Route path="accomodation" element={<Accomodation auth={auth} />} />
+            <Route path="accomodation" element={<Accomodation auth={auth} userid={userId} serverSystemUrl={serverSystemUrl} />} />
             <Route path="/:name" element={<Explore serverSystemUrl={serverSystemUrl} setUserId={setUserId} userid={userId} auth={auth} setAuth={setAuth}/>}/>
             {(auth==="false")&&<Route path="/registration" element={<Reg auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             }<Route path="campus_ambassador" element={<CampusAmb auth={auth} setAuth={setAuth}/>} />
