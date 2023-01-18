@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from "./Payment.module.css";
-import qr from './qr.jpeg'
+import qr from './qr.jpeg';
+import debsocqr from './debsocqr.jpg';
 import { events } from '../Competitions/data'
 import { motion } from "framer-motion/dist/framer-motion";
 import { useForm } from "react-hook-form";
@@ -228,9 +229,9 @@ function Payment(props) {
           )}
           <div className={styles.qrDiv}>
             <div className={styles.input}>QR code for payment </div>
-            <img src={qr} className={styles.qrImg} />
+            <img src={eventname === "plinth's_mun'23" ? debsocqr : qr} className={styles.qrImg} />
           </div>
-          <div className={`${styles.pay}`}>Upi ID to pay to : 7015824452@paytm</div>
+          <div className={`${styles.pay}`}>{eventname === "plinth's_mun'23" ? "UpiID to pay to: divyanshigautam.2001@oksbi" : "Upi ID to pay to : 7015824452@paytm"}</div>
           <input
             className={`${styles.input}`} type="file" {...register("file", {
               required: "Please upload payment screenshot",

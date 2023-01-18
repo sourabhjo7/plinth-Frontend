@@ -579,7 +579,7 @@ export const events = [
           "email": "20dec004@lnmiit.ac.in",
         },
       ],
-    "rulebook": "https://drive.google.com/file/d/19nMcHPNy9mmHaB_6h5c8ONUuBm3P64JY/view?usp=share_link",
+    "rulebook": "https://drive.google.com/file/d/1SJPTc2-fbtf5zDhmWUetd6VdwW7kJk4d/view",
     "link": "https://forms.gle/zLw7LHRV62hgRi1C7",
     "clubemail": "phoenixclub@lnmiit.ac.in",
   },
@@ -1033,7 +1033,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -1062,7 +1062,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -1120,7 +1120,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
