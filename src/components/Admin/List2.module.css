@@ -19,19 +19,27 @@
     text-align: left;
 }
 .list_3{
-    width: 26%;
+    width: 20%;
     text-align: left;
 }
 .list_4{
-    width: 16%;
+    width: 13%;
     text-align: left;
 }
 .list_5{
-    width: 10%;
+    width: 13%;
     text-align: left;
 }
 .list_6{
-    width: 30%;
+    width: 13%;
+    text-align: left;
+}
+.list_7{
+    width: 13%;
+    text-align: left;
+}
+.list_8{
+    width: 10%;
     text-align: left;
 }
 .child:nth-child(odd){

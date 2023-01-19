@@ -1,5 +1,5 @@
 import React from "react";
-import Student_varification_list_css from "./List.module.css"
+import Student_varification_list_css from "./List2.module.css"
 import S_v_listitem from "./Listitem2"
 import Data from "./data";
 import axios from "axios";
@@ -16,8 +16,8 @@ export default function List({ payments ,serverSystemUrl}) {
                 <p className={Student_varification_list_css.list_4}>Phone No</p>
                 <p className={Student_varification_list_css.list_5}>UPI ID</p>
                 <p className={Student_varification_list_css.list_6}>SS</p>
-                <p className={Student_varification_list_css.list_6}>Amount Paid</p>
-                <p className={Student_varification_list_css.list_6}>BTN</p>
+                <p className={Student_varification_list_css.list_7}>Amount Paid</p>
+                <p className={Student_varification_list_css.list_8}>BTN</p>
             </div>
             <div className={Student_varification_list_css.dataScroll}>
 

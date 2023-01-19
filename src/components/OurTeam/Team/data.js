@@ -265,7 +265,7 @@ export const teams = [
       {
         name: "Anuj Goyal",
         image: "./images/teams/design_team/anuj.jpeg",
-        designation: "Desgin Head",
+        designation: "Design Head",
         phone: "",
         mail: "/",
         facebook: "/",
@@ -275,7 +275,7 @@ export const teams = [
       {
         name: "Harshita Ghatiya",
         image: "./images/teams/design_team/harshita.jpg",
-        designation: "Desgin Head",
+        designation: "Design Head",
         phone: "+91 99932 27261",
         mail: "/",
         facebook: "/",
@@ -285,7 +285,7 @@ export const teams = [
       {
         name: "Rudransh Sharma",
         image: "./images/teams/design_team/rudransh.jpeg",
-        designation: "Desgin Head",
+        designation: "Design Head",
         phone: "",
         mail: "/",
         facebook: "/",
@@ -503,7 +503,7 @@ export const teams = [
           },
           {
             name: "Aryan Bansal",
-            image: "./images/teams/pr_team/aryan.jpg",
+            image: "./images/teams/tech_team/aryan-bansal.jpg",
             designation: "Team Executive",
             phone: "+91 9351036367",
             mail: "aryan.bansal0274@gmail.com",
