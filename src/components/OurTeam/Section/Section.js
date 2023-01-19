@@ -3,6 +3,8 @@ import styles from './Section.module.css';
 import ContactCard from '../ContactCard/ContactCard';
 import AnimateHeight from 'react-animate-height';
 
+import {FiChevronUp } from "react-icons/fi";
+
 function Section(props) {
 
     const [reverse, setReverse] = useState(false);
@@ -35,7 +37,7 @@ function Section(props) {
                 <div className={`${styles.separation} ${props.members.length === 0 ? styles.none : null}`}>
 
                     <hr />
-                    <button onMouseEnter={()=>{props.handleEnter();}} onMouseLeave={()=>{props.textLeave();}} className={`${styles.arrow} ${reverse ? styles.reverse : null}`} onClick={dropDownHandler}>^</button>
+                    <button onMouseEnter={()=>{props.handleEnter();}} onMouseLeave={()=>{props.textLeave();}} className={`${styles.arrow} ${reverse ? styles.reverse : null}`} onClick={dropDownHandler}><FiChevronUp className={styles.iconTag}/></button>
                 </div>
             </div>
         </div>
