@@ -527,7 +527,7 @@ export const events = [
     "participation": "Team Participation",
     "imgName": "./images/events/phoenix/robocup/image.png",
     "poster": "/images/events/phoenix/robocup/poster.jpg",
-    "about": <Fragment>Teams have to build two bots to score goals against each other while avoiding penalties. It will be a 2v2 match and the team scoring more goals wins.<br/><br/>   <strong>Note: Bots with dimensions 30*30 are also allowed and dimensions of goal post has been increased to 45 cm</strong></Fragment>,
+    "about": <Fragment>Teams have to build two bots to score goals against each other while avoiding penalties. It will be a 2v2 match and the team scoring more goals wins.<br/><br/>   <strong>Note: Bots with dimensions 30cm*30cm are also allowed and dimensions of goal post has been increased to 45 cm</strong></Fragment>,
     "structure": "Team Size: 2-4 members. The team scoring more goals will be declared the winner. In the case of a tie, the winner is decided by the penalties that teams will be getting when: Kicking the ball out of the arena or damaging the opponent's bot, intentionally making physical contact with the opponent's bots, pulling the bot (in case of a wired connection).",
     "prizes": "Prizes worth ₹25000",
     "timeline": "27 JAN (12PM-6PM) & 28 JAN (3PM-6PM)",
