@@ -7,6 +7,7 @@ import Loader from "./components/Loader/Loader";
 import axios from "axios";
 // import CreateTeam from "./components/CreateTeam/CreateTeam";
 import Payment from "./components/Payments/Payment";
+import Events from "./components/Events/Events";
 
 const Aboutus = lazy(()=>import("./components/About/About"));
 const Admin = lazy(()=>import("./components/Admin/Admin"));
@@ -91,6 +92,7 @@ function App() {
       ) :<Home auth={auth} setAuth={setAuth} />} />
             <Route path="aboutus" element={<Aboutus  />} />
             <Route path="ourteam" element={<Team />} />
+            <Route path="events" element={<Events />} />
             <Route path="/admin" element={(auth==="admin") && (<Admin serverSystemUrl={serverSystemUrl}/>)} />
             <Route path="komet" element={<Komet />} />
             <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />

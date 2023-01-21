@@ -91,7 +91,8 @@ nav.main-menu.expanded {
   position: relative;
   display: block;
   width: 240px;
-  overflow-x: hidden;
+  height: 54px;
+  overflow: hidden;
   opacity: 0.8;
   transition: all 0.5s;
 }
