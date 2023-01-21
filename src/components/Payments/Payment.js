@@ -60,13 +60,7 @@ function Payment(props) {
       });
       return;
     }
-    if (file.type != "image/png" && file.type != "image/jpg") {
-      setError("file", {
-        type: "file",
-        message: "Only image is valid"
-      });
-      return;
-    }
+    
     const formData = new FormData();
     formData.append("file", data.file[0])
     formData.append("paid", paid);

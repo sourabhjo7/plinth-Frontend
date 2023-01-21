@@ -93,9 +93,9 @@ function App() {
             <Route path="ourteam" element={<Team />} />
             <Route path="/admin" element={(auth==="admin") && (<Admin serverSystemUrl={serverSystemUrl}/>)} />
             <Route path="komet" element={<Komet />} />
-            <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
+            <Route path="competitions" element={<Competitions serverSystemUrl={serverSystemUrl} auth={auth} setAuth={setAuth} userid={userId} />} />
             <Route path="accomodation" element={<Accomodation auth={auth} userid={userId} serverSystemUrl={serverSystemUrl} />} />
-            <Route path="/competitions/:name" element={<Explore serverSystemUrl={serverSystemUrl} setUserId={setUserId} userid={userId} auth={auth} setAuth={setAuth}/>}/>
+            <Route path="/:name" element={<Explore serverSystemUrl={serverSystemUrl} setUserId={setUserId} userid={userId} auth={auth} setAuth={setAuth}/>}/>
             {(auth==="false")&&<Route path="/registration" element={<Reg auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             }<Route path="campus_ambassador" element={<CampusAmb auth={auth} setAuth={setAuth}/>} />
             <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />
