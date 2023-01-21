@@ -104,6 +104,7 @@ function App() {
             )}
             <Route path="/payments/:eventname/"  element={auth==="false"?<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl} prevPath={prevLoc}/>:<Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl} prevPath={prevLoc} />} />
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
+            {/* <Route path="/payments/astrohunt/"  element={<Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl} prevPath={prevLoc} />} /> */}
           </Routes>
           </Suspense>
 
