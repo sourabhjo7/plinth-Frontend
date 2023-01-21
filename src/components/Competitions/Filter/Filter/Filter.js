@@ -50,6 +50,7 @@ function Filter(props) {
               payment = {filteredEvent.payment}
               btnEnter={props.btnEnter}
               textLeave={props.textLeave}
+              paymentHandler = {()=>{props.payment(filteredEvent.name.replaceAll(" ", "_").toLowerCase())}}
             />
             </AnimatePresence>
           ))}

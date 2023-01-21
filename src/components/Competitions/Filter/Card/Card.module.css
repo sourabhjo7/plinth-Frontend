@@ -1,6 +1,6 @@
 .card {
   width: 48%;
-  height: 170px;
+  height: 200px;
   /* border: 2px solid black; */
   display: flex;
   gap: 5px;
@@ -17,6 +17,19 @@
   backdrop-filter: blur(3px);
   transition: transform 0.5s;
   overflow: hidden;
+}
+
+.typewriter{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typing 2s infinite;
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 a{
@@ -69,6 +82,15 @@ a{
   color: #ffffff;
 }
 
+.outerbtn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
 .card .content .btn {
   display: flex;
   justify-content: space-between;
@@ -77,7 +99,7 @@ a{
   width: 100%;
   /* margin: 15px 0 5px; */
 }
-.card .content .btn .expbtn {
+.card .content .btn .expbtn, .expbtn {
   display: block;
   /* padding: 5px 10px; */
   border-radius: 5px;
@@ -96,7 +118,7 @@ a{
   font-size: 1vw;
 }
 
-.card .content .btn .regbtn {
+.card .content .btn .regbtn, .regbtn {
   display: block;
   /* padding: 5px 10px; */
   border-radius: 5px;
@@ -141,8 +163,8 @@ a{
         font-size: 1.5vw;
         width: 50%;
     }
-    .card .content .btn .regbtn{
-        font-size: 1.5vw;
+    .card .content .btn .regbtn, .regbtn{
+        font-size: 1.2vw;
         width: 50%;
     }
     .card .content .tag div{
@@ -160,26 +182,28 @@ a{
 @media (max-width:600px) {
     .card {
         width: 90%;
-        height: 120px;
+        height: 170px;
     }
     .card .content .name {
         font-size: 3vw;
     }
-    .card .content .btn .expbtn{
+    .card .content .btn .expbtn, .expbtn{
         font-size: 2vw;
     }
-    .card .content .btn .regbtn{
-        font-size: 2vw;
+    .card .content .btn .regbtn, .regbtn{
+        font-size: 1.4vw;
     }
     .card .content .tag div{
         font-size: 2vw;
         
     }
   }
+
+
 @media (max-width:400px) {
     .card {
         width: 77%;
-        height: 120px;
+        height: 150px;
     }
     .card .content .name {
         font-size: 3vw;
@@ -187,13 +211,13 @@ a{
     .card .content .btn {
       gap: 5px;
     }
-    .card .content .btn .expbtn{
+    .card .content .btn .expbtn, .expbtn{
         font-size: 2vw;
         height: fit-content;
         padding: 4px 0;
     }
-    .card .content .btn .regbtn{
-        font-size: 2vw;
+    .card .content .btn .regbtn, .regbtn{
+        font-size: 1.4vw;
         height: fit-content;
         padding: 4px 0;
     }

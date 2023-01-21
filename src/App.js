@@ -24,7 +24,7 @@ const Accomodation = lazy(()=>import("./components/Accomodation/Accomodation"));
 
 
 console.log(process.env.REACT_APP_API_URL);
-const serverSystemUrl= "https://api.plinth.co.in";// 
+const serverSystemUrl= "http://localhost:3001"//"https://api.plinth.co.in";// 
 function App() {
   const [loading, setLoading] = useState(false);
   const [auth, setAuth] = useState("false");
@@ -95,9 +95,9 @@ function App() {
             <Route path="events" element={<Events />} />
             <Route path="/admin" element={(auth==="admin") && (<Admin serverSystemUrl={serverSystemUrl}/>)} />
             <Route path="komet" element={<Komet />} />
-            <Route path="competitions" element={<Competitions auth={auth} setAuth={setAuth}/>} />
+            <Route path="competitions" element={<Competitions serverSystemUrl={serverSystemUrl} auth={auth} setAuth={setAuth} userid={userId} />} />
             <Route path="accomodation" element={<Accomodation auth={auth} userid={userId} serverSystemUrl={serverSystemUrl} />} />
-            <Route path="/competitions/:name" element={<Explore serverSystemUrl={serverSystemUrl} setUserId={setUserId} userid={userId} auth={auth} setAuth={setAuth}/>}/>
+            <Route path="/:name" element={<Explore serverSystemUrl={serverSystemUrl} setUserId={setUserId} userid={userId} auth={auth} setAuth={setAuth}/>}/>
             {(auth==="false")&&<Route path="/registration" element={<Reg auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}/>}/>
             }<Route path="campus_ambassador" element={<CampusAmb auth={auth} setAuth={setAuth}/>} />
             <Route path="lnm_hacks" element={<LnmHacks auth={auth} setAuth={setAuth} />} />
@@ -106,6 +106,7 @@ function App() {
             )}
             <Route path="/payments/:eventname/"  element={auth==="false"?<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl} prevPath={prevLoc}/>:<Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl} prevPath={prevLoc} />} />
             {/* <Route path="create-team" element={<CreateTeam/>} /> */}
+            {/* <Route path="/payments/astrohunt/"  element={<Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl} prevPath={prevLoc} />} /> */}
           </Routes>
           </Suspense>
 

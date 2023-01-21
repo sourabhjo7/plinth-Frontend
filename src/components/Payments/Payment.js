@@ -14,7 +14,9 @@ function Payment(props) {
   const user_id = props.userid
   const navigate = useNavigate()
   const { eventname } = useParams();
+  // const eventname = "astrohunt"
   console.log(eventname);
+
   const reqEvent = events.filter((event) => event.name.toLowerCase() === eventname.replaceAll("_", " "))
   const [flashMessage, setflashMessage] = useState(false);
   const [message, setMessage] = useState("")
@@ -60,13 +62,7 @@ function Payment(props) {
       });
       return;
     }
-    if (file.type != "image/png" && file.type != "image/jpg") {
-      setError("file", {
-        type: "file",
-        message: "Only image is valid"
-      });
-      return;
-    }
+    
     const formData = new FormData();
     formData.append("file", data.file[0])
     formData.append("paid", paid);
@@ -275,13 +271,6 @@ function Payment(props) {
               id="sharktank"
             >
               Shark Tank
-            </div>
-            <div
-              className={section === "mun" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}
-              onClick={(e) => handleView(e)}
-              id="mun"
-            >
-              MUN
             </div>
             <div
               className={section === "jaipurCubeOpen" ? `${styles.explore_navoptions} ${styles.active}` : `${styles.explore_navoptions}`}

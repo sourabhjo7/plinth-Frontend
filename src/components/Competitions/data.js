@@ -1,3 +1,6 @@
+import { Fragment } from "react";
+import React from "react";
+
 export const clubs = ["Astronomy", "Coding", "Debating", "Quizzinga", "Robotics", "Startups", "Fun Events", "Web3", "ASME"];
 
 export const events = [
@@ -298,7 +301,8 @@ export const events = [
     "club": "Coding",
     "participation": "Team Participation",
     "imgName": "./images/events/cybros/iupc/image.jpg",
-    "poster": "/images/events/cybros/iupc/poster.jpg",
+    "poster": "/images/events/cybros/iupc/poster.png",
+    "about": "This is an on-site “teams-only” contest. The contest will be ICPC style with a 10 minute penalty for each wrong submission and will follow the ICPC format. The preferable number of people in a team is 3.",
     "structure": "ICPC Structure with Team Size of Max 3 Members",
     "prizes": "Prizes Worth 50K",
     "timeline": "28th January 2023",
@@ -319,40 +323,6 @@ export const events = [
     "rulebook": "https://docs.google.com/document/d/1Z_0ZrqXATSKFc239i15f7O4zVW-Iy1uS/edit?usp=sharing&ouid=103682676179344015200&rtpof=true&sd=true",
     "link": "https://docs.google.com/forms/d/e/1FAIpQLSe4cE-hQrO0pQRaGb5LxHkLjm5_XXlInrN36BFmu1Bnd5Ggug/viewform",
     "clubemail": "cybrosclub@lnmiit.ac.in",
-  },
-  {
-    "id": "12",
-    "name": "Plinth's MUN'23",
-    "club": "Debating",
-    "participation": "Solo Participation",
-    "imgName": "./images/events/debsoc/plinth_mun23/image.jpg",
-    "poster": "/images/events/debsoc/plinth_mun23/poster.jpg",
-    "about": "At a MUN conference, delegates(students) will each represent a nation/organization to solve world problems working with other delegates. The event will be 2 days long and will have UNGA, AIPPM and UNSC as the committees.",
-    "structure": "Model United Nations Organisation Conference",
-    "prizes": "PMUN'23 has got a massive prize pool of Rs. 92,000/-",
-    "timeline": "Application deadline: 21st Jaunary 2023     Conference dates: 27th January 2023 and 28th January 2023",
-    "payment": 1200,
-    "contacts":
-      [
-        {
-          "name": "Arjun Saxena",
-          "number": "+91 95714 85158",
-          "email": "20ucc021@lnmiit.ac.in",
-        },
-        {
-          "name": "Divyanshi Gautam",
-          "number": "+91 94624 21299",
-          "email": "20ucs066@lnmiit.ac.in",
-        },
-        {
-          "name": "Saumya Kalra",
-          "number": "+91 6375 548121",
-          "email": "20uec119@lnmiit.ac.in",
-        },
-      ],
-    "rulebook": "https://drive.google.com/file/d/1SbMYQCSguU2ROVODph3KJKTkyllw9lTm/view",
-    "link": "https://docs.google.com/forms/d/e/1FAIpQLSdlckbELXlJ0XCuFyEiSSaXldr7VaDOqUfzTt7hSI4slc10AQ/viewform",
-    "clubemail": "debsoc@lnmiit.ac.in",
   },
   {
     "id": "11",
@@ -487,7 +457,7 @@ export const events = [
     "club2": "LCRAI",
     "participation": "Team Participation",
     "imgName": "./images/events/phoenix/robowars/image.jpg",
-    "poster": "/images/events/phoenix/robowars/poster.png",
+    "poster": "/images/events/phoenix/robowars/poster.jpg",
     "about": "A Competition in which robot battles using various methods to incapacitate the opponents robots.",
     "structure": "Points will be given by judges based on aggression, damage, and control. A team may win by knockout if it successfully immobilizes its opponent for 10 seconds. In case of a double KO, the winner will be decided by points.",
     "prizes": "1st Prize - ₹40000, 2nd Prize - ₹20000, Prizes worth ₹200000 ",
@@ -522,7 +492,8 @@ export const events = [
     "participation": "Team Participation",
     "imgName": "./images/events/phoenix/roborace/image.jpg",
     "poster": "/images/events/phoenix/roborace/poster.jpg",
-    "about": "Teams have to build a bot which has to complete a custom-made race track with every obstacle one can think of.",
+    "about": <Fragment>Teams have to build a bot which has to complete a custom-made race track with every obstacle one can think of.<br/><br/><strong>Note: This rulebook was last updated on 19-01-2023</strong>
+     </Fragment>,
     "structure": "Team Size: 4-5 members. The team having less score than the top three teams will be eliminated and in the case of a tie in points, time taken will become the judging criteria for the affected teams",
     "prizes": "1st Prize - ₹15000, 2nd Prize - ₹10000, Prizes worth ₹40000  ",
     "timeline": "28 JAN (12PM-6PM) & 29 JAN (11AM-5PM)",
@@ -545,7 +516,7 @@ export const events = [
           "email": "21ucs254@lnmiit.ac.in",
         },
       ],
-    "rulebook": "https://drive.google.com/file/d/1RLk1217JeAmx9tYWjsYF2c5pLNvzuXnR/view?usp=share_link",
+    "rulebook": "https://drive.google.com/file/d/1PVPiJ59tPKcjgQI6HUYq154_5h-vYLoE/view",
     "link": "https://forms.gle/YV1tqYcZaUrJHKVJA",
     "clubemail": "phoenixclub@lnmiit.ac.in",
   },
@@ -556,7 +527,7 @@ export const events = [
     "participation": "Team Participation",
     "imgName": "./images/events/phoenix/robocup/image.png",
     "poster": "/images/events/phoenix/robocup/poster.jpg",
-    "about": "Teams have to build two bots to score goals against each other while avoiding penalties. It will be a 2v2 match and the team scoring more goals wins.",
+    "about": <Fragment>Teams have to build two bots to score goals against each other while avoiding penalties. It will be a 2v2 match and the team scoring more goals wins.<br/><br/>   <strong>Note: Bots with dimensions 30cm*30cm are also allowed and dimensions of goal post has been increased to 45 cm</strong></Fragment>,
     "structure": "Team Size: 2-4 members. The team scoring more goals will be declared the winner. In the case of a tie, the winner is decided by the penalties that teams will be getting when: Kicking the ball out of the arena or damaging the opponent's bot, intentionally making physical contact with the opponent's bots, pulling the bot (in case of a wired connection).",
     "prizes": "Prizes worth ₹25000",
     "timeline": "27 JAN (12PM-6PM) & 28 JAN (3PM-6PM)",
@@ -684,7 +655,8 @@ export const events = [
     "participation": "Team Participation",
     "imgName": "./images/events/phoenix/rcplane/image.png",
     "poster": "/images/events/phoenix/rcplane/poster.png",
-    "about": "Teams have to build a RC Plane which is aerodynamically sound and within the specified dimensions to achieve a successful flight",
+    "about": <Fragment>Teams have to build a RC Plane which is aerodynamically sound and within the specified dimensions to achieve a successful flight<br/><br/> <strong>Note: The weight of the plane can be less than 2 kg. You can also use 3 cell-12 Volts battery.</strong>
+    </Fragment>,
     "structure": "",
     "prizes": "Prizes worth ₹20000  ",
     "timeline": "29 JAN (10AM-4PM)",
@@ -931,7 +903,7 @@ export const events = [
     "club": "Fun Events",
     "participation": "Solo Participation",
     "imgName": "./images/events/poc/wca/poster.jpg",
-    "poster": "./images/events/poc/wca/poster.jpg",
+    "poster": "/images/events/poc/wca/poster.jpg",
     "about": "Speedcubing is a competitive sport involving sovling a variety of combination puzzles using cube. The World Cube Associatin (WCA) governs competitions for mechanical puzzles called 'twisty puzzles'. PLINTH'23 is a stage to participate and show case your skills.",
     "structure": "Please Check Rulebook of the WCA for the structure of Speedcubing.",
     "prizes": "Prizes worth Rs. 55,000",
@@ -951,7 +923,7 @@ export const events = [
         },
       ],
     "rulebook": "https://www.worldcubeassociation.org/regulations/",
-    "link": "https://www.worldcubeassociation.org/competitions/LNMIITJaipurCubeOpen2023#competition-events",
+    "link": "https://www.worldcubeassociation.org/competitions/LNMIITJaipurCubeOpen2023/register",
     "clubemail": "",
   },
   {

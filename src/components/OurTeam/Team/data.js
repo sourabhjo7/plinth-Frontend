@@ -387,7 +387,7 @@ export const teams = [
       },
       {
         name: "Rudransh Sharma",
-        image: "./images/teams/design_team/rudransh.jpeg",
+        image: "./images/teams/design_team/rudransh.JPG",
         designation: "Design Head",
         phone: "",
         mail: "/",

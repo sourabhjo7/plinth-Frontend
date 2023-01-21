@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Competitions.module.css";
+import FlashMessage from "../FlashMessage/FlashMessage";
+import {  useNavigate} from "react-router-dom";
 import "../../fonts/Absolute_Xero/Absolute_Xero.ttf";
 import { motion, useScroll, useSpring } from "framer-motion/dist/framer-motion";
 
@@ -10,6 +12,7 @@ import { gsap } from "gsap";
 import { Power3 } from "gsap";
 import { TimelineLite } from "gsap/gsap-core.js";
 import { CSSPlugin } from "gsap/CSSPlugin";
+import axios from "axios";
 
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
@@ -18,14 +21,58 @@ import Filter from "./Filter/Filter/Filter";
 
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
 
-function Competitions({auth,setAuth}) {
+function Competitions({serverSystemUrl, auth,setAuth, userid}) {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll({ target: ref });
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
+  const [flashMessage, setflashMessage] = useState(false);
+  const [message, setMessage] = useState("");
+  const [pay, setPay] = useState(true);
+
+  
+  const payment = async (name) => {
+    await axios
+    .get(`${serverSystemUrl}/checkevents/${name}/${userid}`, {
+      validateStatus: false,
+      withCredentials: true,
+    })
+    .then((res) => {
+      if (res.status === 200) {
+        setPay(res.data.pay);
+        console.log("===pay==", res.data.pay);
+        if (res.data.pay) {
+          navigate(`/payments/${name}`);
+        } else {
+           axios.get(
+            `${serverSystemUrl}/addevent/${name}/${userid}`,
+            {
+              validateStatus: false,
+              withCredentials: true,
+            }
+          ).then((res)=>{
+            if (res.status === 200) {
+              console.log("-->added");
+              setMessage(res.data.msg);
+              setflashMessage(true);
+              alert(res.data.msg);
+              setTimeout(()=>{setflashMessage(false);},2800);
+                           
+            }
+          });
+         
+        }
+      }
+    });
+
+  };
+
+
+
 
   //Particle Bg
   const particlesInit = useCallback(async (engine) => {
@@ -163,6 +210,7 @@ function Competitions({auth,setAuth}) {
           type: 'tween', stiffness: 10000 ,bounce:0
         }}
       />
+      {flashMessage ?  <FlashMessage message={message} /> : null}
       <div className={styles.body}>
 
 
@@ -216,7 +264,7 @@ function Competitions({auth,setAuth}) {
           </div>
 
           <div className={styles.outer}>
-            <Filter btnEnter={btnEnter} auth = {auth} textLeave={textLeave}/>
+            <Filter btnEnter={btnEnter} auth = {auth} textLeave={textLeave} payment = {payment}/>
           </div>
 
           
