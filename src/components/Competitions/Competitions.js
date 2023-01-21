@@ -34,24 +34,41 @@ function Competitions({serverSystemUrl, auth,setAuth, userid}) {
   const [message, setMessage] = useState("");
   const [pay, setPay] = useState(true);
 
+  
   const payment = async (name) => {
-    if (pay) {
-      navigate(`/payments/${name}`);
-    } else {
-      const res = await axios.get(
-        `${serverSystemUrl}/addevent/${name}/${userid}`,
-        {
-          validateStatus: false,
-          withCredentials: true,
-        }
-      );
+    await axios
+    .get(`${serverSystemUrl}/checkevents/${name}/${userid}`, {
+      validateStatus: false,
+      withCredentials: true,
+    })
+    .then((res) => {
       if (res.status === 200) {
-        console.log("-->added");
-        setMessage(res.data.msg);
-        setflashMessage(true);
-        setTimeout(()=>{setflashMessage(false);},2800)
+        setPay(res.data.pay);
+        console.log("===pay==", res.data.pay);
+        if (res.data.pay) {
+          navigate(`/payments/${name}`);
+        } else {
+           axios.get(
+            `${serverSystemUrl}/addevent/${name}/${userid}`,
+            {
+              validateStatus: false,
+              withCredentials: true,
+            }
+          ).then((res)=>{
+            if (res.status === 200) {
+              console.log("-->added");
+              setMessage(res.data.msg);
+              setflashMessage(true);
+              alert(res.data.msg);
+              setTimeout(()=>{setflashMessage(false);},2800);
+                           
+            }
+          });
+         
+        }
       }
-    }
+    });
+
   };
 
 
