@@ -18,7 +18,7 @@ function Section(props) {
     return (
         <div className={styles.section}>
             <div className={styles.subSection}>
-                <div className={styles.subHeading}><span onMouseEnter={()=>{props.handleEnter();}} onMouseLeave={()=>{props.textLeave();}}>{props.name}</span></div>
+                <div className={styles.subHeading}><span className={styles.sub} onMouseEnter={()=>{props.handleEnter();}} onMouseLeave={()=>{props.textLeave();}}>{props.name}</span></div>
                 <hr />
                 <div className={styles.leads}>
                     {props.leads.map((lead) => <ContactCard details = {lead}/>)}

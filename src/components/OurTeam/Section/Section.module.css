@@ -8,7 +8,9 @@
     text-align: center;
     padding: 15px 0 5px;
 }
-
+.sub{
+    font-weight: bold;
+}
 .section{
     z-index: 10;
 }
