@@ -24,7 +24,7 @@ export default function Login({ serverSystemUrl ,auth,setAuth,prevPath}) {
   const params = useParams();
   const location = useLocation();
   const navigate = useNavigate();
-  const { name, id } = params;
+  const { eventname} = params;
   const [tl] = useState(new TimelineLite({ paused: false }));
   const [tl2] = useState(new TimelineLite({ paused: false }));
   const [flashMessage,setflashMessage]=useState(false);
@@ -39,6 +39,8 @@ export default function Login({ serverSystemUrl ,auth,setAuth,prevPath}) {
 
   const onSubmit = async(data) => {
     handleBtnClick();
+    // navigate(/)
+
     const res = await axios.post(
       `${serverSystemUrl}/auth/login`,
       data,
@@ -52,10 +54,14 @@ export default function Login({ serverSystemUrl ,auth,setAuth,prevPath}) {
       setTimeout(()=>{setflashMessage(false);},2800)
       setTimeout(() => {
        setAuth(res.data.user.role);
-       navigate(-1)  
-      }, 2000);
-    }
-    else{
+       if(eventname)
+       {
+         console.log(eventname)
+         window.location.reload(false)
+       } 
+    }, 2000);
+  }
+  else{
       navigate("/registration")
     }
    
