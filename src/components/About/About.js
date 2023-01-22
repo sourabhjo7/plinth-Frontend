@@ -14,6 +14,7 @@ import { TimelineLite } from "gsap/gsap-core.js";
 import { CSSPlugin } from 'gsap/CSSPlugin'
 
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
+import { Carousel } from "./carousel/Carousel";
 
 // import {ReactComponent as Card} from "./card.svg";
 const cardpic = require("./card1.png");
@@ -114,10 +115,12 @@ function About() {
   }, []);
 
   const isDesktop = window.screen.width > 600;
+  const isMobile = window.screen.width <425;
+
 
   return (
     <>
-      <motion.div 
+      {!isMobile &&<motion.div 
         className="cursor" 
         variants={variants}
         animate={cursorVariant}
@@ -125,8 +128,9 @@ function About() {
           x: {delay: 0},
           y: {delay: 0},
           type: 'tween', stiffness: 10000 ,bounce:0
-        }}/>
-
+        }}/>}
+      
+      <div>
       <div className={styles.maindiv}>
         <div ref={(el) => {
               item1 = el;
@@ -153,6 +157,8 @@ function About() {
             Blink; Pink: Plinth!
           </div>
         </div>
+      </div>
+            {/* <Carousel /> */}
       </div>
 
           <div

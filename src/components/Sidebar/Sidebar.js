@@ -17,6 +17,7 @@ import { HiOutlineStar } from "react-icons/hi";
 import { FiMic } from "react-icons/fi";
 import { TbBed } from "react-icons/tb";
 
+
 import axios from "axios";
 
 const imgSrc = require("./plinth.png");
@@ -116,6 +117,14 @@ export default function Sidebar({auth,setAuth,serverSystemUrl,setUser}) {
               <span className="nav-text">Competitions</span>
             </a>
           </li>
+          {/* <li className="has-subnav">
+            <a className="anchor" href="/events">
+              <div className="fa fa-2x">
+                <HiOutlineStar size={25} />
+              </div>
+              <span className="nav-text">Events</span>
+            </a>
+          </li> */}
           <li className="has-subnav">
             <a className="anchor" href="/lnm_hacks">
               <div className="fa fa-2x">

@@ -197,10 +197,11 @@ function Competitions({serverSystemUrl, auth,setAuth, userid}) {
   }, []);
 
   const isDesktop = window.screen.width > 600;
+  const isMobile = window.screen.width <425;
 
   return (
     <>
-      <motion.div
+      {!isMobile&&<motion.div
         className="cursor"
         variants={variants}
         animate={cursorVariant}
@@ -209,7 +210,7 @@ function Competitions({serverSystemUrl, auth,setAuth, userid}) {
           y: { delay: 0 },
           type: 'tween', stiffness: 10000 ,bounce:0
         }}
-      />
+      />}
       {flashMessage ?  <FlashMessage message={message} /> : null}
       <div className={styles.body}>
 

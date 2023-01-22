@@ -237,10 +237,11 @@ const Accomodation = ({ auth,userid, serverSystemUrl  }) => {
   }, []);
 
   const isDesktop = window.screen.width > 600;
+  const isMobile = window.screen.width <425;
 
   return (
     <>
-      <motion.div
+      {!isMobile &&<motion.div
         className="cursor"
         variants={variants}
         animate={cursorVariant}
@@ -250,7 +251,7 @@ const Accomodation = ({ auth,userid, serverSystemUrl  }) => {
           type: 'tween', stiffness: 10000, bounce: 0
           // type: 'tween',ease: [0.17, 0.67, 0.83, 0.67] 
         }}
-      />
+      />}
       <div className={styles.explore_body}>
         <div className={styles.explore}>
 

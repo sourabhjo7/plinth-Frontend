@@ -100,9 +100,12 @@ function CreateTeam() {
     };
   }, []);
 
+  const isMobile = window.screen.width <425;
+
+
   return (
     <>
-      <motion.div
+      {!isMobile&&<motion.div
         className="cursor"
         variants={variants}
         animate={cursorVariant}
@@ -110,7 +113,7 @@ function CreateTeam() {
           x: { delay: 0 },
           y: { delay: 0 },
         }}
-      />
+      />}
       <motion.div variants={variants}
                   initial="init"
                   animate="later"

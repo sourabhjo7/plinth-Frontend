@@ -35,7 +35,7 @@
 }
 
 .title {
-    font-family: Dark;
+    font-family: Akira;
     color: white;
     font-size: 4vw;
     font-weight: 400;
@@ -154,6 +154,15 @@
     font-size: 1.8vw;
 
 }
+.maindiv{
+  height: max-content;
+  margin-top: 8vh;
+ }
+ .rightdiv{
+  width: 90%;
+  padding-left: 60px;
+  height: max-content;
+ }
 }
 @media (max-width:400px) {
   .title{
@@ -171,9 +180,10 @@
 
     width: 90%;
     padding-left: 60px;
-    min-height: max-content;
+    height: max-content;
     /* padding-right: 15px; */
    }
+   
   .textcontent{
     font-family: 'Poppins', sans-serif;
     line-height: 3.7vw;

@@ -26,6 +26,11 @@ body {
   src: local("Agrandir"),
     url("./fonts/Agrandir.otf") format("opentype");
 }
+@font-face {
+  font-family: "Akira"; 
+  src: local("Akira"),
+    url("./fonts/Akira.otf") format("opentype");
+}
 
 .cursor {
   height: 24px;

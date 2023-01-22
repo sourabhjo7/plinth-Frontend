@@ -91,7 +91,8 @@ nav.main-menu.expanded {
   position: relative;
   display: block;
   width: 240px;
-  overflow-x: hidden;
+  height: 54px;
+  overflow: hidden;
   opacity: 0.8;
   transition: all 0.5s;
 }
@@ -131,7 +132,7 @@ nav.main-menu.expanded {
   width: 100%;
   font-family: "poppins", sans-serif;
   color: white;
-  font-weight: lighter;
+  font-weight: bold;
   left: 14%;
   margin-left: 10px;
 }

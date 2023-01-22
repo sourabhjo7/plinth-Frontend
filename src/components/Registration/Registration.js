@@ -169,10 +169,12 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
   const handleBtnClick = () => {
     setBtnText(<Fragment><p className={styles.typewriter}>Loading...</p></Fragment>);
   };
+  const isMobile = window.screen.width <425;
+
  
   return (
     <div className={`${styles.background}`}>
-      <motion.div
+      {!isMobile&&<motion.div
         className="cursor"
         variants={variants}
         animate={cursorVariant}
@@ -180,7 +182,7 @@ function Registration({ serverSystemUrl, auth, setAuth }) {
           x: { delay: 0 },
           y: { delay: 0 },
         }}
-      />
+      />}
       {/* <div ref={(el) => {item3 = el;}} className={`${styles.Handles}`} onMouseEnter={btnEnter} onMouseLeave={textLeave}><Handles /></div> */}
       <motion.div
         onMouseEnter={btnEnter}
