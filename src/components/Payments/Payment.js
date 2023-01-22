@@ -160,9 +160,10 @@ function Payment(props) {
   const handleBtnClick = () => {
     setBtnText(<Fragment><p className={styles.typewriter}>Loading...</p></Fragment>);
   };
+  const isMobile = window.screen.width <425;
 
   return (<>
-    <motion.div
+    {!isMobile&&<motion.div
       className="cursor"
       variants={variants}
       animate={cursorVariant}
@@ -171,7 +172,7 @@ function Payment(props) {
         y: { delay: 0 },
         type: 'tween', stiffness: 10000, bounce: 0
       }}
-    />
+    />}
     {flashMessage ? <FlashMessage message={message} /> : null}
     <div className={styles.payments}>
       <div

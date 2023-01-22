@@ -91,10 +91,12 @@ function Komet() {
   }, []);
 
   const isDesktop = window.screen.width > 600;
+  const isMobile = window.screen.width <425;
+
 
   return (
     <>
-      <motion.div
+      {!isMobile&&<motion.div
         className="cursor"
         variants={variants}
         animate={cursorVariant}
@@ -105,7 +107,7 @@ function Komet() {
           stiffness: 10000,
           bounce: 0,
         }}
-      />
+      />}
       <motion.div
         variants={variants}
         initial="init"

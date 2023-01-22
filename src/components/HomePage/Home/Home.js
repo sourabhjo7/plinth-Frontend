@@ -132,11 +132,12 @@ function Home({auth,setAuth}) {
     const textLeave = ()=> setCursorVariant("default");
 
     const isDesktop = window.screen.width > 600;
+  const isMobile = window.screen.width <425;
 
   return (
     <>
 
-      <motion.div 
+{!isMobile&&<motion.div 
         className="cursor" 
         variants={variants}
         animate={cursorVariant}
@@ -144,7 +145,7 @@ function Home({auth,setAuth}) {
           x: {delay: 0},
           y: {delay: 0},
           type: 'tween', stiffness: 10000 ,bounce:0
-        }}/>
+        }}/>}
 
       <div className={`${styles.mainDiv}`}>
 

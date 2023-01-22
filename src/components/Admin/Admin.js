@@ -71,10 +71,11 @@ const [count,setCount]=useState(0);
       window.removeEventListener("mousemove", mouseMove);
     };
   }, []);
+  const isMobile = window.screen.width <425;
 
   return (
     <>
-      <motion.div
+      {!isMobile&&<motion.div
         className="cursor"
         variants={variants}
         animate={cursorVariant}
@@ -82,7 +83,7 @@ const [count,setCount]=useState(0);
           x: { delay: 0 },
           y: { delay: 0 },
         }}
-      />
+      />}
       <div className={styles.maindiv}>
         <div className={`${styles.heading}`}>Admin Portal</div>
         <div className={styles.pages}>

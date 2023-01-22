@@ -148,10 +148,13 @@ function Events({auth,setAuth}) {
   }, []);
 
   const isDesktop = window.screen.width > 600;
+  const isMobile = window.screen.width <425;
+
+  
 
   return (
     <>
-      <motion.div
+      {!isMobile&&<motion.div
         className="cursor"
         variants={variants}
         animate={cursorVariant}
@@ -160,7 +163,7 @@ function Events({auth,setAuth}) {
           y: { delay: 0},
           type: 'tween', stiffness: 1000000 ,bounce:0
         }}
-      />
+      />}
       <div className={styles.body}>
 
 
