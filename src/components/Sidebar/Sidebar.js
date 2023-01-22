@@ -117,14 +117,14 @@ export default function Sidebar({auth,setAuth,serverSystemUrl,setUser}) {
               <span className="nav-text">Competitions</span>
             </a>
           </li>
-          <li className="has-subnav">
+          {/* <li className="has-subnav">
             <a className="anchor" href="/events">
               <div className="fa fa-2x">
                 <HiOutlineStar size={25} />
               </div>
               <span className="nav-text">Events</span>
             </a>
-          </li>
+          </li> */}
           <li className="has-subnav">
             <a className="anchor" href="/lnm_hacks">
               <div className="fa fa-2x">
