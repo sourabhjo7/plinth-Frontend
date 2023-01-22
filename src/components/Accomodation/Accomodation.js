@@ -77,9 +77,9 @@ const Accomodation = ({ auth,userid, serverSystemUrl  }) => {
         <br /><br />:- Any commodities issued to the guests would have to be returned in sound condition to the organizers during check-out.
         <br /><br />:- Random checks would be made to avoid any illegal stay at the campus. Any team failing to produce their electronic/physical receipts of accommodation would be heavily fined and disqualified.
         <br /><br />:- Entry will be only through the 'Main Gate' of LNMIIT Jaipur. All other gates will be closed for entry.
-        <br /><br />:- All guests are required to carry their valid government photo id proofs at all times. In addition, the student participants are also required to carry their valid College photo id card. Any guest failing to produce their id card will not be permitted inside the campus during Plinth 2022.
+        <br /><br />:- All guests are required to carry their valid government photo id proofs at all times. In addition, the student participants are also required to carry their valid College photo id card. Any guest failing to produce their id card will not be permitted inside the campus during Plinth 2023.
         <br /><br />:- Alcohol, drugs, sharp objects, and explosives of any kind are strictly prohibited inside the campus. Any other item if deemed unsafe will be prohibited. The decision of the Security and Plinth team will be final in case of any disputes.
-        <br /><br />:- No outside vehicles will be allowed into the campus during the Plinth 2022."
+        <br /><br />:- No outside vehicles will be allowed into the campus during the Plinth 2023."
         <br /><br />:- All guests are required to maintain the decorum and cleanliness of the campus and follow the rules of the campus at all times.
         <br /><br />:- Plinth 2023 and LNMIIT will not be responsible for any mishaps that occur throughout the duration of stay for Plinth 2023
 
