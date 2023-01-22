@@ -107,7 +107,7 @@ function About() {
     tl.fromTo(item1, 4, { opacity: 0, ease: Power3.easeOut } ,{ opacity: 1, ease: Power3.easeOut });
     tl2.fromTo(item2, 1, {x:"100%", opacity: 0, ease: Power3.easeOut } ,{x:0,opacity: 1, ease: Power3.easeOut });
     tl3.fromTo(item3, 1, { opacity: 0,x:"100%", ease: Power3.easeOut } ,{opacity: 0.9, x:0,ease: Power3.easeOut }).delay(0.5);
-    tl4.fromTo(item5, 1, { opacity: 0, x:"100%" , ease: Power3.easeOut } ,{ opacity: 0.9,y:"-55px",x:0,z:30, ease: Power3.easeOut }).delay(1);
+    tl4.fromTo(item5, 1, { opacity: 0 , ease: Power3.easeOut } ,{ opacity: 1,ease: Power3.easeOut }).delay(1);
 
     return ()=>{
       window.removeEventListener("mousemove",mouseMove);
