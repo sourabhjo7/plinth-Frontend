@@ -1115,8 +1115,8 @@ export const events = [
     "name": "Web3 Gaming hours",
     "club": "Web3",
     "participation": "Team Participation",
-    "imgName": "",
-    "poster": "",
+    "imgName": "./images/events/cipher/poster.png",
+    "poster": "/images/events/cipher/poster.png",
     "about": "Web3 gaming is here to revolutionise the way we think about gaming forever. With the power of blockchain technology at its fingertips, web3 gaming allows for the creation of decentralised, transparent, and secure platforms that will change the industry as we know it. Plinth brings an exciting opportunity to learn about web3 gaming through workshops and sessions with the industry leaders.",
     "structure": "",
     "prizes": "",
@@ -1144,8 +1144,8 @@ export const events = [
     "name": "DeFi hours",
     "club": "Web3",
     "participation": "Team Participation",
-    "imgName": "",
-    "poster": "",
+    "imgName": "./images/events/cipher/image.png",
+    "poster": "/images/events/cipher/image.png",
     "about": "Gone are the days of traditional financial institutions holding all the power. DeFi puts the control back in the hands of the people, allowing them to access financial services without the need for intermediaries.2023 is going to be the year for DeFi mass adoption and we don’t want you to get behind. Listen to some of the biggest names from DeFi India in Plinth.",
     "structure": "",
     "prizes": "",
@@ -1168,35 +1168,35 @@ export const events = [
     "link": "",
     "clubemail": "",
   },
-  {
-    "id": "41",
-    "name": "Multichain panel discussion",
-    "club": "Web3",
-    "participation": "Team Participation",
-    "imgName": "",
-    "poster": "",
-    "about": "Multichain panel discussion of having to choose between different blockchain platforms - with multichain, you can have it all. Interoperability is at the heart of multichain, allowing different blockchain networks to communicate and work together seamlessly. But the benefits of multichain go beyond just interoperability. Learn about the future of Blockchain tech with the panel of most amazing speakers from industry.",
-    "structure": "",
-    "prizes": "",
-    "timeline": "",
-    "payment": 99,
-    "contacts":
-      [
-        {
-          "name": "Vinay Sharma",
-          "number": "+91 95491 78651",
-          "email": "19ume011@lnmiit.ac.in",
-        },
-        {
-          "name": "Meet Patel",
-          "number": "+91 70418 13479",
-          "email": "19ume020@lnmiit.ac.in",
-        }
-      ],
-    "rulebook": "",
-    "link": "",
-    "clubemail": "",
-  },
+  // {
+  //   "id": "41",
+  //   "name": "Multichain panel discussion",
+  //   "club": "Web3",
+  //   "participation": "Team Participation",
+  //   "imgName": "",
+  //   "poster": "",
+  //   "about": "Multichain panel discussion of having to choose between different blockchain platforms - with multichain, you can have it all. Interoperability is at the heart of multichain, allowing different blockchain networks to communicate and work together seamlessly. But the benefits of multichain go beyond just interoperability. Learn about the future of Blockchain tech with the panel of most amazing speakers from industry.",
+  //   "structure": "",
+  //   "prizes": "",
+  //   "timeline": "",
+  //   "payment": 99,
+  //   "contacts":
+  //     [
+  //       {
+  //         "name": "Vinay Sharma",
+  //         "number": "+91 95491 78651",
+  //         "email": "19ume011@lnmiit.ac.in",
+  //       },
+  //       {
+  //         "name": "Meet Patel",
+  //         "number": "+91 70418 13479",
+  //         "email": "19ume020@lnmiit.ac.in",
+  //       }
+  //     ],
+  //   "rulebook": "",
+  //   "link": "",
+  //   "clubemail": "",
+  // },
   {
     "id": "42",
     "name": "Bridge the Barrier",
@@ -1223,7 +1223,7 @@ export const events = [
         },
       ],
     "rulebook": "",
-    "link": "",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSeYjn2Qao4KU66JuBboYPZlg3CLxmgfGT8YTZCuRnZsYU_Pyw/viewform?usp=sf_link",
     "clubemail": "asme@lnmiit.ac.in",
   },
   {
@@ -1252,7 +1252,7 @@ export const events = [
         },
       ],
     "rulebook": "",
-    "link": "",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSf4P223WFuLIs7tS65HDl6-ftzx8LyfSgz8dknhdnd12HHMOA/viewform?usp=sf_link",
     "clubemail": "asme@lnmiit.ac.in",
   },
   {
@@ -1281,7 +1281,7 @@ export const events = [
         },
       ],
     "rulebook": "",
-    "link": "",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLScplrk-3zTOiw6NUUJTOl8pZ89Gkj-eqVJNw3a0X3O6oO9IDg/viewform?usp=sf_link",
     "clubemail": "asme@lnmiit.ac.in",
   },
 
