@@ -175,8 +175,6 @@ function Home({ auth, setAuth }) {
 
   const isDesktop = window.screen.width > 600;
   const isMobile = window.screen.width < 425;
-
-  const setShowModalFalse = () => {setShowModal(false)};
   
   return (
     <>
@@ -195,7 +193,7 @@ function Home({ auth, setAuth }) {
         />
       )}
 
-      {showModal?<Modal setShowModalFalse={setShowModalFalse} />:null}
+      {showModal?<Modal />:null}
 
       <div className={`${styles.mainDiv}`}>
         <div className={`${styles.backContainer}`}>
