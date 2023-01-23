@@ -93,7 +93,8 @@ function App() {
           <Route path="aboutus" element={<Aboutus />} />
           <Route path="ourteam" element={<Team />} />
           <Route path="events" element={<Events />} />
-          <Route path="/admin" element={(auth === "admin") && (<Admin serverSystemUrl={serverSystemUrl} />)} />
+          <Route path="/admin" element={(auth === "admin")?(<Admin serverSystemUrl={serverSystemUrl} />):<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}
+            prevPath={prevLoc}/>} />
           <Route path="komet" element={<Komet />} />
           <Route path="competitions" element={<Competitions serverSystemUrl={serverSystemUrl} auth={auth} setAuth={setAuth} userid={userId} />} />
           <Route path="accomodation" element={<Accomodation auth={auth} userid={userId} serverSystemUrl={serverSystemUrl} />} />

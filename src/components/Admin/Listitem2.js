@@ -23,6 +23,7 @@ export default function S_v_listitem(props) {
                 <p className={S_v_listitemcss.list_2}>{props.details.fullName}</p>
                 <p className={S_v_listitemcss.list_3}>{props.details.email}</p>
                 <p className={S_v_listitemcss.list_4}>{props.details.phoneNo}</p>
+                <p className={S_v_listitemcss.list_4}>{props.details.paidForEvent}</p>
                 <p className={S_v_listitemcss.list_5}>{props.details.upiId}</p>
                 <p className={S_v_listitemcss.list_6}><a href={props.details.ssLink} target= "_blank">link
                 </a></p>
