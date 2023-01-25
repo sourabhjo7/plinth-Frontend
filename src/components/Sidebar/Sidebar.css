@@ -1,5 +1,13 @@
 /* @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css); */
 /* @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300); */
+
+.activeClassName{
+  color: gray !important;
+  background-color: #8080804f !important;
+  transition: none;
+  font-size: 1rem !important;
+
+}
 .fa-2x {
   font-size: 2em;
 }
@@ -109,7 +117,7 @@ nav.main-menu.expanded {
   border-radius: 16px;
   transform: translateZ(0) scale(1, 1);
   -webkit-transition: all 2s linear;
-  transition: all 2s linear;
+  transition: all 0.4s linear;
   overflow-x: hidden;
 }
 

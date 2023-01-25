@@ -3,7 +3,7 @@ import styles from "./About.module.css";
 import "../../fonts/Absolute_Xero/Absolute_Xero.ttf";
 import {ReactComponent as Glow} from "./glow.svg";
 import { motion } from "framer-motion/dist/framer-motion"; 
-
+import Sponsors from "./Sponsors.js";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -158,6 +158,7 @@ function About() {
           </div>
         </div>
       </div>
+        <Sponsors/>
             {/* <Carousel /> */}
       </div>
 
