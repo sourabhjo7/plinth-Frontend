@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Events.module.css";
 import { motion, useScroll, useSpring } from "framer-motion/dist/framer-motion";
-
+// import styles from "./Card.module.css";
 import { ReactComponent as Base } from "./main.svg";
-
+import { events } from "./data";
 import { gsap } from "gsap";
 import { Power3 } from "gsap";
 import { TimelineLite } from "gsap/gsap-core.js";
@@ -13,8 +13,11 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Filter from "./Filter/Filter/Filter";
-
+// import { motion } from "framer-motion/dist/framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
+import Card from "./Filter/Card/Card";
 
 function Events({auth,setAuth}) {
   const ref = useRef(null);
@@ -199,7 +202,36 @@ function Events({auth,setAuth}) {
           </div>
 
           <div className={styles.outer}>
-            
+            {events.map((filteredEvent,index)=>{
+              return(
+                <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className={styles.card}
+              >
+                <div className={styles.imgContainer}>
+                  <LazyLoadImage
+                    src={filteredEvent.imgName == "" ? "./images/coming-soon.jpg" : filteredEvent.imgName}
+                    alt=""
+                    effect="blur"
+                    placeholderSrc="./Images/dark-bg-preloader.jpg"
+                    height="100%"
+                    width="100%"
+                    className={styles.image} />
+                </div>
+                <div className={styles.content}>
+                  <div className={styles.name} >{filteredEvent.name}</div>
+                  <div className={styles.tag}>
+                    {filteredEvent.about}
+                  </div>
+                  
+                </div>
+              </motion.div>
+              )
+            })}
           </div>
 
           <motion.div className="progress" style={{ scaleX }} />
