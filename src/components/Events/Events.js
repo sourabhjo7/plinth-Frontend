@@ -199,7 +199,7 @@ function Events({auth,setAuth}) {
           </div>
 
           <div className={styles.outer}>
-            <Filter btnEnter={btnEnter} auth = {auth} textLeave={textLeave}/>
+            
           </div>
 
           <motion.div className="progress" style={{ scaleX }} />

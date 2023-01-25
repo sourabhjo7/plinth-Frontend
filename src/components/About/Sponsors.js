@@ -13,7 +13,7 @@ const Sponsors = () => {
             alt="huddle01cam"
             className={styles.sponsor_image}
           />
-
+  
         </div>
       </div>
       <div className={styles.sponsor_type}>
