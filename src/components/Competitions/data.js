@@ -1194,6 +1194,35 @@ export const events = [
   },
   // {
   //   "id": "41",
+  //   "name": "Web3 Job Fare",
+  //   "club": "Web3",
+  //   "participation": "Team Participation",
+  //   "imgName": "./images/events/cipher/jobfare.png",
+  //   "poster": "/images/events/cipher/jobfare.png",
+  //   "about": "Exciting news! We are proud to present the Web3 Job Fair at Plinth'23 by @BuidlersTribe. If you're looking for opportunities in the Web3 space, this is the place to be. Join us to connect with industry leaders and find your dream job in the web3 ecosystem.",
+  //   "structure": "",
+  //   "prizes": "",
+  //   "timeline": "",
+  //   "payment": 99,
+  //   "contacts":
+  //     [
+  //       {
+  //         "name": "Vinay Sharma",
+  //         "number": "+91 95491 78651",
+  //         "email": "19ume011@lnmiit.ac.in",
+  //       },
+  //       {
+  //         "name": "Meet Patel",
+  //         "number": "+91 70418 13479",
+  //         "email": "19ume020@lnmiit.ac.in",
+  //       }
+  //     ],
+  //   "rulebook": "",
+  //   "link": "",
+  //   "clubemail": "",
+  // },
+  // {
+  //   "id": "41",
   //   "name": "Multichain panel discussion",
   //   "club": "Web3",
   //   "participation": "Team Participation",
