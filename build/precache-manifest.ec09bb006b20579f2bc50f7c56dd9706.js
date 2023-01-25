@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "/static/js/1.20375c3e.chunk.js"
   },
   {
-    "revision": "0ce225acfaf261d87889",
+    "revision": "5240c1edf3298cb3c29e",
     "url": "/static/css/main.cc591e17.chunk.css"
   },
   {
-    "revision": "0ce225acfaf261d87889",
-    "url": "/static/js/main.74d48c57.chunk.js"
+    "revision": "5240c1edf3298cb3c29e",
+    "url": "/static/js/main.38678adf.chunk.js"
   },
   {
     "revision": "de21ed8198ab41d9fc2d",
@@ -164,12 +164,12 @@ self.__precacheManifest = [
     "url": "/static/media/Absolute_Xero.e35497f1.ttf"
   },
   {
-    "revision": "19dae88e711b82c8ced9bff1a5687339",
-    "url": "/static/media/Agrandir.19dae88e.otf"
-  },
-  {
     "revision": "4e851bdf1159911bc4b3fbf216eb6d82",
     "url": "/static/media/Akira.4e851bdf.otf"
+  },
+  {
+    "revision": "19dae88e711b82c8ced9bff1a5687339",
+    "url": "/static/media/Agrandir.19dae88e.otf"
   },
   {
     "revision": "f216e43b148534c765e4e2628f08bd7e",
@@ -220,7 +220,7 @@ self.__precacheManifest = [
     "url": "/static/media/glow.5dd5b62a.svg"
   },
   {
-    "revision": "0c90dcd368b6da9376a50554462227f3",
+    "revision": "0961caddb13067dff63628093ee03c9f",
     "url": "/index.html"
   }
 ];
