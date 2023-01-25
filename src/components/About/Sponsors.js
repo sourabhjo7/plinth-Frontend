@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
 // import SponsorCard from "./SponsorCard";
 import styles from "./Sponsors.module.css";
-const Sponsors = () => {
+const Sponsors = (props) => {
   return (
     <div className={styles.sponsors}>
-      <div className={`${styles.title}`}>Sponsors</div>
+      <div onMouseEnter={props.textEnter} onMouseLeave={props.textLeave} className={`${styles.title}`}>Sponsors</div>
       <div className={styles.sponsor_type}>
         <div>Title Sponsor</div>
         <div className={`${styles.sponsor_logo}`}>

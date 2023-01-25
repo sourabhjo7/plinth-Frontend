@@ -158,7 +158,7 @@ function About() {
           </div>
         </div>
       </div>
-        <Sponsors/>
+        <Sponsors textEnter={textEnter} textLeave={textLeave}/>
             {/* <Carousel /> */}
       </div>
 
