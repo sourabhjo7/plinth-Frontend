@@ -2,10 +2,12 @@
 /* @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300); */
 
 .activeClassName{
-  color: gray !important;
-  background-color: #8080804f !important;
-  transition: none;
+  /* color: gray !important; */
+  /* background-color: #8080804f !important; */
+  border-left: 2px solid white !important;
+  /* transition: border-left 2s !important; */
   font-size: 1rem !important;
+  color: white;
 
 }
 .fa-2x {

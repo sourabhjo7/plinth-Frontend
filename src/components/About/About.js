@@ -130,7 +130,7 @@ function About() {
           type: 'tween', stiffness: 10000 ,bounce:0
         }}/>}
       
-      <div>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column"}}>
       <div className={styles.maindiv}>
         <div ref={(el) => {
               item1 = el;
