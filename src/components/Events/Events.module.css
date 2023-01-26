@@ -202,7 +202,28 @@ a{
     display: none;
   }
 }
-
+@media (max-width:464px) {
+ .card{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: 300px!important;
+ }
+ .image{
+  /* width: 50%!important; */
+ }
+span{
+  width: 50%!important;
+ }
+ .imgContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 50%!important; */
+  height: 50%!important;
+  object-fit:none
+ }
+}
 @media (max-width:600px) {
     .card {
         width: 90%;
@@ -218,7 +239,7 @@ a{
         font-size: 1.4vw;
     }
     .card .content .tag div{
-        font-size: 2vw;
+        font-size: 1rem;
         
     }
   }
@@ -365,7 +386,7 @@ a{
   position: relative;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 770px) {
   .animDiv {
     height: 56vh;
   }
