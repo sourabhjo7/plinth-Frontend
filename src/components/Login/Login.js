@@ -54,11 +54,7 @@ export default function Login({ serverSystemUrl ,auth,setAuth,prevPath}) {
       setTimeout(()=>{setflashMessage(false);},2800)
       setTimeout(() => {
        setAuth(res.data.user.role);
-       if(eventname)
-       {
-         console.log(eventname)
-         window.location.reload(false)
-       } 
+       window.location="/competitions";
     }, 2000);
   }
   else{

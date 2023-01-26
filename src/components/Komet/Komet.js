@@ -156,7 +156,7 @@ function Komet() {
                 <strong>Note: An entry pass is mandatory to participate in all events.</strong> 
               </div>
             </div>
-        <a href="https://www.wallet.komet.me/nfts/Plinth_2023_Entry_+_Pro_Night_Pass/303" target="_blank">
+        <a href="https://wallet.komet.me/nfts/Plinth_2023_Entry_+_Pro_Night_Pass/303" target="_blank">
 
             <button
               className={styles.event_register_button}

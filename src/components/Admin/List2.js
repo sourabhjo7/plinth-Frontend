@@ -14,6 +14,7 @@ export default function List({ payments ,serverSystemUrl}) {
                 <p className={Student_varification_list_css.list_2}>Name</p>
                 <p className={Student_varification_list_css.list_3}>Email</p>
                 <p className={Student_varification_list_css.list_4}>Phone No</p>
+                <p className={Student_varification_list_css.list_4}>event</p>
                 <p className={Student_varification_list_css.list_5}>UPI ID</p>
                 <p className={Student_varification_list_css.list_6}>SS</p>
                 <p className={Student_varification_list_css.list_7}>Amount Paid</p>

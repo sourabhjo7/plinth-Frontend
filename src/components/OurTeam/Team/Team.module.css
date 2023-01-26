@@ -155,7 +155,7 @@ body{
 
 @media screen and (max-width: 800px) {
     .header{
-        font-size: 45px;
+        font-size: 35px;
     }
     .outer{
         width: 80%;
@@ -175,7 +175,7 @@ body{
 
  @media screen and (max-width: 440px) {
     .header{
-        font-size: 35px;
+        font-size: 25px;
         margin-left: 44px;
     }
     .outer{

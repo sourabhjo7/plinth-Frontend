@@ -166,7 +166,7 @@ const LnmHacks = ({auth,setAuth}) => {
               <LazyLoadImage
                 className={styles.explore_image}
                 onMouseEnter={cardEnter} onMouseLeave={textLeave}
-                src="./images/lnmhacksposter.jpeg"
+                src="./images/lnmhacksposter2.png"
                 alt="LNM hacks Poster"
                 effect="blur"
                 height="100%"

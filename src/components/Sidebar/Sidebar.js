@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Sidebar.css";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { gsap } from "gsap";
 import { Power3 } from "gsap";
@@ -16,6 +16,7 @@ import { AiOutlineTeam } from "react-icons/ai";
 import { HiOutlineStar } from "react-icons/hi";
 import { FiMic } from "react-icons/fi";
 import { TbBed } from "react-icons/tb";
+import { FiAirplay } from "react-icons/fi";
 
 
 import axios from "axios";
@@ -75,7 +76,7 @@ export default function Sidebar({auth,setAuth,serverSystemUrl,setUser}) {
         }}
       >
         <div className="top-header">
-          <a href="/">
+          <NavLink to="/">
             <img src={imgSrc} className="image-plinth fa" alt="img" />
             <span
               className="nav-text plinth-text"
@@ -87,46 +88,46 @@ export default function Sidebar({auth,setAuth,serverSystemUrl,setUser}) {
             >
               Plinth 2k23
             </span>
-          </a>
+          </NavLink>
         </div>
 
         <ul>
           <li>
-            <a className="anchor" href="/">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/">
               <div className="fa fa-2x">
                 <HiOutlineHome size={25} />
               </div>
               <span className="nav-text">Home</span>
-            </a>
+            </NavLink>
           </li>
           <li className="has-subnav">
-            <a className="anchor" href="/aboutus">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/aboutus">
               {/* <i className="fa fa-book fa-2x" /> */}
               <div className="fa fa-2x">
                 <BiBookAlt size={25} />
               </div>
               <span className="nav-text">About Us</span>
-            </a>
+            </NavLink>
           </li>
           <li className="has-subnav">
-            <a className="anchor" href="/competitions">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/events">
+              <div className="fa fa-2x">
+                <FiAirplay size={25} />
+              </div>
+              <span className="nav-text">Events</span>
+            </NavLink>
+          </li>
+          <li className="has-subnav">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/competitions">
               {/* <i className="fa fa-medal fa-2x" /> */}
               <div className="fa fa-2x">
                 <FiAward size={25} />
               </div>
               <span className="nav-text">Competitions</span>
-            </a>
+            </NavLink>
           </li>
-          {/* <li className="has-subnav">
-            <a className="anchor" href="/events">
-              <div className="fa fa-2x">
-                <HiOutlineStar size={25} />
-              </div>
-              <span className="nav-text">Events</span>
-            </a>
-          </li> */}
           <li className="has-subnav">
-            <a className="anchor" href="/lnm_hacks">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/lnm_hacks">
               <div className="fa fa-2x">
                 <svg
                   className="lnmhackslogo"
@@ -173,50 +174,50 @@ export default function Sidebar({auth,setAuth,serverSystemUrl,setUser}) {
                 </svg>
               </div>
               <span className="nav-text">LNM Hacks</span>
-            </a>
+            </NavLink>
           </li>
           <li className="has-subnav">
-            <a className="anchor" href="/campus_ambassador">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/campus_ambassador">
               {/* <i className="fa fa-phone fa-2x" /> */}
               <div className="fa fa-2x">
                 <FiMic size={25} />
               </div>
               <span className="nav-text">Ambassador</span>
-            </a>
+            </NavLink>
           </li>
           <li className="has-subnav">
-            <a className="anchor" href="/accomodation">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/accomodation">
               {/* <i className="fa fa-phone fa-2x" /> */}
               <div className="fa fa-2x">
                 <TbBed size={25} />
               </div>
               <span className="nav-text">Accomodation</span>
-            </a>
+            </NavLink>
           </li>
           <li className="has-subnav">
-            <a className="anchor" href="/ourteam">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/ourteam">
               {/* <i className="fa fa-phone fa-2x" /> */}
               <div className="fa fa-2x">
                 <AiOutlineTeam size={25} />
               </div>
               <span className="nav-text">Our Team</span>
-            </a>
+            </NavLink>
           </li>
           {(auth==="admin")&&(<li className="has-subnav">
-            <a className="anchor" href="/admin">
+            <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/admin">
               {/* <i className="fa fa-phone fa-2x" /> */}
               <div className="fa fa-2x">
                 <TbBed size={25} />
               </div>
               <span className="nav-text">Admin</span>
-            </a>
+            </NavLink>
           </li>)}
         </ul>
 
         <ul className="logout">
           <li>
 
-            <button className="anchor" href="/login" onClick = {onLoginHandler}>
+            <button className="anchor" to="/login" onClick = {onLoginHandler}>
               {/* <i className="fa fa-sign-in fa-2x" /> */}
               <div className="fa fa-2x">
                 <FiLogIn size={25} />

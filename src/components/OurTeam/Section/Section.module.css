@@ -88,3 +88,9 @@ hr{
         gap: 0 50px;
     }
 }
+@media screen and (max-width: 430px) {
+    
+    .sub{
+        font-size: 18px;
+    }
+}

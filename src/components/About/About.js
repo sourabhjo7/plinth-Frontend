@@ -3,7 +3,7 @@ import styles from "./About.module.css";
 import "../../fonts/Absolute_Xero/Absolute_Xero.ttf";
 import {ReactComponent as Glow} from "./glow.svg";
 import { motion } from "framer-motion/dist/framer-motion"; 
-
+import Sponsors from "./Sponsors.js";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -107,7 +107,7 @@ function About() {
     tl.fromTo(item1, 4, { opacity: 0, ease: Power3.easeOut } ,{ opacity: 1, ease: Power3.easeOut });
     tl2.fromTo(item2, 1, {x:"100%", opacity: 0, ease: Power3.easeOut } ,{x:0,opacity: 1, ease: Power3.easeOut });
     tl3.fromTo(item3, 1, { opacity: 0,x:"100%", ease: Power3.easeOut } ,{opacity: 0.9, x:0,ease: Power3.easeOut }).delay(0.5);
-    tl4.fromTo(item5, 1, { opacity: 0, x:"100%" , ease: Power3.easeOut } ,{ opacity: 0.9,y:"-55px",x:0,z:30, ease: Power3.easeOut }).delay(1);
+    tl4.fromTo(item5, 1, { opacity: 0 , ease: Power3.easeOut } ,{ opacity: 1,ease: Power3.easeOut }).delay(1);
 
     return ()=>{
       window.removeEventListener("mousemove",mouseMove);
@@ -130,7 +130,7 @@ function About() {
           type: 'tween', stiffness: 10000 ,bounce:0
         }}/>}
       
-      <div>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column"}}>
       <div className={styles.maindiv}>
         <div ref={(el) => {
               item1 = el;
@@ -158,6 +158,7 @@ function About() {
           </div>
         </div>
       </div>
+        <Sponsors textEnter={textEnter} textLeave={textLeave}/>
             {/* <Carousel /> */}
       </div>
 

@@ -20,14 +20,279 @@
 }
 /* .maindiv  *{
 cursor: default;
-} */
+} */.card {
+  width: 68%;
+  height: 300px;
+  /* border: 2px solid black; */
+  display: flex;
+  gap: 5px;
+  margin: 2.5%;
+  border-radius: 16px;
+  font-family: "Poppins", "sans-serif";
+  color: white;
+  box-sizing: border-box;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(3px);
+  transition: transform 0.5s;
+  overflow: hidden;
+}
+
+.typewriter{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typing 2s infinite;
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+a{
+  text-decoration: none;
+
+  color: #0f0d3f;
+}
+
+.card .imgContainer{
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.card .image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.card .content {
+  padding: 2vh 1.5vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.card .content .name {
+  font-weight: bold;
+  font-size: 1.5vw;
+  line-height: auto;
+  text-transform: uppercase;
+}
+
+.card .content .tag {
+  display: flex;
+  gap: 13px;
+  overflow-y:scroll;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card .content .tag div {
+  background-color: rgba(255, 255, 255, 0.412);
+  /* border: 2px solid black; */
+  padding: 5px 10px;
+  border-radius: 25px;
+  font-size: 0.95vw;
+  margin-bottom: 1vh;
+  color: #ffffff;
+}
+
+.outerbtn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.card .content .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  /* margin: 15px 0 5px; */
+}
+.card .content .btn .expbtn, .expbtn {
+  display: block;
+  /* padding: 5px 10px; */
+  border-radius: 5px;
+
+  border: 1.15429px solid white;
+  border-radius: 10px;
+  background: transparent;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  height: 4.3vh;
+  opacity: 0.8;
+  /* cursor: pointer; */
+  font-family: "Poppins", "sans-serif";
+  transition: transform 0.5s;
+  font-size: 1vw;
+}
+
+.card .content .btn .regbtn, .regbtn {
+  display: block;
+  /* padding: 5px 10px; */
+  border-radius: 5px;
+  border: 1.15429px solid white;
+  border-radius: 10px;
+  background: transparent;
+  width: 100%;
+  color: #0f0d3f;
+  font-weight: bold;
+  height: 4.3vh;
+  opacity: 0.8;
+  /* cursor: pointer; */
+  font-family: "Poppins", "sans-serif";
+  transition: transform 0.5s;
+  font-size: 1vw;
+  color: #0f0d3f;
+  background-color: white;
+}
+
+.regbtn:hover {
+    transform: scale(1.04);
+  }
+  .expbtn:hover {
+    transform: scale(1.04);
+  }
+.tag{
+  overflow-y: auto !important;
+}
+@media ((min-width: 950px) and (max-width: 1150px)) {
+    .card{
+      width: 55%;
+    }
+  }
+
+@media (max-width:950px) {
+    .card {
+        width: 70%;
+        height: 160px;
+    }
+    .card .content .name {
+        font-size: 2vw;
+    }
+    .card .content .btn .expbtn{
+        font-size: 1.5vw;
+        width: 50%;
+    }
+    .card .content .btn .regbtn, .regbtn{
+        font-size: 1.2vw;
+        width: 50%;
+    }
+    .card .content .tag div{
+        font-size: 1.5vw;
+        
+    }
+  }
+
+@media (max-width:750px) {
+  .clubName{
+    display: none;
+  }
+}
+@media (max-width:464px) {
+  .outer{
+    position: relative;
+    right: -1.5vw;
+  }
+  .name{
+    font-size: 3vw;
+  }
+ .card{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: 485px!important;
+ }
+ .tag{
+  font-size: 3vw;
+ }
+ .image{
+  /* width: 50%!important; */
+ }
+ .imgContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 50%!important; */
+  height: 50%!important;
+  object-fit:none
+ }
+
+}
+@media (max-width:600px) {
+    .card {
+        width: 90%;
+        height: 170px;
+    }
+    .card .content .name {
+        font-size: 3vw;
+    }
+    .card .content .btn .expbtn, .expbtn{
+        font-size: 2vw;
+    }
+    .card .content .btn .regbtn, .regbtn{
+        font-size: 1.4vw;
+    }
+    .card .content .tag div{
+        font-size: 1rem;
+        
+    }
+  }
+
+
+@media (max-width:400px) {
+    .card {
+        width: 77%;
+        height: 150px;
+    }
+    .card .content .name {
+        font-size: 3.5vw;
+    }
+    .card .content .btn {
+      gap: 5px;
+    }
+    .card .content .btn .expbtn, .expbtn{
+        font-size: 2vw;
+        height: fit-content;
+        padding: 4px 0;
+    }
+    .card .content .btn .regbtn, .regbtn{
+        font-size: 1.4vw;
+        height: fit-content;
+        padding: 4px 0;
+    }
+    .card .content .tag div{
+        font-size: 2vw;
+        
+    }
+  }
 .body{
   position: relative;
 }
 
 .outer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height:max-content;
   width:92%;
+  margin-left: 38px;
   /* cursor:auto; */
   min-height:90vh;
   margin-top: 7vh; 
@@ -131,7 +396,7 @@ cursor: default;
   position: relative;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 770px) {
   .animDiv {
     height: 56vh;
   }
