@@ -221,9 +221,6 @@ a{
  .tag{
   font-size: 3vw;
  }
- .image{
-  /* width: 50%!important; */
- }
  .imgContainer{
   display: flex;
   align-items: center;

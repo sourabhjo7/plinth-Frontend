@@ -27,16 +27,6 @@ const Sponsors = (props) => {
         </div>
       </div>
       <div className={styles.sponsor_type}>
-        <div className={styles.text}>Ecosystem Partner</div>
-        <div className={styles.sponsor_logo}>
-          <img
-            src="./images/logo/tdl.png"
-            alt="The Dapp List"
-            className={`${styles.sponsor_image} ${styles.whitebg}`}
-          />
-        </div>
-      </div>
-      <div className={styles.sponsor_type}>
         <div className={styles.text}>NFT tech Partner</div>
         <div className={styles.sponsor_logo}>
           <img
@@ -81,6 +71,43 @@ const Sponsors = (props) => {
         </div>
       </div>
       <div className={styles.sponsor_type}>
+        <div className={styles.text}>Development Partner</div>
+        <div className={styles.sponsor_logo}>
+          <img
+            src="./images/logo/saturn.png"
+            alt="0xSaturn"
+            className={`${styles.sponsor_image} ${styles.whitebg}`}
+          />
+    
+        </div>
+      </div>
+      <div className={styles.sponsor_type}>
+        <div className={styles.text}>Organizing Partner</div>
+        <div className={styles.sponsor_logo}>
+          <img
+            src="./images/logo/deepverse.png"
+            alt="Deep verse"
+            className={`${styles.sponsor_image} ${styles.whitebg}`}
+          />
+    
+        </div>
+      </div>
+      <div className={styles.sponsor_type}>
+        <div className={styles.text}>Ecosystem Partner</div>
+        <div className={styles.sponsor_logo}>
+          <img
+            src="./images/logo/tdl.png"
+            alt="The Dapp List"
+            className={`${styles.sponsor_image} ${styles.whitebg}`}
+          />
+          <img
+            src="./images/logo/builder.png"
+            alt="BuilderTribe"
+            className={`${styles.sponsor_image} ${styles.whitebg}`}
+          />
+        </div>
+      </div>
+      <div className={styles.sponsor_type}>
         <div className={styles.text}>Web3 Infrastructure Partner</div>
         <div className={styles.sponsor_logo}>
           <img
@@ -92,6 +119,28 @@ const Sponsors = (props) => {
         </div>
       </div>
       <div className={styles.sponsor_type}>
+        <div className={styles.text}>Web3 Gaming Partner</div>
+        <div className={styles.sponsor_logo}>
+          <img
+            src="./images/logo/trikon.png"
+            alt="trikon"
+            className={`${styles.sponsor_image} ${styles.blackbg}`}
+          />
+    
+        </div>
+      </div>
+      <div className={styles.sponsor_type}>
+        <div className={styles.text}>Curation and Management Partner</div>
+        <div className={styles.sponsor_logo}>
+          <img
+            src="./images/logo/web3events.png"
+            alt="web3events"
+            className={`${styles.sponsor_image} ${styles.blackbg}`}
+          />
+         
+        </div>
+      </div>
+      <div className={styles.sponsor_type}>
         <div className={styles.text}>Community Partner</div>
         <div className={styles.sponsor_logo}>
           <img
@@ -100,9 +149,9 @@ const Sponsors = (props) => {
             className={styles.sponsor_image}
           />
           <img
-            src="./images/logo/webBharat.png"
-            alt="WEB3 Bharat"
-            className={styles.sponsor_image}
+            src="./images/logo/chennai.png"
+            alt="chennaiweb3Meetup"
+            className={`${styles.sponsor_image} ${styles.blackbg}`}
           />
           <img
             src="./images/logo/webp.png"
@@ -113,6 +162,42 @@ const Sponsors = (props) => {
             src="./images/logo/tph.png"
             alt="The Product House"
             className={styles.sponsor_image}
+          />
+        </div>
+
+        <div className={styles.sponsor_logo}>
+        <img
+            src="./images/logo/webBharat.png"
+            alt="WEB3 Bharat"
+            className={styles.sponsor_image}
+          />        
+          <img
+            src="./images/logo/punedao.png"
+            alt="puneDao"
+            className={`${styles.sponsor_image} ${styles.blackbg}`}
+          />
+          <img
+            src="./images/logo/web3meet.png"
+            alt="web3meetup"
+            className={styles.sponsor_image}
+          />
+          <img
+            src="./images/logo/w3g.png"
+            alt="W3G"
+            className={styles.sponsor_image}
+          />
+        </div>
+
+        <div className={styles.sponsor_logo}>
+        <img
+            src="./images/logo/wolf.png"
+            alt="wolf"
+            className={`${styles.sponsor_image} ${styles.whitebg}`}
+          />
+          <img
+            src="./images/logo/polygon.png"
+            alt="polygon"
+            className={`${styles.sponsor_image} ${styles.whitebg}`}
           />
         </div>
       </div>
