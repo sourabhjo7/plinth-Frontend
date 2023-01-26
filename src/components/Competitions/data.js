@@ -1121,7 +1121,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -1150,7 +1150,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
