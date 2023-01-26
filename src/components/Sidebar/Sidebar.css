@@ -221,10 +221,11 @@ nav.main-menu li.active > a,
   transform: scale(1.03);
 }
 .plinth-text{
+  font-family:"Akira" !important;
   opacity: 0.9;
   white-space: nowrap; 
     left:75%;
-    font-size: 19px;
+    font-size: 15px;
     transition: all 0.5s;
 }
 .plinth-text:hover{
@@ -257,8 +258,5 @@ nav.main-menu li.active > a,
   }
   .top-header{
     margin-top: 15px;
-  }
-  .plinth-text{
-    font-size: 20px;
   }
 }
