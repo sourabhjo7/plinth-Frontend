@@ -56,4 +56,10 @@
     width: 30px;
     height: 30px;
   }
+  .crossdiv{
+    border: 1.5px white solid;
+  }
+  .img{
+    border: 1.5px white solid;
+  }
 }

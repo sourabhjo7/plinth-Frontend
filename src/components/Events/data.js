@@ -19,12 +19,12 @@ export const events = [
   },
   {
     "id": "2",
-    "name": "Plinth Talk Series-AYUSH RANJAN",
+    "name": "Plinth Talk Series : AYUSH RANJAN",
     "club": "Astronomy",
     "participation": "Solo Participation",
     "imgName": "./images/events/events/ayushRanjan.jfif",
     "poster": "/images/events/events/ayushRanjan.jpg",
-    "about": "Exciting news!We're thrilled to announce that @ranjan_3018 , Co-founder and CEO of @huddle01com, will be joining us as a speaker at Plinth 2K23Don't miss out on the insights and expertise of this industry leader!Blink, Pink; Plinth!",
+    "about": "Exciting news! We're thrilled to announce that @ranjan_3018, Co-founder and CEO of @huddle01com, will be joining us as a speaker at Plinth 2K23. Don't miss out on the insights and expertise of this industry leader! Blink,Pink;Plinth!",
     "prizes": "Prizes Worth 10K!",
     "timeline": "13 January 2023 - Contest Starts 20 January 2023 - Submissions Close",
     
@@ -32,7 +32,7 @@ export const events = [
   },
   {
     "id": "3",
-    "name": "Plinth Talk Series-STRIVER",
+    "name": "Plinth Talk Series : STRIVER",
     "club": "Astronomy",
     "participation": "Team Participation",
     "imgName": "./images/events/events/striver.jfif",

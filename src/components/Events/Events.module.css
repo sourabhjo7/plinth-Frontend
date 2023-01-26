@@ -209,11 +209,14 @@ a{
     position: relative;
     right: -1.5vw;
   }
+  .name{
+    font-size: 3vw;
+  }
  .card{
   display: flex;
   flex-direction: column;
   width: fit-content;
-  height: 480px!important;
+  height: 485px!important;
  }
  .tag{
   font-size: 3vw;
@@ -258,7 +261,7 @@ a{
         height: 150px;
     }
     .card .content .name {
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
     .card .content .btn {
       gap: 5px;
