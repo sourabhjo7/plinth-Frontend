@@ -69,7 +69,7 @@ function Card(props) {
           </div>
 
 
-          {props.payment > 0 ? (
+          {/* {props.payment > 0 ? (
             <button
               className={`${styles.expbtn}`}
               onClick={() => {
@@ -80,7 +80,7 @@ function Card(props) {
             >
               {BtnText}
             </button>
-          ) : null}
+          ) : null} */}
         </div>
       </div>
     </motion.div>

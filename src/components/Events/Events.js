@@ -12,12 +12,10 @@ import { CSSPlugin } from "gsap/CSSPlugin";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import Filter from "./Filter/Filter/Filter";
 // import { motion } from "framer-motion/dist/framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Handles } from "../HomePage/PlinthHandlesSection/Handles";
-import Card from "./Filter/Card/Card";
 
 function Events({auth,setAuth}) {
   const ref = useRef(null);

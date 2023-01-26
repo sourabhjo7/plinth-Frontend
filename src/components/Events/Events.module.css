@@ -168,7 +168,9 @@ a{
   .expbtn:hover {
     transform: scale(1.04);
   }
-
+.tag{
+  overflow-y: auto !important;
+}
 @media ((min-width: 950px) and (max-width: 1150px)) {
     .card{
       width: 55%;
@@ -203,17 +205,21 @@ a{
   }
 }
 @media (max-width:464px) {
+  .outer{
+    position: relative;
+    right: -1.5vw;
+  }
  .card{
   display: flex;
   flex-direction: column;
   width: fit-content;
-  height: 300px!important;
+  height: 480px!important;
+ }
+ .tag{
+  font-size: 3vw;
  }
  .image{
   /* width: 50%!important; */
- }
-span{
-  width: 50%!important;
  }
  .imgContainer{
   display: flex;
@@ -223,6 +229,7 @@ span{
   height: 50%!important;
   object-fit:none
  }
+
 }
 @media (max-width:600px) {
     .card {

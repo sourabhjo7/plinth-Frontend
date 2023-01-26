@@ -9,15 +9,14 @@ import { CSSPlugin } from "gsap/CSSPlugin";
 
 import { HiOutlineHome } from "react-icons/hi";
 import { FiAward } from "react-icons/fi";
-import {MdOutlineEmojiEvents} from 'react-icons/md'
 import { BiBookAlt } from "react-icons/bi";
 // import {FiPhone} from "react-icons/fi";
 import { FiLogIn } from "react-icons/fi";
 import { AiOutlineTeam } from "react-icons/ai";
-import { FiAirplay } from "react-icons/fi";
 import { HiOutlineStar } from "react-icons/hi";
 import { FiMic } from "react-icons/fi";
 import { TbBed } from "react-icons/tb";
+import { FiAirplay } from "react-icons/fi";
 
 
 import axios from "axios";
@@ -112,31 +111,21 @@ export default function Sidebar({auth,setAuth,serverSystemUrl,setUser}) {
           </li>
           <li className="has-subnav">
             <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/events">
-              {/* <i className="fa fa-book fa-2x" /> */}
               <div className="fa fa-2x">
                 <FiAirplay size={25} />
               </div>
               <span className="nav-text">Events</span>
             </NavLink>
           </li>
-
           <li className="has-subnav">
             <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/competitions">
               {/* <i className="fa fa-medal fa-2x" /> */}
               <div className="fa fa-2x">
                 <FiAward size={25} />
               </div>
-              <span className="nav-text">Competitons</span>
+              <span className="nav-text">Competitions</span>
             </NavLink>
           </li>
-          {/* <li className="has-subnav">
-            <NavLink className="anchor" to="/events">
-              <div className="fa fa-2x">
-                <HiOutlineStar size={25} />
-              </div>
-              <span className="nav-text">Events</span>
-            </NavLink>
-          </li> */}
           <li className="has-subnav">
             <NavLink className={({isActive})=>isActive?"activeClassName anchor":"anchor"} to="/lnm_hacks">
               <div className="fa fa-2x">
