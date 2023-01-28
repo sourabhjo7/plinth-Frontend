@@ -5,7 +5,8 @@ export const TimerCell = ({ label, value }) => {
 
     return (
         <div className={ styles.TimerCell }>
-            <span className={ styles.TimerCellValue }>{ formattedValue }</span>
+            {/* <span className={ styles.TimerCellValue }>{ formattedValue }</span> */}
+            <span className={ styles.TimerCellValue }>00</span>
             <span className={ styles.TimerCellLabel }>{ label }</span>
         </div>
     );
