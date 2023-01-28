@@ -69,7 +69,7 @@ export const teams = [
     leads: [
       {
         name: "Vinay Sharma",
-        image: "./images/teams/web3/Vinay.png",
+        image: "./images/teams/web3/Vinay.jpg",
         designation: "Web3 Lead",
         phone: "+91 95491 78651",
         mail: "vinaystwt@gmail.com ",
@@ -285,7 +285,7 @@ export const teams = [
     leads: [
       {
         name: "Krishna Kulshreshtha",
-        image: "./images/teams/content_team/krishna.jpeg",
+        image: "./images/teams/content_team/krishna.jpg",
         designation: "Content Lead",
         phone: "+91 80769 63691",
         mail: "kkulshreshtha29@gmail.com",

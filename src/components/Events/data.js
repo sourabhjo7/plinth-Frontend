@@ -41,6 +41,12 @@ export const events = [
     "structure": "Presentation making competition conducted in two rounds. Shortlisted candidates from the online round will be asked to present in offline mode in LNMIIT.",
     "prizes": "Prizes Worth 15K!",
     "timeline": "17:00 PM, 13 January 2023 - Problem statement will be released 23:59 PM, 15 January 2023 - Submission Deadline, 16:00 PM, 27 January 2023 - Shortlisted teams will get a chance to present their case studies to judges in offline mode",
-    
+  },
+  {
+    "id": "4",
+    "name": "Blood Connect",
+    "imgName": "./images/blooddonation.jpeg",
+    "poster": "./images/blooddonation.jpeg",
+    "about": "BloodConnect is India’s largest youth-led organization that works with colleges, corporates, and RWAs to help the blood banks be blood sufficient. In collaboration with PLINTH'23 we are providing camps to contribute for the good cause. We at BloodConnect live by the motto of saving lives by ensuring every drop of blood contributes towards the right cause of saving lives.",
   },
 ]
