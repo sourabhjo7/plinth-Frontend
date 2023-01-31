@@ -276,7 +276,7 @@ function Home({ auth, setAuth }) {
             className={`${styles.homeGradientLayerRev}`}
           >
             <div className={`${styles.CountdownContainer}`}>
-              <div className={`${styles.CountdownHeading}`}>STARTS IN </div>
+              <div className={`${styles.CountdownHeading}`}>We're Live🚀</div>
             </div>
             <div
               className={`${styles.Countdown}`}
