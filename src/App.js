@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Loader from "./components/Loader/Loader";
 import axios from "axios";
 // import CreateTeam from "./components/CreateTeam/CreateTeam";
-import Payment from "./components/Payments/Payment";
+// import Payment from "./components/Payments/Payment";
 import Events from "./components/Events/Events";
 
 const Aboutus = lazy(() => import("./components/About/About"));
@@ -105,7 +105,7 @@ function App() {
           {(auth === "false") && (<Route path="/login" element={<Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl}
             prevPath={prevLoc} />} />
           )}
-          <Route path="/payments/:eventname/" element={auth === "false" ? <Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl} prevPath={prevLoc} /> : <Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl} prevPath={prevLoc} />} />
+          {/* <Route path="/payments/:eventname/" element={auth === "false" ? <Login auth={auth} setAuth={setAuth} serverSystemUrl={serverSystemUrl} prevPath={prevLoc} /> : <Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl} prevPath={prevLoc} />} /> */}
           <Route path="*" element={<Home auth={auth} setAuth={setAuth}/>} /> 
           {/* <Route path="create-team" element={<CreateTeam/>} /> */}
           {/* <Route path="/payments/astrohunt/"  element={<Payment userid={userId} accomodation={accomodation} auth={auth} setAuth={setAuth} url={serverSystemUrl} prevPath={prevLoc} />} /> */}

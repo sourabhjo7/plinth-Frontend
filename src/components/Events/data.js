@@ -13,7 +13,7 @@ export const events = [
     "structure": "An exciting hunt with a pinch of Astronomy!",
     "prizes": "Prize Pool of 20,000/-",
     "timeline": "09:00 AM to 13:00 PM on January 28th, 2023",
-    "payment": 99,
+    "payment": 0,
 
   
   },

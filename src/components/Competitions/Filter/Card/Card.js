@@ -52,8 +52,8 @@ function Card(props) {
         <div className={styles.name} onMouseEnter={() => { props.btnEnter(); }} onMouseLeave={() => { props.textLeave(); }}>{props.name}</div>
         <div className={styles.tag}>
           <div className={styles.teamTag}>{props.participation}</div>
-          <div className={`${styles.teamTag} ${styles.clubName}`}>
-            {props.payment > 0 ? "Paid" : "Free"}</div>
+          {/* <div className={`${styles.teamTag} ${styles.clubName}`}>
+            {props.payment > 0 ? "Paid" : "Free"}</div> */}
         </div>
         <div className={styles.outerbtn}>
           <div className={styles.btn}>

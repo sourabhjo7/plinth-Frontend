@@ -15,7 +15,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment": 999,
+    "payment": 0,
     "contacts":
       [
         {
@@ -49,7 +49,7 @@ export const events = [
     "structure": "An exciting hunt with a pinch of Astronomy!",
     "prizes": "Prize Pool of 20,000/-",
     "timeline": "09:00 AM to 13:00 PM on January 28th, 2023",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -151,7 +151,7 @@ export const events = [
     "structure": "A relaxing and entertaining event having telescopic handling, jamming sessions, poetry sessions, etcetera.",
     "prizes": "",
     "timeline": "20:00 PM Onwards on 27th January 2023 and 28th January 2023",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -277,7 +277,7 @@ export const events = [
     "structure": "Onsite competitive programming contest",
     "prizes": "Prizes Worth 30K",
     "timeline": "19 December 2022 - Online round concluded 29 January 2023 - Onsite Round",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -306,7 +306,7 @@ export const events = [
     "structure": "ICPC Structure with Team Size of Max 3 Members",
     "prizes": "Prizes Worth 50K",
     "timeline": "28th January 2023",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -335,7 +335,7 @@ export const events = [
     "structure": "On site passively-aggressive refutal",
     "prizes": "The winners will be awarded prizes, goodies and vouchers worth Rs. 6000/-.",
     "timeline": "27th, 28th and 29th January 2023",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -369,7 +369,7 @@ export const events = [
     "structure": "On site idea centric graffiti",
     "prizes": "",
     "timeline": "27th, 28th and 29th January 2023",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -403,7 +403,7 @@ export const events = [
     "structure": "Round 1 (Online): Your startup's Pitch Deck needs to be Submitted on Unstop Platform ; Round 2 (Online): A video pitch describing your startup in the most creative form needs to be Submitted on Unstop Platform ; Round 3 (Offline): Offline Pitching in front of Judges (established Entrepreneurs); Round 4 (Offline): Final pitch in front of Angel Investors and Micro Venture Capitalists.",
     "prizes": "Cash Prizes worth a minimum of Rs. 1,00,000/- will be given to the winners including Prototype Funding of Rs.35,000+",
     "timeline": "Round 1 (Online): 14 December 2022 - 12 January 2023; Round 2 (Online): 13 Januray - 20 January 2023; Round 3 (Offline): 27th January 2023; Round 4 (Offline): 28th January 2023",
-    "payment": 1000,
+    "payment": 0,
     "contacts":
       [
         {
@@ -432,7 +432,7 @@ export const events = [
     "structure": "The event would be happening on designated Stock Simulation Platform and the prize distribution ceremony would take place during Plinth ",
     "prizes": "Cash Prizes worth a minimum of Rs. 10,000/- will be given to the winners.",
     "timeline": "21 January 2023 - Registrations Closes, 23 January 2023 to 27 January 2023 - Contest dates",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -462,7 +462,7 @@ export const events = [
     "structure": "Points will be given by judges based on aggression, damage, and control. A team may win by knockout if it successfully immobilizes its opponent for 10 seconds. In case of a double KO, the winner will be decided by points.",
     "prizes": "1st Prize - ₹40000, 2nd Prize - ₹20000, Prizes worth ₹200000 ",
     "timeline": "28 JAN & 29 JAN, 2023",
-    "payment": 1000,
+    "payment": 0,
     "contacts":
       [
         {
@@ -497,7 +497,7 @@ export const events = [
     "structure": "Team Size: 4-5 members. The team having less score than the top three teams will be eliminated and in the case of a tie in points, time taken will become the judging criteria for the affected teams",
     "prizes": "1st Prize - ₹15000, 2nd Prize - ₹10000, Prizes worth ₹40000  ",
     "timeline": "28 JAN (12PM-6PM) & 29 JAN (11AM-5PM)",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -531,7 +531,7 @@ export const events = [
     "structure": "Team Size: 2-4 members. The team scoring more goals will be declared the winner. In the case of a tie, the winner is decided by the penalties that teams will be getting when: Kicking the ball out of the arena or damaging the opponent's bot, intentionally making physical contact with the opponent's bots, pulling the bot (in case of a wired connection).",
     "prizes": "Prizes worth ₹25000",
     "timeline": "27 JAN (12PM-6PM) & 28 JAN (3PM-6PM)",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -565,7 +565,7 @@ export const events = [
     "structure": "Team Size: 2-6 members. If the dimensions of the bot are not as per the rulebook, the respective team will be eliminated",
     "prizes": "Prizes worth ₹35000",
     "timeline": "27 JAN (11AM-5PM) & 28 JAN (11AM-5PM)",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -599,7 +599,7 @@ export const events = [
   //   "structure": "Team Size: 2-6 members. If a car is disintegrated during the race or there is another car that has completed the laps in much lesser time or a car starts off twice before waving the flag or countdown, the team is eliminated.",
   //   "prizes": "1st Prize - ₹14000, 2nd Prize - ₹6000, Prizes worth ₹40000 ",
   //   "timeline": "28 JAN (12PM-4PM)",
-  //   "payment": 99,
+  //   "payment": 0,
   //   "contacts":
   //     [
   //       {
@@ -629,7 +629,7 @@ export const events = [
     "structure": "Team Size: 1-4 members. There will be no elimination rounds. The team with the minimum time run will be considered as the winner.",
     "prizes": "Prizes worth ₹40000  ",
     "timeline": "28 JAN (5PM-8PM) & 29 JAN (5PM-8PM)",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -660,7 +660,7 @@ export const events = [
     "structure": "",
     "prizes": "Prizes worth ₹20000  ",
     "timeline": "29 JAN (10AM-4PM)",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -689,7 +689,7 @@ export const events = [
     "structure": "Team Size: 1-4 members. If the dimensions of the bot are not as per the rulebook, if the bot gets disintegrated during the event, or if the team has scored fewer points than other teams, then the respective team will be eliminated.",
     "prizes": "Prizes worth ₹20000",
     "timeline": "27 JAN (12PM-3PM) & 28 JAN (12PM-3PM)",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -724,7 +724,7 @@ export const events = [
   //   "structure": "",
   //   "prizes": "1st Prize - ₹10000, 2nd Prize - ₹5000",
   //   "timeline": "29 JAN (11AM-4PM) ",
-  //   "payment": 99,
+  //   "payment": 0,
   //   "contacts":
   //     [
   //       {
@@ -753,7 +753,7 @@ export const events = [
   //   "structure": "Once your balloon is shot, you will be considered eliminated.",
   //   "prizes": " Gift hampers ",
   //   "timeline": "28 JAN & 29 JAN",
-  //   "payment": 99,
+  //   "payment": 0,
   //   "contacts":
   //     [
   //       {
@@ -787,7 +787,7 @@ export const events = [
     "structure": "Team Size: 1-4 members. Only one member is allowed to handle the bot, other than that personal devices are not permitted close to the arena, and all other Wi-Fi, Bluetooth, and other devices need to be turned off only a bot should be inside the arena, nothing else.",
     "prizes": "Prizes worth ₹30000 ",
     "timeline": "28 JAN (11AM-6PM)",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -821,7 +821,7 @@ export const events = [
     "structure": "Team Size: 3 members. Prelims: Pen-paper based round. The quizmaster will present the questions and you will have to write your answers. Final round: Top 6 teams will compete in a quiz consisting of different biz genres to become the champion. ",
     "prizes": "Prizes worth Rs. 15,000",
     "timeline": "Date: 28.01.2023 Time: Starts at 10 AM",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -879,7 +879,7 @@ export const events = [
     "structure": "Team Size: 3 members. Prelims: Pen-paper based round. The quizmaster will present the questions and you will have to write your answers.  Final Round: Top 16 teams will qualify for this round. We will merge two teams into one and then they will be alloted different IPL franchises. The 8 franchises will compete against each other to maximise their rating given a pixed 100 Cr. purse. ",
     "prizes": "Prizes worth Rs. 20,000",
     "timeline": "Date: 29.01.2023  Time: 10:00 AM-12:00 PM Prelims  01:00 PM-06:00 PM Auction",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -908,7 +908,7 @@ export const events = [
     "structure": "Please Check Rulebook of the WCA for the structure of Speedcubing.",
     "prizes": "Prizes worth Rs. 55,000",
     "timeline": "28th Jan, 2023 to 29th Jan, 2023",
-    "payment": 400,
+    "payment": 0,
     "contacts":
       [
         {
@@ -937,7 +937,7 @@ export const events = [
     "structure": "2-4 players will play at one time",
     "prizes": "",
     "timeline": "11AM to 5PM on January 27th, 2023",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -966,7 +966,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -1058,7 +1058,7 @@ export const events = [
     "structure": "",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -1203,7 +1203,7 @@ export const events = [
   //   "structure": "",
   //   "prizes": "",
   //   "timeline": "",
-  //   "payment": 99,
+  //   "payment": 0,
   //   "contacts":
   //     [
   //       {
@@ -1232,7 +1232,7 @@ export const events = [
   //   "structure": "",
   //   "prizes": "",
   //   "timeline": "",
-  //   "payment": 99,
+  //   "payment": 0,
   //   "contacts":
   //     [
   //       {
@@ -1261,7 +1261,7 @@ export const events = [
     "structure": "Team Size: 3-5 people",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -1290,7 +1290,7 @@ export const events = [
     "structure": "Team Size: 3-5 people",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
@@ -1319,7 +1319,7 @@ export const events = [
     "structure": "Team SIze: 1-3 people",
     "prizes": "",
     "timeline": "",
-    "payment": 99,
+    "payment": 0,
     "contacts":
       [
         {
