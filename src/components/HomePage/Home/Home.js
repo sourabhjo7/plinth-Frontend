@@ -426,6 +426,6 @@ function Home({ auth, setAuth }) {
   );
 }
 
-// Kingshuk Ghosh,Vishal Kumar,Aryan Bansal,Aryan Gupta,Ayush Mathpal,Arnit Gupta,Ashutosh Jha,Ketan Jakhar,Aditya Mittal,Sriraj Behera,Niharika Mahajan
+
 
 export default Home;
